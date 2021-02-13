@@ -10,106 +10,98 @@
 
 namespace FBE {
 
-void GeneratorGo::Generate(const std::shared_ptr<Package>& package)
-{
-    GenerateFBEPackage("fbe");
-    GenerateFBEConstants("fbe");
-    GenerateFBEJson("fbe");
-    GenerateFBEOptional("fbe");
-    GenerateFBETypes("fbe");
-    GenerateFBEVersion("fbe", "fbe");
-    GenerateFBEBuffer("fbe");
-    GenerateFBEFieldModel("fbe", "Bool", "bool", "1", "false");
-    GenerateFBEFieldModel("fbe", "Byte", "byte", "1", "0");
-    GenerateFBEFieldModel("fbe", "Char", "rune", "1", "'\\000'");
-    GenerateFBEFieldModel("fbe", "WChar", "rune", "4", "'\\000'");
-    GenerateFBEFieldModel("fbe", "Int8", "int8", "1", "0");
-    GenerateFBEFieldModel("fbe", "UInt8", "uint8", "1", "0");
-    GenerateFBEFieldModel("fbe", "Int16", "int16", "2", "0");
-    GenerateFBEFieldModel("fbe", "UInt16", "uint16", "2", "0");
-    GenerateFBEFieldModel("fbe", "Int32", "int32", "4", "0");
-    GenerateFBEFieldModel("fbe", "UInt32", "uint32", "4", "0");
-    GenerateFBEFieldModel("fbe", "Int64", "int64", "8", "0");
-    GenerateFBEFieldModel("fbe", "UInt64", "uint64", "8", "0");
-    GenerateFBEFieldModel("fbe", "Float", "float32", "4", "0.0");
-    GenerateFBEFieldModel("fbe", "Double", "float64", "8", "0.0");
-    GenerateFBEFieldModelDecimal("fbe");
-    GenerateFBEFieldModelTimestamp("fbe");
-    GenerateFBEFieldModelUUID("fbe");
-    GenerateFBEFieldModelBytes("fbe");
-    GenerateFBEFieldModelString("fbe");
-    if (Final())
-    {
-        GenerateFBEFinalModel("fbe", "Bool", "bool", "1", "false");
-        GenerateFBEFinalModel("fbe", "Byte", "byte", "1", "0");
-        GenerateFBEFinalModel("fbe", "Char", "rune", "1", "'\\000'");
-        GenerateFBEFinalModel("fbe", "WChar", "rune", "4", "'\\000'");
-        GenerateFBEFinalModel("fbe", "Int8", "int8", "1", "0");
-        GenerateFBEFinalModel("fbe", "UInt8", "uint8", "1", "0");
-        GenerateFBEFinalModel("fbe", "Int16", "int16", "2", "0");
-        GenerateFBEFinalModel("fbe", "UInt16", "uint16", "2", "0");
-        GenerateFBEFinalModel("fbe", "Int32", "int32", "4", "0");
-        GenerateFBEFinalModel("fbe", "UInt32", "uint32", "4", "0");
-        GenerateFBEFinalModel("fbe", "Int64", "int64", "8", "0");
-        GenerateFBEFinalModel("fbe", "UInt64", "uint64", "8", "0");
-        GenerateFBEFinalModel("fbe", "Float", "float32", "4", "0.0");
-        GenerateFBEFinalModel("fbe", "Double", "float64", "8", "0.0");
-        GenerateFBEFinalModelDecimal("fbe");
-        GenerateFBEFinalModelTimestamp("fbe");
-        GenerateFBEFinalModelUUID("fbe");
-        GenerateFBEFinalModelBytes("fbe");
-        GenerateFBEFinalModelString("fbe");
-    }
-    if (Proto())
-    {
-        GenerateFBESender("fbe");
-        GenerateFBEReceiver("fbe");
-    }
+void GeneratorGo::Generate(const std::shared_ptr<Package> &package) {
+  GenerateFBEPackage("fbe");
+  GenerateFBEConstants("fbe");
+  GenerateFBEJson("fbe");
+  GenerateFBEOptional("fbe");
+  GenerateFBETypes("fbe");
+  GenerateFBEVersion("fbe", "fbe");
+  GenerateFBEBuffer("fbe");
+  GenerateFBEFieldModel("fbe", "Bool", "bool", "1", "false");
+  GenerateFBEFieldModel("fbe", "Byte", "byte", "1", "0");
+  GenerateFBEFieldModel("fbe", "Char", "rune", "1", "'\\000'");
+  GenerateFBEFieldModel("fbe", "WChar", "rune", "4", "'\\000'");
+  GenerateFBEFieldModel("fbe", "Int8", "int8", "1", "0");
+  GenerateFBEFieldModel("fbe", "UInt8", "uint8", "1", "0");
+  GenerateFBEFieldModel("fbe", "Int16", "int16", "2", "0");
+  GenerateFBEFieldModel("fbe", "UInt16", "uint16", "2", "0");
+  GenerateFBEFieldModel("fbe", "Int32", "int32", "4", "0");
+  GenerateFBEFieldModel("fbe", "UInt32", "uint32", "4", "0");
+  GenerateFBEFieldModel("fbe", "Int64", "int64", "8", "0");
+  GenerateFBEFieldModel("fbe", "UInt64", "uint64", "8", "0");
+  GenerateFBEFieldModel("fbe", "Float", "float32", "4", "0.0");
+  GenerateFBEFieldModel("fbe", "Double", "float64", "8", "0.0");
+  GenerateFBEFieldModelDecimal("fbe");
+  GenerateFBEFieldModelTimestamp("fbe");
+  GenerateFBEFieldModelUUID("fbe");
+  GenerateFBEFieldModelBytes("fbe");
+  GenerateFBEFieldModelString("fbe");
+  if (Final()) {
+    GenerateFBEFinalModel("fbe", "Bool", "bool", "1", "false");
+    GenerateFBEFinalModel("fbe", "Byte", "byte", "1", "0");
+    GenerateFBEFinalModel("fbe", "Char", "rune", "1", "'\\000'");
+    GenerateFBEFinalModel("fbe", "WChar", "rune", "4", "'\\000'");
+    GenerateFBEFinalModel("fbe", "Int8", "int8", "1", "0");
+    GenerateFBEFinalModel("fbe", "UInt8", "uint8", "1", "0");
+    GenerateFBEFinalModel("fbe", "Int16", "int16", "2", "0");
+    GenerateFBEFinalModel("fbe", "UInt16", "uint16", "2", "0");
+    GenerateFBEFinalModel("fbe", "Int32", "int32", "4", "0");
+    GenerateFBEFinalModel("fbe", "UInt32", "uint32", "4", "0");
+    GenerateFBEFinalModel("fbe", "Int64", "int64", "8", "0");
+    GenerateFBEFinalModel("fbe", "UInt64", "uint64", "8", "0");
+    GenerateFBEFinalModel("fbe", "Float", "float32", "4", "0.0");
+    GenerateFBEFinalModel("fbe", "Double", "float64", "8", "0.0");
+    GenerateFBEFinalModelDecimal("fbe");
+    GenerateFBEFinalModelTimestamp("fbe");
+    GenerateFBEFinalModelUUID("fbe");
+    GenerateFBEFinalModelBytes("fbe");
+    GenerateFBEFinalModelString("fbe");
+  }
+  if (Proto()) {
+    GenerateFBESender("fbe");
+    GenerateFBEReceiver("fbe");
+  }
 
-    GeneratePackage(package);
+  GeneratePackage(package);
 }
 
-void GeneratorGo::GenerateHeader(const std::string& source)
-{
-    std::string code = R"CODE(// Automatically generated by the Fast Binary Encoding compiler, do not modify!
+void GeneratorGo::GenerateHeader(const std::string &source) {
+  std::string code =
+      R"CODE(// Automatically generated by the Fast Binary Encoding compiler, do not modify!
 // https://github.com/chronoxor/FastBinaryEncoding
 // Source: _INPUT_
 // Version: _VERSION_
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("_INPUT_"), source);
-    code = std::regex_replace(code, std::regex("_VERSION_"), version);
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("_INPUT_"), source);
+  code = std::regex_replace(code, std::regex("_VERSION_"), version);
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 }
 
-void GeneratorGo::GenerateFooter()
-{
+void GeneratorGo::GenerateFooter() {}
 
+void GeneratorGo::GenerateFBEPackage(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
+
+  // Create FBE package path
+  CppCommon::Directory::CreateTree(path);
 }
 
-void GeneratorGo::GenerateFBEPackage(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEConstants(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Create FBE package path
-    CppCommon::Directory::CreateTree(path);
-}
+  // Generate the file
+  CppCommon::Path file = path / "Constants.go";
+  WriteBegin();
 
-void GeneratorGo::GenerateFBEConstants(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+  // Generate headers
+  GenerateHeader("FBE");
 
-    // Generate the file
-    CppCommon::Path file = path / "Constants.go";
-    WriteBegin();
-
-    // Generate headers
-    GenerateHeader("FBE");
-
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 // Maximal signed integer value
@@ -123,31 +115,30 @@ const MaxUint = ^uint(0)
 const MinUint = 0
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEJson(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEJson(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / "Json.go";
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / "Json.go";
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 import "github.com/json-iterator/go"
@@ -156,31 +147,30 @@ import "github.com/json-iterator/go"
 var Json = jsoniter.ConfigCompatibleWithStandardLibrary
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEOptional(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEOptional(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / "Optional.go";
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / "Optional.go";
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 // Create an optional bool
@@ -274,31 +264,30 @@ func OptionalUUID(value UUID) *UUID {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBETypes(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBETypes(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / "Types.go";
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / "Types.go";
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 import "time"
@@ -409,64 +398,63 @@ func UUIDRandom() UUID {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEVersion(const std::string& package, const std::string& source)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEVersion(const std::string &package,
+                                     const std::string &source) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / "Version.go";
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / "Version.go";
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader(source);
+  // Generate headers
+  GenerateHeader(source);
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package _PACKAGE_
 
 // Package version
 const Version = "_VERSION_"
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("_PACKAGE_"), package);
-    code = std::regex_replace(code, std::regex("_VERSION_"), version);
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("_PACKAGE_"), package);
+  code = std::regex_replace(code, std::regex("_VERSION_"), version);
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEBuffer(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEBuffer(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / "Buffer.go";
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / "Buffer.go";
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 import "math"
@@ -900,31 +888,34 @@ func WriteUUID(buffer []byte, offset int, value UUID) {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEFieldModel(const std::string& package, const std::string& name, const std::string& type, const std::string& size, const std::string& defaults)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEFieldModel(const std::string &package,
+                                        const std::string &name,
+                                        const std::string &type,
+                                        const std::string &size,
+                                        const std::string &defaults) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / ("FieldModel" + name + ".go");
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / ("FieldModel" + name + ".go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 import "errors"
@@ -985,35 +976,34 @@ func (fm *FieldModel_NAME_) Set(value _TYPE_) error {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("_NAME_"), name);
-    code = std::regex_replace(code, std::regex("_TYPE_"), type);
-    code = std::regex_replace(code, std::regex("_SIZE_"), size);
-    code = std::regex_replace(code, std::regex("_DEFAULTS_"), defaults);
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("_NAME_"), name);
+  code = std::regex_replace(code, std::regex("_TYPE_"), type);
+  code = std::regex_replace(code, std::regex("_SIZE_"), size);
+  code = std::regex_replace(code, std::regex("_DEFAULTS_"), defaults);
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEFieldModelDecimal(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEFieldModelDecimal(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / ("FieldModelDecimal.go");
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / ("FieldModelDecimal.go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 import "errors"
@@ -1138,31 +1128,30 @@ func init()  {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEFieldModelTimestamp(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEFieldModelTimestamp(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / ("FieldModelTimestamp.go");
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / ("FieldModelTimestamp.go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 import "errors"
@@ -1223,31 +1212,30 @@ func (fm *FieldModelTimestamp) Set(value Timestamp) error {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEFieldModelUUID(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEFieldModelUUID(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / ("FieldModelUUID.go");
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / ("FieldModelUUID.go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 import "errors"
@@ -1308,31 +1296,30 @@ func (fm *FieldModelUUID) Set(value UUID) error {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEFieldModelBytes(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEFieldModelBytes(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / ("FieldModelBytes.go");
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / ("FieldModelBytes.go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 import "errors"
@@ -1447,31 +1434,30 @@ func (fm *FieldModelBytes) Set(value []byte) error {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEFieldModelString(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEFieldModelString(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / ("FieldModelString.go");
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / ("FieldModelString.go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 import "errors"
@@ -1589,37 +1575,39 @@ func (fm *FieldModelString) Set(value string) error {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEFieldModelOptional(const std::shared_ptr<Package>& p, const std::string& name, const std::string& model, const StructField& field, const CppCommon::Path& path)
-{
-    // Generate the output file
-    CppCommon::Path output = path / ("FieldModelOptional" + name + ".go");
-    WriteBegin();
+void GeneratorGo::GenerateFBEFieldModelOptional(
+    const std::shared_ptr<Package> &p, const std::string &name,
+    const std::string &model, const StructField &field,
+    const CppCommon::Path &path) {
+  // Generate the output file
+  CppCommon::Path output = path / ("FieldModelOptional" + name + ".go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
 
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 // Fast Binary Encoding optional _NAME_ field model
 type FieldModelOptional_NAME_ struct {
     // Field model buffer
@@ -1784,45 +1772,60 @@ func (fm *FieldModelOptional_NAME_) Set(fbeValue _TYPE_ARG_) error {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("_NAME_"), name);
-    code = std::regex_replace(code, std::regex("_TYPE_ARG_"), ConvertTypeName(*field.type, field.optional));
-    code = std::regex_replace(code, std::regex("_TYPE_NEW_"), IsGoType(*field.type) ? ConvertOptional(*field.type) : (ConvertNewName(*field.type) + "()"));
-    code = std::regex_replace(code, std::regex("_TYPE_"), ConvertTypeFieldType(*field.type, field.optional));
-    code = std::regex_replace(code, std::regex("_MODEL_NEW_"), ConvertNewName(model));
-    code = std::regex_replace(code, std::regex("_MODEL_"), model);
-    code = std::regex_replace(code, std::regex("_GET_VALUE_"), IsGoType(*field.type) ? "*fbeValue, err = fm.value.Get()" : "err = fm.value.GetValue(fbeValue)");
-    code = std::regex_replace(code, std::regex("_SET_VALUE_"), IsGoType(*field.type) ? "err = fm.value.Set(*fbeValue)" : "err = fm.value.Set(fbeValue)");
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("_NAME_"), name);
+  code = std::regex_replace(code, std::regex("_TYPE_ARG_"),
+                            ConvertTypeName(*field.type, field.optional));
+  code = std::regex_replace(code, std::regex("_TYPE_NEW_"),
+                            IsGoType(*field.type)
+                                ? ConvertOptional(*field.type)
+                                : (ConvertNewName(*field.type) + "()"));
+  code = std::regex_replace(code, std::regex("_TYPE_"),
+                            ConvertTypeFieldType(*field.type, field.optional));
+  code = std::regex_replace(code, std::regex("_MODEL_NEW_"),
+                            ConvertNewName(model));
+  code = std::regex_replace(code, std::regex("_MODEL_"), model);
+  code = std::regex_replace(code, std::regex("_GET_VALUE_"),
+                            IsGoType(*field.type)
+                                ? "*fbeValue, err = fm.value.Get()"
+                                : "err = fm.value.GetValue(fbeValue)");
+  code = std::regex_replace(code, std::regex("_SET_VALUE_"),
+                            IsGoType(*field.type)
+                                ? "err = fm.value.Set(*fbeValue)"
+                                : "err = fm.value.Set(fbeValue)");
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the output file
-    WriteEnd();
-    Store(output);
+  // Store the output file
+  WriteEnd();
+  Store(output);
 }
 
-void GeneratorGo::GenerateFBEFieldModelArray(const std::shared_ptr<Package>& p, const std::string& name, const std::string& model, const StructField& field, const CppCommon::Path& path)
-{
-    // Generate the output file
-    CppCommon::Path output = path / ("FieldModelArray" + name + ".go");
-    WriteBegin();
+void GeneratorGo::GenerateFBEFieldModelArray(const std::shared_ptr<Package> &p,
+                                             const std::string &name,
+                                             const std::string &model,
+                                             const StructField &field,
+                                             const CppCommon::Path &path) {
+  // Generate the output file
+  CppCommon::Path output = path / ("FieldModelArray" + name + ".go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
 
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 // Fast Binary Encoding _NAME_ array field model
 type FieldModelArray_NAME_ struct {
     // Field model buffer
@@ -1945,43 +1948,52 @@ func (fm *FieldModelArray_NAME_) Set(values []_TYPE_) error {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("_NAME_"), name);
-    code = std::regex_replace(code, std::regex("_TYPE_"), ConvertTypeFieldType(*field.type, field.optional));
-    code = std::regex_replace(code, std::regex("_MODEL_NEW_"), ConvertNewName(model));
-    code = std::regex_replace(code, std::regex("_MODEL_"), model);
-    code = std::regex_replace(code, std::regex("_GET_VALUE_"), (IsGoType(*field.type) || field.optional) ? "value" : "*value");
-    code = std::regex_replace(code, std::regex("_SET_VALUE_"), (IsGoType(*field.type) || field.optional) ? "values[i]" : "&values[i]");
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("_NAME_"), name);
+  code = std::regex_replace(code, std::regex("_TYPE_"),
+                            ConvertTypeFieldType(*field.type, field.optional));
+  code = std::regex_replace(code, std::regex("_MODEL_NEW_"),
+                            ConvertNewName(model));
+  code = std::regex_replace(code, std::regex("_MODEL_"), model);
+  code = std::regex_replace(
+      code, std::regex("_GET_VALUE_"),
+      (IsGoType(*field.type) || field.optional) ? "value" : "*value");
+  code = std::regex_replace(
+      code, std::regex("_SET_VALUE_"),
+      (IsGoType(*field.type) || field.optional) ? "values[i]" : "&values[i]");
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the output file
-    WriteEnd();
-    Store(output);
+  // Store the output file
+  WriteEnd();
+  Store(output);
 }
 
-void GeneratorGo::GenerateFBEFieldModelVector(const std::shared_ptr<Package>& p, const std::string& name, const std::string& model, const StructField& field, const CppCommon::Path& path)
-{
-    // Generate the output file
-    CppCommon::Path output = path / ("FieldModelVector" + name + ".go");
-    WriteBegin();
+void GeneratorGo::GenerateFBEFieldModelVector(const std::shared_ptr<Package> &p,
+                                              const std::string &name,
+                                              const std::string &model,
+                                              const StructField &field,
+                                              const CppCommon::Path &path) {
+  // Generate the output file
+  CppCommon::Path output = path / ("FieldModelVector" + name + ".go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
 
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 // Fast Binary Encoding _NAME_ vector field model
 type FieldModelVector_NAME_ struct {
     // Field model buffer
@@ -2176,43 +2188,52 @@ func (fm *FieldModelVector_NAME_) Set(values []_TYPE_) error {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("_NAME_"), name);
-    code = std::regex_replace(code, std::regex("_TYPE_"), ConvertTypeFieldType(*field.type, field.optional));
-    code = std::regex_replace(code, std::regex("_MODEL_NEW_"), ConvertNewName(model));
-    code = std::regex_replace(code, std::regex("_MODEL_"), model);
-    code = std::regex_replace(code, std::regex("_GET_VALUE_"), (IsGoType(*field.type) || field.optional) ? "value" : "*value");
-    code = std::regex_replace(code, std::regex("_SET_VALUE_"), (IsGoType(*field.type) || field.optional) ? "value" : "&value");
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("_NAME_"), name);
+  code = std::regex_replace(code, std::regex("_TYPE_"),
+                            ConvertTypeFieldType(*field.type, field.optional));
+  code = std::regex_replace(code, std::regex("_MODEL_NEW_"),
+                            ConvertNewName(model));
+  code = std::regex_replace(code, std::regex("_MODEL_"), model);
+  code = std::regex_replace(
+      code, std::regex("_GET_VALUE_"),
+      (IsGoType(*field.type) || field.optional) ? "value" : "*value");
+  code = std::regex_replace(
+      code, std::regex("_SET_VALUE_"),
+      (IsGoType(*field.type) || field.optional) ? "value" : "&value");
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the output file
-    WriteEnd();
-    Store(output);
+  // Store the output file
+  WriteEnd();
+  Store(output);
 }
 
-void GeneratorGo::GenerateFBEFieldModelSet(const std::shared_ptr<Package>& p, const std::string& name, const std::string& model, const StructField& field, const CppCommon::Path& path)
-{
-    // Generate the output file
-    CppCommon::Path output = path / ("FieldModelSet" + name + ".go");
-    WriteBegin();
+void GeneratorGo::GenerateFBEFieldModelSet(const std::shared_ptr<Package> &p,
+                                           const std::string &name,
+                                           const std::string &model,
+                                           const StructField &field,
+                                           const CppCommon::Path &path) {
+  // Generate the output file
+  CppCommon::Path output = path / ("FieldModelSet" + name + ".go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
 
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 // Fast Binary Encoding _NAME_ set field model
 type FieldModelSet_NAME_ struct {
     // Field model buffer
@@ -2405,44 +2426,58 @@ func (fm *FieldModelSet_NAME_) Set(values _TYPE_) error {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("_NAME_"), name);
-    code = std::regex_replace(code, std::regex("_TYPE_"), "map[" + ConvertKeyName(*field.key) + "]" + ConvertTypeName(*field.type, field.optional));
-    code = std::regex_replace(code, std::regex("_MODEL_NEW_"), ConvertNewName(model));
-    code = std::regex_replace(code, std::regex("_MODEL_"), model);
-    code = std::regex_replace(code, std::regex("_GET_KEY_"), IsGoType(*field.type) ? "value" : "value.Key()");
-    code = std::regex_replace(code, std::regex("_GET_VALUE_"), (IsGoType(*field.type) || field.optional) ? "value" : "*value");
-    code = std::regex_replace(code, std::regex("_SET_VALUE_"), (IsGoType(*field.type) || field.optional) ? "value" : "&value");
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("_NAME_"), name);
+  code = std::regex_replace(code, std::regex("_TYPE_"),
+                            "map[" + ConvertKeyName(*field.key) + "]" +
+                                ConvertTypeName(*field.type, field.optional));
+  code = std::regex_replace(code, std::regex("_MODEL_NEW_"),
+                            ConvertNewName(model));
+  code = std::regex_replace(code, std::regex("_MODEL_"), model);
+  code = std::regex_replace(code, std::regex("_GET_KEY_"),
+                            IsGoType(*field.type) ? "value" : "value.Key()");
+  code = std::regex_replace(
+      code, std::regex("_GET_VALUE_"),
+      (IsGoType(*field.type) || field.optional) ? "value" : "*value");
+  code = std::regex_replace(
+      code, std::regex("_SET_VALUE_"),
+      (IsGoType(*field.type) || field.optional) ? "value" : "&value");
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the output file
-    WriteEnd();
-    Store(output);
+  // Store the output file
+  WriteEnd();
+  Store(output);
 }
 
-void GeneratorGo::GenerateFBEFieldModelMap(const std::shared_ptr<Package>& p, const std::string& key_name, const std::string& key_model, const std::string& value_name, const std::string& value_model, const StructField& field, const CppCommon::Path& path)
-{
-    // Generate the output file
-    CppCommon::Path output = path / ("FieldModelMap" + key_name + value_name + ".go");
-    WriteBegin();
+void GeneratorGo::GenerateFBEFieldModelMap(const std::shared_ptr<Package> &p,
+                                           const std::string &key_name,
+                                           const std::string &key_model,
+                                           const std::string &value_name,
+                                           const std::string &value_model,
+                                           const StructField &field,
+                                           const CppCommon::Path &path) {
+  // Generate the output file
+  CppCommon::Path output =
+      path / ("FieldModelMap" + key_name + value_name + ".go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
 
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 // Fast Binary Encoding _KEY_NAME_->_VALUE_NAME_ map field model
 type FieldModelMap_KEY_NAME__VALUE_NAME_ struct {
     // Field model buffer
@@ -2660,52 +2695,70 @@ func (fm *FieldModelMap_KEY_NAME__VALUE_NAME_) Set(values _TYPE_) error {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("_KEY_NAME_"), key_name);
-    code = std::regex_replace(code, std::regex("_VALUE_NAME_"), value_name);
-    code = std::regex_replace(code, std::regex("_TYPE_"), ConvertTypeName(field));
-    code = std::regex_replace(code, std::regex("_MODEL_KEY_NEW_"), ConvertNewName(key_model));
-    code = std::regex_replace(code, std::regex("_MODEL_VALUE_NEW_"), ConvertNewName(value_model));
-    code = std::regex_replace(code, std::regex("_MODEL_KEY_"), key_model);
-    code = std::regex_replace(code, std::regex("_MODEL_VALUE_"), value_model);
-    code = std::regex_replace(code, std::regex("_GET_KEY_"), IsGoType(*field.key) ? "key" : "key.Key()");
-    code = std::regex_replace(code, std::regex("_GET_VALUE_"), IsGoType(*field.key) ? ((IsGoType(*field.type) || field.optional) ? "value" : "*value") : ("struct{Key " + ConvertTypeName(*field.key, false) + "; Value " + ConvertTypeName(*field.type, field.optional) + "}{*key, " + ((IsGoType(*field.type) || field.optional) ? "value" : "*value") + "}"));
-    code = std::regex_replace(code, std::regex("_SET_KEY_"), IsGoType(*field.key) ? "key" : "&value.Key");
-    code = std::regex_replace(code, std::regex("_SET_VALUE_"), IsGoType(*field.key) ? ((IsGoType(*field.type) || field.optional) ? "value" : "&value") : ((IsGoType(*field.type) || field.optional) ? "value.Value" : "&value.Value"));
-    code = std::regex_replace(code, std::regex("_KEY_"), IsGoType(*field.key) ? "key" : "_");
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("_KEY_NAME_"), key_name);
+  code = std::regex_replace(code, std::regex("_VALUE_NAME_"), value_name);
+  code = std::regex_replace(code, std::regex("_TYPE_"), ConvertTypeName(field));
+  code = std::regex_replace(code, std::regex("_MODEL_KEY_NEW_"),
+                            ConvertNewName(key_model));
+  code = std::regex_replace(code, std::regex("_MODEL_VALUE_NEW_"),
+                            ConvertNewName(value_model));
+  code = std::regex_replace(code, std::regex("_MODEL_KEY_"), key_model);
+  code = std::regex_replace(code, std::regex("_MODEL_VALUE_"), value_model);
+  code = std::regex_replace(code, std::regex("_GET_KEY_"),
+                            IsGoType(*field.key) ? "key" : "key.Key()");
+  code = std::regex_replace(
+      code, std::regex("_GET_VALUE_"),
+      IsGoType(*field.key)
+          ? ((IsGoType(*field.type) || field.optional) ? "value" : "*value")
+          : ("struct{Key " + ConvertTypeName(*field.key, false) + "; Value " +
+             ConvertTypeName(*field.type, field.optional) + "}{*key, " +
+             ((IsGoType(*field.type) || field.optional) ? "value" : "*value") +
+             "}"));
+  code = std::regex_replace(code, std::regex("_SET_KEY_"),
+                            IsGoType(*field.key) ? "key" : "&value.Key");
+  code = std::regex_replace(
+      code, std::regex("_SET_VALUE_"),
+      IsGoType(*field.key)
+          ? ((IsGoType(*field.type) || field.optional) ? "value" : "&value")
+          : ((IsGoType(*field.type) || field.optional) ? "value.Value"
+                                                       : "&value.Value"));
+  code = std::regex_replace(code, std::regex("_KEY_"),
+                            IsGoType(*field.key) ? "key" : "_");
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the output file
-    WriteEnd();
-    Store(output);
+  // Store the output file
+  WriteEnd();
+  Store(output);
 }
 
-void GeneratorGo::GenerateFBEFieldModelEnumFlags(const std::string& package, const std::string& name, const std::string& type)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEFieldModelEnumFlags(const std::string &package,
+                                                 const std::string &name,
+                                                 const std::string &type) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / ("FieldModel" + name + ".go");
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / ("FieldModel" + name + ".go");
+  WriteBegin();
 
-    // Generate header
-    GenerateHeader(CppCommon::Path(_input).filename().string());
+  // Generate header
+  GenerateHeader(CppCommon::Path(_input).filename().string());
 
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + package);
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + package);
 
-    // Generate imports
-    WriteLine();
-    WriteLineIndent("import \"errors\"");
-    WriteLineIndent("import \"saatsazov.com/fbe-virus/fbe\"");
+  // Generate imports
+  WriteLine();
+  WriteLineIndent("import \"errors\"");
+  WriteLineIndent("import \"saatsazov.com/fbe-virus/fbe\"");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 // Fast Binary Encoding _NAME_ field model
 type FieldModel_NAME_ struct {
     // Field model buffer
@@ -2782,35 +2835,38 @@ func (fm *FieldModel_NAME_) SetValue(value _NAME_) error {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("_NAME_"), name);
-    code = std::regex_replace(code, std::regex("_TYPE_"), ConvertEnumType(type));
-    code = std::regex_replace(code, std::regex("_BASE_"), ConvertEnumBase(type));
-    code = std::regex_replace(code, std::regex("_SIZE_"), ConvertEnumSize(type));
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("_NAME_"), name);
+  code = std::regex_replace(code, std::regex("_TYPE_"), ConvertEnumType(type));
+  code = std::regex_replace(code, std::regex("_BASE_"), ConvertEnumBase(type));
+  code = std::regex_replace(code, std::regex("_SIZE_"), ConvertEnumSize(type));
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEFinalModel(const std::string& package, const std::string& name, const std::string& type, const std::string& size, const std::string& defaults)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEFinalModel(const std::string &package,
+                                        const std::string &name,
+                                        const std::string &type,
+                                        const std::string &size,
+                                        const std::string &defaults) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / ("FinalModel" + name + ".go");
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / ("FinalModel" + name + ".go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 import "errors"
@@ -2873,35 +2929,34 @@ func (fm *FinalModel_NAME_) Set(value _TYPE_) (int, error) {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("_NAME_"), name);
-    code = std::regex_replace(code, std::regex("_TYPE_"), type);
-    code = std::regex_replace(code, std::regex("_SIZE_"), size);
-    code = std::regex_replace(code, std::regex("_DEFAULTS_"), defaults);
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("_NAME_"), name);
+  code = std::regex_replace(code, std::regex("_TYPE_"), type);
+  code = std::regex_replace(code, std::regex("_SIZE_"), size);
+  code = std::regex_replace(code, std::regex("_DEFAULTS_"), defaults);
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEFinalModelDecimal(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEFinalModelDecimal(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / ("FinalModelDecimal.go");
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / ("FinalModelDecimal.go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 import "errors"
@@ -3028,31 +3083,30 @@ func init()  {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEFinalModelTimestamp(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEFinalModelTimestamp(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / ("FinalModelTimestamp.go");
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / ("FinalModelTimestamp.go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 import "errors"
@@ -3115,31 +3169,30 @@ func (fm *FinalModelTimestamp) Set(value Timestamp) (int, error) {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEFinalModelUUID(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEFinalModelUUID(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / ("FinalModelUUID.go");
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / ("FinalModelUUID.go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 import "errors"
@@ -3202,31 +3255,30 @@ func (fm *FinalModelUUID) Set(value UUID) (int, error) {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEFinalModelBytes(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEFinalModelBytes(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / ("FinalModelBytes.go");
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / ("FinalModelBytes.go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 import "errors"
@@ -3302,31 +3354,30 @@ func (fm *FinalModelBytes) Set(value []byte) (int, error) {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEFinalModelString(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEFinalModelString(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / ("FinalModelString.go");
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / ("FinalModelString.go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 import "errors"
@@ -3405,37 +3456,39 @@ func (fm *FinalModelString) Set(value string) (int, error) {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEFinalModelOptional(const std::shared_ptr<Package>& p, const std::string& name, const std::string& model, const StructField& field, const CppCommon::Path& path)
-{
-    // Generate the output file
-    CppCommon::Path output = path / ("FinalModelOptional" + name + ".go");
-    WriteBegin();
+void GeneratorGo::GenerateFBEFinalModelOptional(
+    const std::shared_ptr<Package> &p, const std::string &name,
+    const std::string &model, const StructField &field,
+    const CppCommon::Path &path) {
+  // Generate the output file
+  CppCommon::Path output = path / ("FinalModelOptional" + name + ".go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
 
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 // Fast Binary Encoding optional _NAME_ final model
 type FinalModelOptional_NAME_ struct {
     // Final model buffer
@@ -3548,46 +3601,62 @@ func (fm *FinalModelOptional_NAME_) Set(fbeValue _TYPE_ARG_) (int, error) {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("_NAME_"), name);
-    code = std::regex_replace(code, std::regex("_TYPE_ARG_"), ConvertTypeName(*field.type, field.optional));
-    code = std::regex_replace(code, std::regex("_TYPE_NEW_"), IsGoType(*field.type) ? ConvertOptional(*field.type) : (ConvertNewName(*field.type) + "()"));
-    code = std::regex_replace(code, std::regex("_TYPE_"), ConvertTypeFieldType(*field.type, field.optional));
-    code = std::regex_replace(code, std::regex("_MODEL_NEW_"), ConvertNewName(model));
-    code = std::regex_replace(code, std::regex("_MODEL_"), model);
-    code = std::regex_replace(code, std::regex("_GET_VALUE_"), IsGoType(*field.type) ? "*fbeValue, fbeResult, err = fm.value.Get()" : "fbeResult, err = fm.value.GetValue(fbeValue)");
-    code = std::regex_replace(code, std::regex("_SET_VALUE_"), IsGoType(*field.type) ? "fbeResult, err := fm.value.Set(*fbeValue)" : "fbeResult, err := fm.value.Set(fbeValue)");
-    code = std::regex_replace(code, std::regex("_VALUE_"), IsGoType(*field.type) ? "*fbeValue" : "fbeValue");
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("_NAME_"), name);
+  code = std::regex_replace(code, std::regex("_TYPE_ARG_"),
+                            ConvertTypeName(*field.type, field.optional));
+  code = std::regex_replace(code, std::regex("_TYPE_NEW_"),
+                            IsGoType(*field.type)
+                                ? ConvertOptional(*field.type)
+                                : (ConvertNewName(*field.type) + "()"));
+  code = std::regex_replace(code, std::regex("_TYPE_"),
+                            ConvertTypeFieldType(*field.type, field.optional));
+  code = std::regex_replace(code, std::regex("_MODEL_NEW_"),
+                            ConvertNewName(model));
+  code = std::regex_replace(code, std::regex("_MODEL_"), model);
+  code = std::regex_replace(
+      code, std::regex("_GET_VALUE_"),
+      IsGoType(*field.type) ? "*fbeValue, fbeResult, err = fm.value.Get()"
+                            : "fbeResult, err = fm.value.GetValue(fbeValue)");
+  code = std::regex_replace(code, std::regex("_SET_VALUE_"),
+                            IsGoType(*field.type)
+                                ? "fbeResult, err := fm.value.Set(*fbeValue)"
+                                : "fbeResult, err := fm.value.Set(fbeValue)");
+  code = std::regex_replace(code, std::regex("_VALUE_"),
+                            IsGoType(*field.type) ? "*fbeValue" : "fbeValue");
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the output file
-    WriteEnd();
-    Store(output);
+  // Store the output file
+  WriteEnd();
+  Store(output);
 }
 
-void GeneratorGo::GenerateFBEFinalModelArray(const std::shared_ptr<Package>& p, const std::string& name, const std::string& model, const StructField& field, const CppCommon::Path& path)
-{
-    // Generate the output file
-    CppCommon::Path output = path / ("FinalModelArray" + name + ".go");
-    WriteBegin();
+void GeneratorGo::GenerateFBEFinalModelArray(const std::shared_ptr<Package> &p,
+                                             const std::string &name,
+                                             const std::string &model,
+                                             const StructField &field,
+                                             const CppCommon::Path &path) {
+  // Generate the output file
+  CppCommon::Path output = path / ("FinalModelArray" + name + ".go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
 
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 // Fast Binary Encoding _NAME_ array final model
 type FinalModelArray_NAME_ struct {
     // Final model buffer
@@ -3706,43 +3775,52 @@ func (fm *FinalModelArray_NAME_) Set(values []_TYPE_) (int, error) {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("_NAME_"), name);
-    code = std::regex_replace(code, std::regex("_TYPE_"), ConvertTypeFieldType(*field.type, field.optional));
-    code = std::regex_replace(code, std::regex("_MODEL_NEW_"), ConvertNewName(model));
-    code = std::regex_replace(code, std::regex("_MODEL_"), model);
-    code = std::regex_replace(code, std::regex("_GET_VALUE_"), (IsGoType(*field.type) || field.optional) ? "value" : "*value");
-    code = std::regex_replace(code, std::regex("_SET_VALUE_"), (IsGoType(*field.type) || field.optional) ? "values[i]" : "&values[i]");
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("_NAME_"), name);
+  code = std::regex_replace(code, std::regex("_TYPE_"),
+                            ConvertTypeFieldType(*field.type, field.optional));
+  code = std::regex_replace(code, std::regex("_MODEL_NEW_"),
+                            ConvertNewName(model));
+  code = std::regex_replace(code, std::regex("_MODEL_"), model);
+  code = std::regex_replace(
+      code, std::regex("_GET_VALUE_"),
+      (IsGoType(*field.type) || field.optional) ? "value" : "*value");
+  code = std::regex_replace(
+      code, std::regex("_SET_VALUE_"),
+      (IsGoType(*field.type) || field.optional) ? "values[i]" : "&values[i]");
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the output file
-    WriteEnd();
-    Store(output);
+  // Store the output file
+  WriteEnd();
+  Store(output);
 }
 
-void GeneratorGo::GenerateFBEFinalModelVector(const std::shared_ptr<Package>& p, const std::string& name, const std::string& model, const StructField& field, const CppCommon::Path& path)
-{
-    // Generate the output file
-    CppCommon::Path output = path / ("FinalModelVector" + name + ".go");
-    WriteBegin();
+void GeneratorGo::GenerateFBEFinalModelVector(const std::shared_ptr<Package> &p,
+                                              const std::string &name,
+                                              const std::string &model,
+                                              const StructField &field,
+                                              const CppCommon::Path &path) {
+  // Generate the output file
+  CppCommon::Path output = path / ("FinalModelVector" + name + ".go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
 
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 // Fast Binary Encoding _NAME_ vector final model
 type FinalModelVector_NAME_ struct {
     // Final model buffer
@@ -3852,43 +3930,52 @@ func (fm *FinalModelVector_NAME_) Set(values []_TYPE_) (int, error) {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("_NAME_"), name);
-    code = std::regex_replace(code, std::regex("_TYPE_"), ConvertTypeFieldType(*field.type, field.optional));
-    code = std::regex_replace(code, std::regex("_MODEL_NEW_"), ConvertNewName(model));
-    code = std::regex_replace(code, std::regex("_MODEL_"), model);
-    code = std::regex_replace(code, std::regex("_GET_VALUE_"), (IsGoType(*field.type) || field.optional) ? "value" : "*value");
-    code = std::regex_replace(code, std::regex("_SET_VALUE_"), (IsGoType(*field.type) || field.optional) ? "value" : "&value");
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("_NAME_"), name);
+  code = std::regex_replace(code, std::regex("_TYPE_"),
+                            ConvertTypeFieldType(*field.type, field.optional));
+  code = std::regex_replace(code, std::regex("_MODEL_NEW_"),
+                            ConvertNewName(model));
+  code = std::regex_replace(code, std::regex("_MODEL_"), model);
+  code = std::regex_replace(
+      code, std::regex("_GET_VALUE_"),
+      (IsGoType(*field.type) || field.optional) ? "value" : "*value");
+  code = std::regex_replace(
+      code, std::regex("_SET_VALUE_"),
+      (IsGoType(*field.type) || field.optional) ? "value" : "&value");
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the output file
-    WriteEnd();
-    Store(output);
+  // Store the output file
+  WriteEnd();
+  Store(output);
 }
 
-void GeneratorGo::GenerateFBEFinalModelSet(const std::shared_ptr<Package>& p, const std::string& name, const std::string& model, const StructField& field, const CppCommon::Path& path)
-{
-    // Generate the output file
-    CppCommon::Path output = path / ("FinalModelSet" + name + ".go");
-    WriteBegin();
+void GeneratorGo::GenerateFBEFinalModelSet(const std::shared_ptr<Package> &p,
+                                           const std::string &name,
+                                           const std::string &model,
+                                           const StructField &field,
+                                           const CppCommon::Path &path) {
+  // Generate the output file
+  CppCommon::Path output = path / ("FinalModelSet" + name + ".go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
 
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 // Fast Binary Encoding _NAME_ set final model
 type FinalModelSet_NAME_ struct {
     // Final model buffer
@@ -3996,44 +4083,58 @@ func (fm *FinalModelSet_NAME_) Set(values _TYPE_) (int, error) {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("_NAME_"), name);
-    code = std::regex_replace(code, std::regex("_TYPE_"), "map[" + ConvertKeyName(*field.key) + "]" + ConvertTypeName(*field.type, field.optional));
-    code = std::regex_replace(code, std::regex("_MODEL_NEW_"), ConvertNewName(model));
-    code = std::regex_replace(code, std::regex("_MODEL_"), model);
-    code = std::regex_replace(code, std::regex("_GET_KEY_"), IsGoType(*field.type) ? "value" : "value.Key()");
-    code = std::regex_replace(code, std::regex("_GET_VALUE_"), (IsGoType(*field.type) || field.optional) ? "value" : "*value");
-    code = std::regex_replace(code, std::regex("_SET_VALUE_"), (IsGoType(*field.type) || field.optional) ? "value" : "&value");
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("_NAME_"), name);
+  code = std::regex_replace(code, std::regex("_TYPE_"),
+                            "map[" + ConvertKeyName(*field.key) + "]" +
+                                ConvertTypeName(*field.type, field.optional));
+  code = std::regex_replace(code, std::regex("_MODEL_NEW_"),
+                            ConvertNewName(model));
+  code = std::regex_replace(code, std::regex("_MODEL_"), model);
+  code = std::regex_replace(code, std::regex("_GET_KEY_"),
+                            IsGoType(*field.type) ? "value" : "value.Key()");
+  code = std::regex_replace(
+      code, std::regex("_GET_VALUE_"),
+      (IsGoType(*field.type) || field.optional) ? "value" : "*value");
+  code = std::regex_replace(
+      code, std::regex("_SET_VALUE_"),
+      (IsGoType(*field.type) || field.optional) ? "value" : "&value");
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the output file
-    WriteEnd();
-    Store(output);
+  // Store the output file
+  WriteEnd();
+  Store(output);
 }
 
-void GeneratorGo::GenerateFBEFinalModelMap(const std::shared_ptr<Package>& p, const std::string& key_name, const std::string& key_model, const std::string& value_name, const std::string& value_model, const StructField& field, const CppCommon::Path& path)
-{
-    // Generate the output file
-    CppCommon::Path output = path / ("FinalModelMap" + key_name + value_name + ".go");
-    WriteBegin();
+void GeneratorGo::GenerateFBEFinalModelMap(const std::shared_ptr<Package> &p,
+                                           const std::string &key_name,
+                                           const std::string &key_model,
+                                           const std::string &value_name,
+                                           const std::string &value_model,
+                                           const StructField &field,
+                                           const CppCommon::Path &path) {
+  // Generate the output file
+  CppCommon::Path output =
+      path / ("FinalModelMap" + key_name + value_name + ".go");
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
 
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 // Fast Binary Encoding _KEY_NAME_->_VALUE_NAME_ map final model
 type FinalModelMap_KEY_NAME__VALUE_NAME_ struct {
     // Final model buffer
@@ -4171,52 +4272,70 @@ func (fm *FinalModelMap_KEY_NAME__VALUE_NAME_) Set(values _TYPE_) (int, error) {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("_KEY_NAME_"), key_name);
-    code = std::regex_replace(code, std::regex("_VALUE_NAME_"), value_name);
-    code = std::regex_replace(code, std::regex("_TYPE_"), ConvertTypeName(field));
-    code = std::regex_replace(code, std::regex("_MODEL_KEY_NEW_"), ConvertNewName(key_model));
-    code = std::regex_replace(code, std::regex("_MODEL_VALUE_NEW_"), ConvertNewName(value_model));
-    code = std::regex_replace(code, std::regex("_MODEL_KEY_"), key_model);
-    code = std::regex_replace(code, std::regex("_MODEL_VALUE_"), value_model);
-    code = std::regex_replace(code, std::regex("_GET_KEY_"), IsGoType(*field.key) ? "key" : "key.Key()");
-    code = std::regex_replace(code, std::regex("_GET_VALUE_"), IsGoType(*field.key) ? ((IsGoType(*field.type) || field.optional) ? "value" : "*value") : ("struct{Key " + ConvertTypeName(*field.key, false) + "; Value " + ConvertTypeName(*field.type, field.optional) + "}{*key, " + ((IsGoType(*field.type) || field.optional) ? "value" : "*value") + "}"));
-    code = std::regex_replace(code, std::regex("_SET_KEY_"), IsGoType(*field.key) ? "key" : "&value.Key");
-    code = std::regex_replace(code, std::regex("_SET_VALUE_"), IsGoType(*field.key) ? ((IsGoType(*field.type) || field.optional) ? "value" : "&value") : ((IsGoType(*field.type) || field.optional) ? "value.Value" : "&value.Value"));
-    code = std::regex_replace(code, std::regex("_KEY_"), IsGoType(*field.key) ? "key" : "_");
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("_KEY_NAME_"), key_name);
+  code = std::regex_replace(code, std::regex("_VALUE_NAME_"), value_name);
+  code = std::regex_replace(code, std::regex("_TYPE_"), ConvertTypeName(field));
+  code = std::regex_replace(code, std::regex("_MODEL_KEY_NEW_"),
+                            ConvertNewName(key_model));
+  code = std::regex_replace(code, std::regex("_MODEL_VALUE_NEW_"),
+                            ConvertNewName(value_model));
+  code = std::regex_replace(code, std::regex("_MODEL_KEY_"), key_model);
+  code = std::regex_replace(code, std::regex("_MODEL_VALUE_"), value_model);
+  code = std::regex_replace(code, std::regex("_GET_KEY_"),
+                            IsGoType(*field.key) ? "key" : "key.Key()");
+  code = std::regex_replace(
+      code, std::regex("_GET_VALUE_"),
+      IsGoType(*field.key)
+          ? ((IsGoType(*field.type) || field.optional) ? "value" : "*value")
+          : ("struct{Key " + ConvertTypeName(*field.key, false) + "; Value " +
+             ConvertTypeName(*field.type, field.optional) + "}{*key, " +
+             ((IsGoType(*field.type) || field.optional) ? "value" : "*value") +
+             "}"));
+  code = std::regex_replace(code, std::regex("_SET_KEY_"),
+                            IsGoType(*field.key) ? "key" : "&value.Key");
+  code = std::regex_replace(
+      code, std::regex("_SET_VALUE_"),
+      IsGoType(*field.key)
+          ? ((IsGoType(*field.type) || field.optional) ? "value" : "&value")
+          : ((IsGoType(*field.type) || field.optional) ? "value.Value"
+                                                       : "&value.Value"));
+  code = std::regex_replace(code, std::regex("_KEY_"),
+                            IsGoType(*field.key) ? "key" : "_");
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the output file
-    WriteEnd();
-    Store(output);
+  // Store the output file
+  WriteEnd();
+  Store(output);
 }
 
-void GeneratorGo::GenerateFBEFinalModelEnumFlags(const std::string& package, const std::string& name, const std::string& type)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEFinalModelEnumFlags(const std::string &package,
+                                                 const std::string &name,
+                                                 const std::string &type) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / ("FinalModel" + name + ".go");
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / ("FinalModel" + name + ".go");
+  WriteBegin();
 
-    // Generate header
-    GenerateHeader(CppCommon::Path(_input).filename().string());
+  // Generate header
+  GenerateHeader(CppCommon::Path(_input).filename().string());
 
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + package);
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + package);
 
-    // Generate imports
-    WriteLine();
-    WriteLineIndent("import \"errors\"");
-    WriteLineIndent("import \"saatsazov.com/fbe-virus/fbe\"");
+  // Generate imports
+  WriteLine();
+  WriteLineIndent("import \"errors\"");
+  WriteLineIndent("import \"saatsazov.com/fbe-virus/fbe\"");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 // Fast Binary Encoding _NAME_ final model
 type FinalModel_NAME_ struct {
     // Final model buffer
@@ -4301,35 +4420,34 @@ func (fm *FinalModel_NAME_) SetValue(value _NAME_) (int, error) {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("_NAME_"), name);
-    code = std::regex_replace(code, std::regex("_TYPE_"), ConvertEnumType(type));
-    code = std::regex_replace(code, std::regex("_BASE_"), ConvertEnumBase(type));
-    code = std::regex_replace(code, std::regex("_SIZE_"), ConvertEnumSize(type));
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("_NAME_"), name);
+  code = std::regex_replace(code, std::regex("_TYPE_"), ConvertEnumType(type));
+  code = std::regex_replace(code, std::regex("_BASE_"), ConvertEnumBase(type));
+  code = std::regex_replace(code, std::regex("_SIZE_"), ConvertEnumSize(type));
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBESender(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBESender(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / "Sender.go";
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / "Sender.go";
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 // Send message interface
@@ -4428,31 +4546,30 @@ func (s *Sender) SendSerialized(serialized int) (int, error) {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateFBEReceiver(const std::string& package)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / package;
+void GeneratorGo::GenerateFBEReceiver(const std::string &package) {
+  CppCommon::Path path = CppCommon::Path(_output) / package;
 
-    // Generate the file
-    CppCommon::Path file = path / "Receiver.go";
-    WriteBegin();
+  // Generate the file
+  CppCommon::Path file = path / "Receiver.go";
+  WriteBegin();
 
-    // Generate headers
-    GenerateHeader("FBE");
+  // Generate headers
+  GenerateHeader("FBE");
 
-    std::string code = R"CODE(
+  std::string code = R"CODE(
 package fbe
 
 // Receive message interface
@@ -4764,3887 +4881,4258 @@ func min(a, b int) int {
 }
 )CODE";
 
-    // Prepare code template
-    code = std::regex_replace(code, std::regex("\n"), EndLine());
+  // Prepare code template
+  code = std::regex_replace(code, std::regex("\n"), EndLine());
 
-    Write(code);
+  Write(code);
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the file
-    WriteEnd();
-    Store(file);
+  // Store the file
+  WriteEnd();
+  Store(file);
 }
 
-void GeneratorGo::GenerateImports(const std::shared_ptr<Package>& p)
-{
-    // Generate fbe import
-    WriteLineIndent("import \"errors\"");
-    WriteLineIndent("import \"saatsazov.com/fbe-virus/fbe\"");
+void GeneratorGo::GenerateImports(const std::shared_ptr<Package> &p) {
+  // Generate fbe import
+  WriteLineIndent("import \"errors\"");
+  WriteLineIndent("import \"saatsazov.com/fbe-virus/fbe\"");
 
-    // Generate packages import
-    if (p->import)
-        for (const auto& import : p->import->imports)
-            WriteLineIndent("import \"saatsazov.com/fbe-virus/" + *import + "\"");
+  // Generate packages import
+  if (p->import)
+    for (const auto &import : p->import->imports)
+      WriteLineIndent("import \"saatsazov.com/fbe-virus/" + *import + "\"");
 
-    // Generate workaround for Go unused imports issue
-    WriteLine();
-    WriteLineIndent("// Workaround for Go unused imports issue");
-    WriteLineIndent("var _ = errors.New");
-    WriteLineIndent("var _ = fbe.Version");
-    if (p->import)
-        for (const auto& import : p->import->imports)
-            WriteLineIndent("var _ = " + *import + ".Version");
+  // Generate workaround for Go unused imports issue
+  WriteLine();
+  WriteLineIndent("// Workaround for Go unused imports issue");
+  WriteLineIndent("var _ = errors.New");
+  WriteLineIndent("var _ = fbe.Version");
+  if (p->import)
+    for (const auto &import : p->import->imports)
+      WriteLineIndent("var _ = " + *import + ".Version");
 }
 
-void GeneratorGo::GenerateContainers(const std::shared_ptr<Package>& p, const CppCommon::Path& path, bool final)
-{
-    if (p->body)
-    {
-        // Check all structs in the package
-        for (const auto& s : p->body->structs)
-        {
-            if (s->body)
-            {
-                // Check all fields in the struct
-                for (const auto& field : s->body->fields)
-                {
-                    if (field->array)
-                    {
-                        if (final)
-                            GenerateFBEFinalModelArray(p, (field->optional ? "Optional" : "") + ConvertTypeFieldName(*field->type), ConvertTypeFieldDeclaration(*field->type, field->optional, final), *field, path);
-                        else
-                            GenerateFBEFieldModelArray(p, (field->optional ? "Optional" : "") + ConvertTypeFieldName(*field->type), ConvertTypeFieldDeclaration(*field->type, field->optional, final), *field, path);
-                    }
-                    if (field->vector || field->list)
-                    {
-                        if (final)
-                            GenerateFBEFinalModelVector(p, (field->optional ? "Optional" : "") + ConvertTypeFieldName(*field->type), ConvertTypeFieldDeclaration(*field->type, field->optional, final), *field, path);
-                        else
-                            GenerateFBEFieldModelVector(p, (field->optional ? "Optional" : "") + ConvertTypeFieldName(*field->type), ConvertTypeFieldDeclaration(*field->type, field->optional, final), *field, path);
-                    }
-                    if (field->set)
-                    {
-                        if (final)
-                            GenerateFBEFinalModelSet(p, (field->optional ? "Optional" : "") + ConvertTypeFieldName(*field->type), ConvertTypeFieldDeclaration(*field->type, field->optional, final), *field, path);
-                        else
-                            GenerateFBEFieldModelSet(p, (field->optional ? "Optional" : "") + ConvertTypeFieldName(*field->type), ConvertTypeFieldDeclaration(*field->type, field->optional, final), *field, path);
-                    }
-                    if (field->map || field->hash)
-                    {
-                        if (final)
-                            GenerateFBEFinalModelMap(p, ConvertTypeFieldName(*field->key), ConvertTypeFieldDeclaration(*field->key, false, final), (field->optional ? "Optional" : "") + ConvertTypeFieldName(*field->type), ConvertTypeFieldDeclaration(*field->type, field->optional, final), *field, path);
-                        else
-                            GenerateFBEFieldModelMap(p, ConvertTypeFieldName(*field->key), ConvertTypeFieldDeclaration(*field->key, false, final), (field->optional ? "Optional" : "") + ConvertTypeFieldName(*field->type), ConvertTypeFieldDeclaration(*field->type, field->optional, final), *field, path);
-                    }
-                    if (field->optional)
-                    {
-                        if (final)
-                            GenerateFBEFinalModelOptional(p, ConvertTypeFieldName(*field->type), ConvertTypeFieldDeclaration(*field->type, false, final), *field, path);
-                        else
-                            GenerateFBEFieldModelOptional(p, ConvertTypeFieldName(*field->type), ConvertTypeFieldDeclaration(*field->type, false, final), *field, path);
-                    }
-                }
-            }
-        }
-    }
-}
-
-void GeneratorGo::GeneratePackage(const std::shared_ptr<Package>& p)
-{
-    CppCommon::Path path = CppCommon::Path(_output) / *p->name;
-
-    // Create package path
-    CppCommon::Directory::CreateTree(path);
-
-    // Generate package version
-    GenerateFBEVersion(*p->name, CppCommon::Path(_input).filename().string());
-
-    // Generate namespace
-    if (p->body)
-    {
-        // Generate child enums
-        for (const auto& child_e : p->body->enums)
-            GenerateEnum(p, child_e, path);
-
-        // Generate child flags
-        for (const auto& child_f : p->body->flags)
-            GenerateFlags(p, child_f, path);
-
-        // Generate child structs
-        for (const auto& child_s : p->body->structs)
-            GenerateStruct(p, child_s, path);
-    }
-
-    // Generate containers
-    GenerateContainers(p, path, false);
-    if (Final())
-        GenerateContainers(p, path, true);
-
-    // Generate protocol
-    if (Proto())
-    {
-        // Generate protocol version
-        GenerateProtocolVersion(p, path);
-
-        // Generate sender & receiver
-        GenerateSender(p, path, false);
-        GenerateReceiver(p, path, false);
-        GenerateProxy(p, path, false);
-        if (Final())
-        {
-            GenerateSender(p, path, true);
-            GenerateReceiver(p, path, true);
-        }
-    }
-}
-
-void GeneratorGo::GenerateEnum(const std::shared_ptr<Package>& p, const std::shared_ptr<EnumType>& e, const CppCommon::Path& path)
-{
-    std::string enum_name = ConvertToUpper(*e->name);
-
-    // Generate the output file
-    CppCommon::Path output = path / (enum_name + ".go");
-    WriteBegin();
-
-    // Generate header
-    GenerateHeader(CppCommon::Path(_input).filename().string());
-
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
-
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
-
-    std::string enum_type = (e->base && !e->base->empty()) ? *e->base : "int32";
-
-    // Generate enum key
-    WriteLine();
-    WriteLineIndent("// " + enum_name + " enum key");
-    WriteLineIndent("type " + enum_name + "Key " + ConvertEnumType(enum_type));
-
-    // Generate enum key String() method
-    WriteLine();
-    WriteLineIndent("// Convert " + enum_name + " enum key to string");
-    WriteLineIndent("func (k " + enum_name + "Key) String() string {");
-    Indent(1);
-    WriteLineIndent("return " + enum_name + "(k).String()");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate enum type
-    WriteLine();
-    WriteLineIndent("// " + enum_name + " enum");
-    WriteLineIndent("type " + enum_name + " " + ConvertEnumType(enum_type));
-
-    // Generate enum body
-    if (e->body)
-    {
-        WriteLine();
-        WriteLineIndent("// " + enum_name + " enum values");
-        WriteLineIndent("//noinspection GoSnakeCaseUsage");
-        WriteLineIndent("const (");
-        Indent(1);
-
-        int index = 0;
-        std::string last = ConvertEnumConstant(enum_name, "int32", "0");
-        for (const auto& value : e->body->values)
-        {
-            WriteIndent(enum_name + "_" + *value->name + " = " + enum_name + "(");
-            if (value->value)
-            {
-                if (value->value->constant && !value->value->constant->empty())
-                {
-                    index = 0;
-                    last = ConvertEnumConstant(enum_name, enum_type, *value->value->constant);
-                    Write(last + " + " + std::to_string(index++));
-                }
-                else if (value->value->reference && !value->value->reference->empty())
-                {
-                    index = 0;
-                    last = ConvertEnumConstant(enum_name, "", *value->value->reference);
-                    Write(last);
-                }
-            }
+void GeneratorGo::GenerateContainers(const std::shared_ptr<Package> &p,
+                                     const CppCommon::Path &path, bool final) {
+  if (p->body) {
+    // Check all structs in the package
+    for (const auto &s : p->body->structs) {
+      if (s->body) {
+        // Check all fields in the struct
+        for (const auto &field : s->body->fields) {
+          if (field->array) {
+            if (final)
+              GenerateFBEFinalModelArray(
+                  p,
+                  (field->optional ? "Optional" : "") +
+                      ConvertTypeFieldName(*field->type),
+                  ConvertTypeFieldDeclaration(*field->type, field->optional,
+                                              final),
+                  *field, path);
             else
-                Write(last + " + " + std::to_string(index++));
-            Write(")");
-            WriteLine();
-        }
-
-        Indent(-1);
-        WriteLineIndent(")");
-    }
-
-    // Generate enum constructor
-    WriteLine();
-    WriteLineIndent("// Create a new " + enum_name + " enum");
-    WriteLineIndent("func New" + enum_name + "() *" + enum_name + " {");
-    Indent(1);
-    WriteLineIndent("return new(" + enum_name + ")");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate enum constructor from the given value
-    WriteLine();
-    WriteLineIndent("// Create a new " + enum_name + " enum from the given value");
-    WriteLineIndent("func New" + enum_name + "FromValue(value " + ConvertEnumType(enum_type) + ") *" + enum_name + " {");
-    Indent(1);
-    WriteLineIndent("result := " + enum_name + "(value)");
-    WriteLineIndent("return &result");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate enum Key() method
-    WriteLine();
-    WriteLineIndent("// Get the enum key");
-    WriteLineIndent("func (e " + enum_name + ") Key() " + enum_name + "Key {");
-    Indent(1);
-    WriteLineIndent("return " + enum_name + "Key(e)");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate enum Optional() method
-    WriteLine();
-    WriteLineIndent("// Convert enum to optional");
-    WriteLineIndent("func (e *" + enum_name + ") Optional() *" + enum_name + " {");
-    Indent(1);
-    WriteLineIndent("return e");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate enum String() method
-    WriteLine();
-    WriteLineIndent("// Convert enum to string");
-    WriteLineIndent("func (e " + enum_name + ") String() string {");
-    Indent(1);
-    if (e->body && !e->body->values.empty())
-    {
-        for (auto it = e->body->values.begin(); it != e->body->values.end(); ++it)
-        {
-            WriteLineIndent("if e == " + enum_name + "_" + *(*it)->name + " {");
-            Indent(1);
-            WriteLineIndent("return \"" + *(*it)->name + "\"");
-            Indent(-1);
-            WriteLineIndent("}");
-        }
-        WriteLineIndent("return \"<unknown>\"");
-    }
-    else
-        WriteLineIndent("return \"<empty>\"");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    if (JSON())
-    {
-        // Generate enum MarshalJSON() method
-        WriteLine();
-        WriteLineIndent("// Convert enum to JSON");
-        WriteLineIndent("func (e " + enum_name + ") MarshalJSON() ([]byte, error) {");
-        Indent(1);
-        WriteLineIndent("value := " + ConvertEnumType(enum_type) + "(e)");
-        WriteLineIndent("return fbe.Json.Marshal(&value)");
-        Indent(-1);
-        WriteLineIndent("}");
-
-        // Generate enum UnmarshalJSON() method
-        WriteLine();
-        WriteLineIndent("// Convert JSON to enum");
-        WriteLineIndent("func (e *" + enum_name + ") UnmarshalJSON(buffer []byte) error {");
-        Indent(1);
-        WriteLineIndent("var result " + ConvertEnumType(enum_type));
-        WriteLineIndent("err := fbe.Json.Unmarshal(buffer, &result)");
-        WriteLineIndent("if err != nil {");
-        Indent(1);
-        WriteLineIndent("return err");
-        Indent(-1);
-        WriteLineIndent("}");
-        WriteLineIndent("*e = " + enum_name + "(result)");
-        WriteLineIndent("return nil");
-        Indent(-1);
-        WriteLineIndent("}");
-    }
-
-    // Generate footer
-    GenerateFooter();
-
-    // Store the output file
-    WriteEnd();
-    Store(output);
-
-    // Generate enum field model
-    GenerateFBEFieldModelEnumFlags(*p->name, enum_name, enum_type);
-
-    // Generate enum final model
-    if (Final())
-        GenerateFBEFinalModelEnumFlags(*p->name, enum_name, enum_type);
-}
-
-void GeneratorGo::GenerateFlags(const std::shared_ptr<Package>& p, const std::shared_ptr<FlagsType>& f, const CppCommon::Path& path)
-{
-    std::string flags_name = ConvertToUpper(*f->name);
-
-    // Generate the output file
-    CppCommon::Path output = path / (flags_name + ".go");
-    WriteBegin();
-
-    // Generate header
-    GenerateHeader(CppCommon::Path(_input).filename().string());
-
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
-
-    // Generate imports
-    WriteLine();
-    WriteLineIndent("import \"strings\"");
-    GenerateImports(p);
-
-    std::string flags_type = (f->base && !f->base->empty()) ? *f->base : "int32";
-
-    // Generate flags key
-    WriteLine();
-    WriteLineIndent("// " + flags_name + " flags key");
-    WriteLineIndent("type " + flags_name + "Key " + ConvertEnumType(flags_type));
-
-    // Generate flags key String() method
-    WriteLine();
-    WriteLineIndent("// Convert " + flags_name + " flags key to string");
-    WriteLineIndent("func (k " + flags_name + "Key) String() string {");
-    Indent(1);
-    WriteLineIndent("return " + flags_name + "(k).String()");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate flags type
-    WriteLine();
-    WriteLineIndent("// " + flags_name + " flags");
-    WriteLineIndent("type " + flags_name + " " + ConvertEnumType(flags_type));
-
-    // Generate flags body
-    if (f->body)
-    {
-        WriteLine();
-        WriteLineIndent("// " + flags_name + " flags values");
-        WriteLineIndent("//noinspection GoSnakeCaseUsage");
-        WriteLineIndent("const (");
-        Indent(1);
-
-        for (const auto& value : f->body->values)
-        {
-            WriteIndent(flags_name + "_" + *value->name + " = " + flags_name + "(");
-            if (value->value)
-            {
-                if (value->value->constant && !value->value->constant->empty())
-                    Write(ConvertEnumConstant(flags_name, flags_type, *value->value->constant));
-                else if (value->value->reference && !value->value->reference->empty())
-                    Write(ConvertEnumConstant(flags_name, "", *value->value->reference));
-            }
-            Write(")");
-            WriteLine();
-        }
-
-        Indent(-1);
-        WriteLineIndent(")");
-    }
-
-    // Generate flags constructor
-    WriteLine();
-    WriteLineIndent("// Create a new " + flags_name + " flags");
-    WriteLineIndent("func New" + flags_name + "() *" + flags_name + " {");
-    Indent(1);
-    WriteLineIndent("return new(" + flags_name + ")");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate flags constructor from the given flags
-    WriteLine();
-    WriteLineIndent("// Create a new " + flags_name + " flags from the given flags");
-    WriteLineIndent("func New" + flags_name + "FromValue(flags " + ConvertEnumType(flags_type) + ") *" + flags_name + " {");
-    Indent(1);
-    WriteLineIndent("result := " + flags_name + "(flags)");
-    WriteLineIndent("return &result");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate flags HasFlags() method
-    WriteLine();
-    WriteLineIndent("// Is flags set?");
-    WriteLineIndent("func (f " + flags_name + ") HasFlags(flags " + flags_name + ") bool {");
-    Indent(1);
-    WriteLineIndent("return ((f & flags) != 0) && ((f & flags) == flags)");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate flags SetFlags() method
-    WriteLine();
-    WriteLineIndent("// Set flags");
-    WriteLineIndent("func (f *" + flags_name + ") SetFlags(flags " + flags_name + ") *" + flags_name + " {");
-    Indent(1);
-    WriteLineIndent("*f |= flags");
-    WriteLineIndent("return f");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate flags RemoveFlags() method
-    WriteLine();
-    WriteLineIndent("// Remove flags");
-    WriteLineIndent("func (f *" + flags_name + ") RemoveFlags(flags " + flags_name + ") *" + flags_name + " {");
-    Indent(1);
-    WriteLineIndent("*f &^= flags");
-    WriteLineIndent("return f");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate flags Key() method
-    WriteLine();
-    WriteLineIndent("// Get the flags key");
-    WriteLineIndent("func (f " + flags_name + ") Key() " + flags_name + "Key {");
-    Indent(1);
-    WriteLineIndent("return " + flags_name + "Key(f)");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate flags Optional() method
-    WriteLine();
-    WriteLineIndent("// Convert flags to optional");
-    WriteLineIndent("func (f *" + flags_name + ") Optional() *" + flags_name + " {");
-    Indent(1);
-    WriteLineIndent("return f");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate flags String() method
-    WriteLine();
-    WriteLineIndent("// Convert flags to string");
-    WriteLineIndent("//noinspection GoBoolExpressions");
-    WriteLineIndent("func (f " + flags_name + ") String() string {");
-    Indent(1);
-    WriteLineIndent("var sb strings.Builder");
-    if (f->body && !f->body->values.empty())
-    {
-        WriteLineIndent("first := true");
-        for (auto it = f->body->values.begin(); it != f->body->values.end(); ++it)
-        {
-            std::string flag = flags_name + "_" + *(*it)->name;
-            WriteLineIndent("if ((f & " + flag + ") != 0) && ((f & " + flag + ") == " + flag + ") {");
-            Indent(1);
-            WriteLineIndent("if first {");
-            Indent(1);
-            WriteLineIndent("first = false");
-            Indent(-1);
-            WriteLineIndent("} else {");
-            Indent(1);
-            WriteLineIndent("sb.WriteRune('|')");
-            Indent(-1);
-            WriteLineIndent("}");
-            WriteLineIndent("sb.WriteString(\"" + *(*it)->name + "\")");
-            Indent(-1);
-            WriteLineIndent("}");
-        }
-    }
-    WriteLineIndent("return sb.String()");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    if (JSON())
-    {
-        // Generate flags MarshalJSON() method
-        WriteLine();
-        WriteLineIndent("// Convert flags to JSON");
-        WriteLineIndent("func (f " + flags_name + ") MarshalJSON() ([]byte, error) {");
-        Indent(1);
-        WriteLineIndent("value := " + ConvertEnumType(flags_type) + "(f)");
-        WriteLineIndent("return fbe.Json.Marshal(&value)");
-        Indent(-1);
-        WriteLineIndent("}");
-
-        // Generate flags UnmarshalJSON() method
-        WriteLine();
-        WriteLineIndent("// Convert JSON to flags");
-        WriteLineIndent("func (f *" + flags_name + ") UnmarshalJSON(buffer []byte) error {");
-        Indent(1);
-        WriteLineIndent("var result " + ConvertEnumType(flags_type));
-        WriteLineIndent("err := fbe.Json.Unmarshal(buffer, &result)");
-        WriteLineIndent("if err != nil {");
-        Indent(1);
-        WriteLineIndent("return err");
-        Indent(-1);
-        WriteLineIndent("}");
-        WriteLineIndent("*f = " + flags_name + "(result)");
-        WriteLineIndent("return nil");
-        Indent(-1);
-        WriteLineIndent("}");
-    }
-
-    // Generate footer
-    GenerateFooter();
-
-    // Store the output file
-    WriteEnd();
-    Store(output);
-
-    // Generate flags field model
-    GenerateFBEFieldModelEnumFlags(*p->name, flags_name, flags_type);
-
-    // Generate flags final model
-    if (Final())
-        GenerateFBEFinalModelEnumFlags(*p->name, flags_name, flags_type);
-}
-
-void GeneratorGo::GenerateStruct(const std::shared_ptr<Package>& p, const std::shared_ptr<StructType>& s, const CppCommon::Path& path)
-{
-    std::string struct_name = ConvertToUpper(*s->name);
-
-    // Generate the output file
-    CppCommon::Path output = path / (struct_name + ".go");
-    WriteBegin();
-
-    // Generate header
-    GenerateHeader(CppCommon::Path(_input).filename().string());
-
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
-
-    // Generate imports
-    WriteLine();
-    WriteLineIndent("import \"fmt\"");
-    WriteLineIndent("import \"strconv\"");
-    WriteLineIndent("import \"strings\"");
-    GenerateImports(p);
-
-    // Generate workaround for Go unused imports issue
-    WriteLine();
-    WriteLineIndent("// Workaround for Go unused imports issue");
-    WriteLineIndent("var _ = fmt.Print");
-    WriteLineIndent("var _ = strconv.FormatInt");
-
-    std::string base_type = (s->base && !s->base->empty()) ? ConvertTypeName(*s->base, false) : "";
-
-    // Generate struct key
-    WriteLine();
-    WriteLineIndent("// " + struct_name + " key");
-    WriteLineIndent("type " + struct_name + "Key struct {");
-    Indent(1);
-    if (!base_type.empty())
-        WriteLineIndent(base_type + "Key");
-    if (s->body)
-        for (const auto& field : s->body->fields)
-            if (field->keys)
-                WriteLineIndent(ConvertToUpper(*field->name) + " " + ConvertTypeName(*field));
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct key String() method
-    WriteLine();
-    WriteLineIndent("// Convert " + struct_name + " flags key to string");
-    WriteLineIndent("func (k *" + struct_name + "Key) String() string {");
-    Indent(1);
-    WriteLineIndent("var sb strings.Builder");
-    WriteLineIndent("sb.WriteString(\"" + *s->name + "Key(\")");
-    bool first = true;
-    if (!base_type.empty())
-    {
-        WriteLineIndent("sb.WriteString(k." + ConvertBaseName(base_type) + "Key.String())");
-        first = false;
-    }
-    if (s->body)
-    {
-        for (const auto& field : s->body->fields)
-        {
-            if (field->keys)
-            {
-                WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") + *field->name + "=\")");
-                if (field->attributes && field->attributes->hidden)
-                    WriteLineIndent("sb.WriteString(\"***\")");
-                else if (field->array)
-                {
-                    WriteLineIndent("if true {");
-                    Indent(1);
-                    WriteLineIndent("first := true");
-                    WriteLineIndent("sb.WriteString(\"[\" + strconv.FormatInt(int64(len(k." + ConvertToUpper(*field->name) + ")), 10) + \"][\")");
-                    WriteLineIndent("for _, v := range k." + ConvertToUpper(*field->name) + " {");
-                    Indent(1);
-                    WriteOutputStreamValue(*field->type, "v", field->optional, true);
-                    WriteLineIndent("first = false");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    WriteLineIndent("sb.WriteString(\"]\")");
-                    Indent(-1);
-                    WriteLineIndent("} else {");
-                    Indent(1);
-                    WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") + *field->name + "=[0][]\")");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                }
-                else if (field->vector)
-                {
-                    WriteLineIndent("if k." + ConvertToUpper(*field->name) + " != nil {");
-                    Indent(1);
-                    WriteLineIndent("first := true");
-                    WriteLineIndent("sb.WriteString(\"[\" + strconv.FormatInt(int64(len(k." + ConvertToUpper(*field->name) + ")), 10) + \"][\")");
-                    WriteLineIndent("for _, v := range k." + ConvertToUpper(*field->name) + " {");
-                    Indent(1);
-                    WriteOutputStreamValue(*field->type, "v", field->optional, true);
-                    WriteLineIndent("first = false");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    WriteLineIndent("sb.WriteString(\"]\")");
-                    Indent(-1);
-                    WriteLineIndent("} else {");
-                    Indent(1);
-                    WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") + *field->name + "=[0][]\")");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                }
-                else if (field->list)
-                {
-                    WriteLineIndent("if k." + ConvertToUpper(*field->name) + " != nil {");
-                    Indent(1);
-                    WriteLineIndent("first := true");
-                    WriteLineIndent("sb.WriteString(\"[\" + strconv.FormatInt(int64(len(k." + ConvertToUpper(*field->name) + ")), 10) + \"]<\")");
-                    WriteLineIndent("for _, v := range k." + ConvertToUpper(*field->name) + " {");
-                    Indent(1);
-                    WriteOutputStreamValue(*field->type, "v", field->optional, true);
-                    WriteLineIndent("first = false");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    WriteLineIndent("sb.WriteString(\">\")");
-                    Indent(-1);
-                    WriteLineIndent("} else {");
-                    Indent(1);
-                    WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") + *field->name + "=[0]<>\")");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                }
-                else if (field->set)
-                {
-                    WriteLineIndent("if k." + ConvertToUpper(*field->name) + " != nil {");
-                    Indent(1);
-                    WriteLineIndent("first := true");
-                    WriteLineIndent("sb.WriteString(\"[\" + strconv.FormatInt(int64(k." + ConvertToUpper(*field->name) + ".Size()), 10) + \"]{\")");
-                    WriteLineIndent("for _, v := range k." + ConvertToUpper(*field->name) + " {");
-                    Indent(1);
-                    WriteOutputStreamValue(*field->type, "v", field->optional, true);
-                    WriteLineIndent("first = false");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    WriteLineIndent("sb.WriteString(\"}\")");
-                    Indent(-1);
-                    WriteLineIndent("} else {");
-                    Indent(1);
-                    WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") + *field->name + "=[0]{}\")");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                }
-                else if (field->map)
-                {
-                    WriteLineIndent("if k." + ConvertToUpper(*field->name) + " != nil {");
-                    Indent(1);
-                    WriteLineIndent("first := true");
-                    WriteLineIndent("sb.WriteString(\"[\" + strconv.FormatInt(int64(len(k." + ConvertToUpper(*field->name) + ")), 10) + \"]<{\")");
-                    WriteLineIndent("for " + std::string(IsGoType(*field->key) ? "k" : "_") + ", v := range k." + ConvertToUpper(*field->name) + " {");
-                    Indent(1);
-                    WriteOutputStreamValue(*field->key, (IsGoType(*field->key) ? "k" : "v.Key"), false, true);
-                    WriteLineIndent("sb.WriteString(\"->\")");
-                    WriteOutputStreamValue(*field->type, (IsGoType(*field->key) ? "v" : "v.Value"), field->optional, false);
-                    WriteLineIndent("first = false");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    WriteLineIndent("sb.WriteString(\"}>\")");
-                    Indent(-1);
-                    WriteLineIndent("} else {");
-                    Indent(1);
-                    WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") + *field->name + "=[0]<{}>\")");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                }
-                else if (field->hash)
-                {
-                    WriteLineIndent("if k." + ConvertToUpper(*field->name) + " != nil {");
-                    Indent(1);
-                    WriteLineIndent("first := true");
-                    WriteLineIndent("sb.WriteString(\"[\" + strconv.FormatInt(int64(len(k." + ConvertToUpper(*field->name) + ")), 10) + \"][{\")");
-                    WriteLineIndent("for " + std::string(IsGoType(*field->key) ? "k" : "_") + ", v := range k." + ConvertToUpper(*field->name) + " {");
-                    Indent(1);
-                    WriteOutputStreamValue(*field->key, (IsGoType(*field->key) ? "k" : "v.Key"), false, true);
-                    WriteLineIndent("sb.WriteString(\"->\")");
-                    WriteOutputStreamValue(*field->type, (IsGoType(*field->key) ? "v" : "v.Value"), field->optional, false);
-                    WriteLineIndent("first = false");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    WriteLineIndent("sb.WriteString(\"}]\")");
-                    Indent(-1);
-                    WriteLineIndent("} else {");
-                    Indent(1);
-                    WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") + *field->name + "=[0][{}]\")");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                }
-                else
-                    WriteOutputStreamValue(*field->type, "k." + ConvertToUpper(*field->name), field->optional, false);
-                first = false;
-            }
-        }
-    }
-    WriteLineIndent("sb.WriteString(\")\")");
-    WriteLineIndent("return sb.String()");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct body
-    WriteLine();
-    WriteLineIndent("// " + struct_name + " struct");
-    WriteLineIndent("type " + struct_name + " struct {");
-    Indent(1);
-    if (!base_type.empty())
-        WriteLineIndent("*" + base_type);
-    if (s->body)
-        for (const auto& field : s->body->fields)
-            WriteLineIndent(ConvertToUpper(*field->name) + " " + ConvertTypeName(*field) + " `json:\"" + *field->name + "\"`");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct constructor
-    WriteLine();
-    WriteLineIndent("// Create a new " + struct_name + " struct");
-    WriteLineIndent("func New" + struct_name + "() *" + struct_name + " {");
-    Indent(1);
-    WriteLineIndent("return &" + struct_name + "{");
-    Indent(1);
-    if (!base_type.empty())
-        WriteLineIndent(ConvertBaseName(base_type) + ": " + ConvertNewName(base_type) + "(),");
-    if (s->body)
-    {
-        for (const auto& field : s->body->fields)
-        {
-            WriteIndent(ConvertToUpper(*field->name) + ": ");
-            if (field->value)
-                Write(ConvertConstant(*field->type, *field->value, field->optional));
+              GenerateFBEFieldModelArray(
+                  p,
+                  (field->optional ? "Optional" : "") +
+                      ConvertTypeFieldName(*field->type),
+                  ConvertTypeFieldDeclaration(*field->type, field->optional,
+                                              final),
+                  *field, path);
+          }
+          if (field->vector || field->list) {
+            if (final)
+              GenerateFBEFinalModelVector(
+                  p,
+                  (field->optional ? "Optional" : "") +
+                      ConvertTypeFieldName(*field->type),
+                  ConvertTypeFieldDeclaration(*field->type, field->optional,
+                                              final),
+                  *field, path);
             else
-                Write(ConvertDefault(*field));
-            WriteLine(",");
-        }
-    }
-    Indent(-1);
-    WriteLineIndent("}");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct constructor from the given field values
-    WriteLine();
-    WriteLineIndent("// Create a new " + struct_name + " struct from the given field values");
-    WriteIndent("func New" + struct_name + "FromFieldValues(");
-    first = true;
-    if (!base_type.empty())
-    {
-        Write("Parent *" + base_type);
-        first = false;
-    }
-    if (s->body)
-    {
-        for (const auto& field : s->body->fields)
-        {
-            Write(std::string(first ? "" : ", ") + ConvertToUpper(*field->name) + " " + ConvertTypeName(*field));
-            first = false;
-        }
-    }
-    WriteLine(") *" + struct_name + " {");
-    Indent(1);
-    WriteIndent("return &" + struct_name + "{");
-    first = true;
-    if (!base_type.empty())
-    {
-        Write("Parent");
-        first = false;
-    }
-    if (s->body)
-    {
-        for (const auto& field : s->body->fields)
-        {
-            Write(std::string(first ? "" : ", ") + ConvertToUpper(*field->name));
-            first = false;
-        }
-    }
-    WriteLine("}");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    if (JSON())
-    {
-        // Generate struct JSON constructor
-        WriteLine();
-        WriteLineIndent("// Create a new " + struct_name + " struct from JSON");
-        WriteLineIndent("func New" + struct_name + "FromJSON(buffer []byte) (*" + struct_name + ", error) {");
-        Indent(1);
-        WriteLineIndent("result := *New" + struct_name + "()");
-        WriteLineIndent("err := fbe.Json.Unmarshal(buffer, &result)");
-        WriteLineIndent("if err != nil {");
-        Indent(1);
-        WriteLineIndent("return nil, err");
-        Indent(-1);
-        WriteLineIndent("}");
-        WriteLineIndent("return &result, nil");
-        Indent(-1);
-        WriteLineIndent("}");
-    }
-
-    // Generate struct Copy() method
-    WriteLine();
-    WriteLineIndent("// Struct shallow copy");
-    WriteLineIndent("func (s *" + struct_name + ") Copy() *" + struct_name + " {");
-    Indent(1);
-    WriteLineIndent("var result = *s");
-    WriteLineIndent("return &result");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct Clone() method
-    WriteLine();
-    WriteLineIndent("// Struct deep clone");
-    WriteLineIndent("func (s *" + struct_name + ") Clone() *" + struct_name + " {");
-    Indent(1);
-    WriteLineIndent("// Serialize the struct to the FBE stream");
-    WriteLineIndent("writer := New" + struct_name + "Model(fbe.NewEmptyBuffer())");
-    WriteLineIndent("_, _ = writer.Serialize(s)");
-    WriteLine();
-    WriteLineIndent("// Deserialize the struct from the FBE stream");
-    WriteLineIndent("reader := New" + struct_name + "Model(writer.Buffer())");
-    WriteLineIndent("result, _, _ := reader.Deserialize()");
-    WriteLineIndent("return result");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct Key() method
-    WriteLine();
-    WriteLineIndent("// Get the struct key");
-    WriteLineIndent("func (s *" + struct_name + ") Key() " + struct_name + "Key {");
-    Indent(1);
-    WriteLineIndent("return " + struct_name + "Key{");
-    Indent(1);
-    if (!base_type.empty())
-        WriteLineIndent(ConvertBaseName(base_type) + "Key: s." + ConvertBaseName(base_type) + ".Key(),");
-    if (s->body)
-        for (const auto& field : s->body->fields)
-            if (field->keys)
-                WriteLineIndent(ConvertToUpper(*field->name) + ": s." + ConvertToUpper(*field->name) + ",");
-    Indent(-1);
-    WriteLineIndent("}");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct Optional() method
-    WriteLine();
-    WriteLineIndent("// Convert struct to optional");
-    WriteLineIndent("func (s *" + struct_name + ") Optional() *" + struct_name + " {");
-    Indent(1);
-    WriteLineIndent("return s");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct FBE type property
-    WriteLine();
-    WriteLineIndent("// Get the FBE type");
-    if (s->base && !s->base->empty() && (s->type == 0))
-        WriteLineIndent("func (s *" + struct_name + ") FBEType() int { return s." + ConvertBaseName(base_type) + ".FBEType() }");
-    else
-        WriteLineIndent("func (s *" + struct_name + ") FBEType() int { return " + std::to_string(s->type) + " }");
-
-    // Generate struct String() method
-    WriteLine();
-    WriteLineIndent("// Convert struct to string");
-    WriteLineIndent("func (s *" + struct_name + ") String() string {");
-    Indent(1);
-    WriteLineIndent("var sb strings.Builder");
-    WriteLineIndent("sb.WriteString(\"" + *s->name + "(\")");
-    first = true;
-    if (!base_type.empty())
-    {
-        WriteLineIndent("sb.WriteString(s." + ConvertBaseName(base_type) + ".String())");
-        first = false;
-    }
-    if (s->body)
-    {
-        for (const auto& field : s->body->fields)
-        {
-            WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") + *field->name + "=\")");
-            if (field->attributes && field->attributes->hidden)
-                WriteLineIndent("sb.WriteString(\"***\")");
-            else if (field->array)
-            {
-                WriteLineIndent("if true {");
-                Indent(1);
-                WriteLineIndent("first := true");
-                WriteLineIndent("sb.WriteString(\"[\" + strconv.FormatInt(int64(len(s." + ConvertToUpper(*field->name) + ")), 10) + \"][\")");
-                WriteLineIndent("for _, v := range s." + ConvertToUpper(*field->name) + " {");
-                Indent(1);
-                WriteOutputStreamValue(*field->type, "v", field->optional, true);
-                WriteLineIndent("first = false");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLineIndent("sb.WriteString(\"]\")");
-                Indent(-1);
-                WriteLineIndent("} else {");
-                Indent(1);
-                WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") + *field->name + "=[0][]\")");
-                Indent(-1);
-                WriteLineIndent("}");
-            }
-            else if (field->vector)
-            {
-                WriteLineIndent("if s." + ConvertToUpper(*field->name) + " != nil {");
-                Indent(1);
-                WriteLineIndent("first := true");
-                WriteLineIndent("sb.WriteString(\"[\" + strconv.FormatInt(int64(len(s." + ConvertToUpper(*field->name) + ")), 10) + \"][\")");
-                WriteLineIndent("for _, v := range s." + ConvertToUpper(*field->name) + " {");
-                Indent(1);
-                WriteOutputStreamValue(*field->type, "v", field->optional, true);
-                WriteLineIndent("first = false");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLineIndent("sb.WriteString(\"]\")");
-                Indent(-1);
-                WriteLineIndent("} else {");
-                Indent(1);
-                WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") + *field->name + "=[0][]\")");
-                Indent(-1);
-                WriteLineIndent("}");
-            }
-            else if (field->list)
-            {
-                WriteLineIndent("if s." + ConvertToUpper(*field->name) + " != nil {");
-                Indent(1);
-                WriteLineIndent("first := true");
-                WriteLineIndent("sb.WriteString(\"[\" + strconv.FormatInt(int64(len(s." + ConvertToUpper(*field->name) + ")), 10) + \"]<\")");
-                WriteLineIndent("for _, v := range s." + ConvertToUpper(*field->name) + " {");
-                Indent(1);
-                WriteOutputStreamValue(*field->type, "v", field->optional, true);
-                WriteLineIndent("first = false");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLineIndent("sb.WriteString(\">\")");
-                Indent(-1);
-                WriteLineIndent("} else {");
-                Indent(1);
-                WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") + *field->name + "=[0]<>\")");
-                Indent(-1);
-                WriteLineIndent("}");
-            }
-            else if (field->set)
-            {
-                WriteLineIndent("if s." + ConvertToUpper(*field->name) + " != nil {");
-                Indent(1);
-                WriteLineIndent("first := true");
-                WriteLineIndent("sb.WriteString(\"[\" + strconv.FormatInt(int64(s." + ConvertToUpper(*field->name) + ".Size()), 10) + \"]{\")");
-                WriteLineIndent("for _, v := range s." + ConvertToUpper(*field->name) + " {");
-                Indent(1);
-                WriteOutputStreamValue(*field->type, "v", field->optional, true);
-                WriteLineIndent("first = false");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLineIndent("sb.WriteString(\"}\")");
-                Indent(-1);
-                WriteLineIndent("} else {");
-                Indent(1);
-                WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") + *field->name + "=[0]{}\")");
-                Indent(-1);
-                WriteLineIndent("}");
-            }
-            else if (field->map)
-            {
-                WriteLineIndent("if s." + ConvertToUpper(*field->name) + " != nil {");
-                Indent(1);
-                WriteLineIndent("first := true");
-                WriteLineIndent("sb.WriteString(\"[\" + strconv.FormatInt(int64(len(s." + ConvertToUpper(*field->name) + ")), 10) + \"]<{\")");
-                WriteLineIndent("for " + std::string(IsGoType(*field->key) ? "k" : "_") + ", v := range s." + ConvertToUpper(*field->name) + " {");
-                Indent(1);
-                WriteOutputStreamValue(*field->key, (IsGoType(*field->key) ? "k" : "v.Key"), false, true);
-                WriteLineIndent("sb.WriteString(\"->\")");
-                WriteOutputStreamValue(*field->type, (IsGoType(*field->key) ? "v" : "v.Value"), field->optional, false);
-                WriteLineIndent("first = false");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLineIndent("sb.WriteString(\"}>\")");
-                Indent(-1);
-                WriteLineIndent("} else {");
-                Indent(1);
-                WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") + *field->name + "=[0]<{}>\")");
-                Indent(-1);
-                WriteLineIndent("}");
-            }
-            else if (field->hash)
-            {
-                WriteLineIndent("if s." + ConvertToUpper(*field->name) + " != nil {");
-                Indent(1);
-                WriteLineIndent("first := true");
-                WriteLineIndent("sb.WriteString(\"[\" + strconv.FormatInt(int64(len(s." + ConvertToUpper(*field->name) + ")), 10) + \"][{\")");
-                WriteLineIndent("for " + std::string(IsGoType(*field->key) ? "k" : "_") + ", v := range s." + ConvertToUpper(*field->name) + " {");
-                Indent(1);
-                WriteOutputStreamValue(*field->key, (IsGoType(*field->key) ? "k" : "v.Key"), false, true);
-                WriteLineIndent("sb.WriteString(\"->\")");
-                WriteOutputStreamValue(*field->type, (IsGoType(*field->key) ? "v" : "v.Value"), field->optional, false);
-                WriteLineIndent("first = false");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLineIndent("sb.WriteString(\"}]\")");
-                Indent(-1);
-                WriteLineIndent("} else {");
-                Indent(1);
-                WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") + *field->name + "=[0][{}]\")");
-                Indent(-1);
-                WriteLineIndent("}");
-            }
+              GenerateFBEFieldModelVector(
+                  p,
+                  (field->optional ? "Optional" : "") +
+                      ConvertTypeFieldName(*field->type),
+                  ConvertTypeFieldDeclaration(*field->type, field->optional,
+                                              final),
+                  *field, path);
+          }
+          if (field->set) {
+            if (final)
+              GenerateFBEFinalModelSet(
+                  p,
+                  (field->optional ? "Optional" : "") +
+                      ConvertTypeFieldName(*field->type),
+                  ConvertTypeFieldDeclaration(*field->type, field->optional,
+                                              final),
+                  *field, path);
             else
-                WriteOutputStreamValue(*field->type, "s." + ConvertToUpper(*field->name), field->optional, false);
-            first = false;
+              GenerateFBEFieldModelSet(
+                  p,
+                  (field->optional ? "Optional" : "") +
+                      ConvertTypeFieldName(*field->type),
+                  ConvertTypeFieldDeclaration(*field->type, field->optional,
+                                              final),
+                  *field, path);
+          }
+          if (field->map || field->hash) {
+            if (final)
+              GenerateFBEFinalModelMap(
+                  p, ConvertTypeFieldName(*field->key),
+                  ConvertTypeFieldDeclaration(*field->key, false, final),
+                  (field->optional ? "Optional" : "") +
+                      ConvertTypeFieldName(*field->type),
+                  ConvertTypeFieldDeclaration(*field->type, field->optional,
+                                              final),
+                  *field, path);
+            else
+              GenerateFBEFieldModelMap(
+                  p, ConvertTypeFieldName(*field->key),
+                  ConvertTypeFieldDeclaration(*field->key, false, final),
+                  (field->optional ? "Optional" : "") +
+                      ConvertTypeFieldName(*field->type),
+                  ConvertTypeFieldDeclaration(*field->type, field->optional,
+                                              final),
+                  *field, path);
+          }
+          if (field->optional) {
+            if (final)
+              GenerateFBEFinalModelOptional(
+                  p, ConvertTypeFieldName(*field->type),
+                  ConvertTypeFieldDeclaration(*field->type, false, final),
+                  *field, path);
+            else
+              GenerateFBEFieldModelOptional(
+                  p, ConvertTypeFieldName(*field->type),
+                  ConvertTypeFieldDeclaration(*field->type, false, final),
+                  *field, path);
+          }
         }
+      }
     }
-    WriteLineIndent("sb.WriteString(\")\")");
-    WriteLineIndent("return sb.String()");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    if (JSON())
-    {
-        // Generate struct JSON() method
-        WriteLine();
-        WriteLineIndent("// Convert struct to JSON");
-        WriteLineIndent("func (s *" + struct_name + ") JSON() ([]byte, error) {");
-        Indent(1);
-        WriteLineIndent("return fbe.Json.Marshal(s)");
-        Indent(-1);
-        WriteLineIndent("}");
-    }
-
-    // Generate set wrappers
-    if (s->body)
-    {
-        for (const auto& field : s->body->fields)
-        {
-            if (field->set)
-            {
-                WriteLine();
-                WriteLineIndent("// Set wrapper for the field " + ConvertToUpper(*field->name));
-                WriteLineIndent("type set" + ConvertToUpper(*field->name) + " map[" + ConvertKeyName(*field->key) + "]" + ConvertTypeName(*field->type, field->optional));
-
-                if (JSON())
-                {
-                    // Generate set wrapper IsEmpty() method
-                    WriteLine();
-                    WriteLineIndent("// Is the set empty?");
-                    WriteLineIndent("func (s set" + ConvertToUpper(*field->name) + ") IsEmpty() bool {");
-                    Indent(1);
-                    WriteLineIndent("return s.Size() > 0");
-                    Indent(-1);
-                    WriteLineIndent("}");
-
-                    // Generate set wrapper Size() method
-                    WriteLine();
-                    WriteLineIndent("// Get the set size");
-                    WriteLineIndent("func (s set" + ConvertToUpper(*field->name) + ") Size() int {");
-                    Indent(1);
-                    WriteLineIndent("return len(s)");
-                    Indent(-1);
-                    WriteLineIndent("}");
-
-                    // Generate set wrapper Add() method
-                    WriteLine();
-                    WriteLineIndent("// Add the given item to the set");
-                    WriteLineIndent("func (s set" + ConvertToUpper(*field->name) + ") Add(item " + ConvertTypeName(*field->type, field->optional) + ") {");
-                    Indent(1);
-                    if (IsGoType(*field->key))
-                        WriteLineIndent("s[item] = item");
-                    else
-                        WriteLineIndent("s[item.Key()] = item");
-                    Indent(-1);
-                    WriteLineIndent("}");
-
-                    // Generate set wrapper Contains() method
-                    WriteLine();
-                    WriteLineIndent("// Contains the given item in the set?");
-                    WriteLineIndent("func (s set" + ConvertToUpper(*field->name) + ") Contains(item " + ConvertTypeName(*field->type, field->optional) + ") bool {");
-                    Indent(1);
-                    if (IsGoType(*field->key))
-                        WriteLineIndent("_, exists := s[item]");
-                    else
-                        WriteLineIndent("_, exists := s[item.Key()]");
-                    Indent(-1);
-                    WriteLineIndent("return exists");
-                    WriteLineIndent("}");
-
-                    // Generate set wrapper Remove() method
-                    WriteLine();
-                    WriteLineIndent("// Remove the given item from the set");
-                    WriteLineIndent("func (s set" + ConvertToUpper(*field->name) + ") Remove(item " + ConvertTypeName(*field->type, field->optional) + ") {");
-                    Indent(1);
-                    if (IsGoType(*field->key))
-                        WriteLineIndent("delete(s, item)");
-                    else
-                        WriteLineIndent("delete(s, item.Key())");
-                    Indent(-1);
-                    WriteLineIndent("}");
-
-                    // Generate set wrapper Clear() method
-                    WriteLine();
-                    WriteLineIndent("// Clear the set");
-                    WriteLineIndent("func (s set" + ConvertToUpper(*field->name) + ") Clear() {");
-                    Indent(1);
-                    WriteLineIndent("for i := range s {");
-                    Indent(1);
-                    WriteLineIndent("delete(s, i)");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    Indent(-1);
-                    WriteLineIndent("}");
-
-                    // Generate set wrapper Enumerate() method
-                    WriteLine();
-                    WriteLineIndent("// Enumerate the set");
-                    WriteLineIndent("func (s set" + ConvertToUpper(*field->name) + ") Enumerate() []" + ConvertTypeName(*field->type, field->optional) + " {");
-                    Indent(1);
-                    WriteLineIndent("array := make([]" + ConvertTypeName(*field->type, field->optional) + ", 0)");
-                    WriteLineIndent("for _, v := range s {");
-                    Indent(1);
-                    WriteLineIndent("array = append(array, v)");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    WriteLineIndent("return array");
-                    Indent(-1);
-                    WriteLineIndent("}");
-
-                    // Generate set wrapper Subset() method
-                    WriteLine();
-                    WriteLineIndent("// Is the current set a subset of the given set?");
-                    WriteLineIndent("func (s set" + ConvertToUpper(*field->name) + ") Subset(set set" + ConvertToUpper(*field->name) + ") bool {");
-                    Indent(1);
-                    WriteLineIndent("result := true");
-                    WriteLineIndent("for _, v := range s {");
-                    Indent(1);
-                    WriteLineIndent("if !set.Contains(v) {");
-                    Indent(1);
-                    WriteLineIndent("result = false");
-                    WriteLineIndent("break");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    WriteLineIndent("return result");
-                    Indent(-1);
-                    WriteLineIndent("}");
-
-                    // Generate set wrapper Union() method
-                    WriteLine();
-                    WriteLineIndent("// Union of the current set and the given set");
-                    WriteLineIndent("func (s set" + ConvertToUpper(*field->name) + ") Union(set set" + ConvertToUpper(*field->name) + ") set" + ConvertToUpper(*field->name) + " {");
-                    Indent(1);
-                    WriteLineIndent("result := make(set" + ConvertToUpper(*field->name) + ")");
-                    WriteLineIndent("for _, v := range s {");
-                    Indent(1);
-                    WriteLineIndent("result.Add(v)");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    WriteLineIndent("for _, v := range set {");
-                    Indent(1);
-                    WriteLineIndent("result.Add(v)");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    WriteLineIndent("return result");
-                    Indent(-1);
-                    WriteLineIndent("}");
-
-                    // Generate set wrapper Intersection() method
-                    WriteLine();
-                    WriteLineIndent("// Intersection of the current set and the given set");
-                    WriteLineIndent("func (s set" + ConvertToUpper(*field->name) + ") Intersection(set set" + ConvertToUpper(*field->name) + ") set" + ConvertToUpper(*field->name) + " {");
-                    Indent(1);
-                    WriteLineIndent("result := make(set" + ConvertToUpper(*field->name) + ")");
-                    WriteLineIndent("for _, v := range set {");
-                    Indent(1);
-                    WriteLineIndent("if s.Contains(v) {");
-                    Indent(1);
-                    WriteLineIndent("result.Add(v)");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    WriteLineIndent("return result");
-                    Indent(-1);
-                    WriteLineIndent("}");
-
-                    // Generate set wrapper Difference() method
-                    WriteLine();
-                    WriteLineIndent("// Difference between the current set and the given set");
-                    WriteLineIndent("func (s set" + ConvertToUpper(*field->name) + ") Difference(set set" + ConvertToUpper(*field->name) + ") set" + ConvertToUpper(*field->name) + " {");
-                    Indent(1);
-                    WriteLineIndent("result := make(set" + ConvertToUpper(*field->name) + ")");
-                    WriteLineIndent("for _, v := range set {");
-                    Indent(1);
-                    WriteLineIndent("if !s.Contains(v) {");
-                    Indent(1);
-                    WriteLineIndent("result.Add(v)");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    WriteLineIndent("for _, v := range s {");
-                    Indent(1);
-                    WriteLineIndent("if !set.Contains(v) {");
-                    Indent(1);
-                    WriteLineIndent("result.Add(v)");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    WriteLineIndent("return result");
-                    Indent(-1);
-                    WriteLineIndent("}");
-
-                    // Generate set wrapper MarshalJSON() method
-                    WriteLine();
-                    WriteLineIndent("// Convert set to JSON");
-                    WriteLineIndent("func (s set" + ConvertToUpper(*field->name) + ") MarshalJSON() ([]byte, error) {");
-                    Indent(1);
-                    WriteLineIndent("array := make([]" + ConvertTypeName(*field->type, field->optional) + ", 0)");
-                    WriteLineIndent("for _, v := range s {");
-                    Indent(1);
-                    WriteLineIndent("array = append(array, v)");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    WriteLineIndent("return fbe.Json.Marshal(&array)");
-                    Indent(-1);
-                    WriteLineIndent("}");
-
-                    // Generate set wrapper UnmarshalJSON() method
-                    WriteLine();
-                    WriteLineIndent("// Convert JSON to set");
-                    WriteLineIndent("func (s *set" + ConvertToUpper(*field->name) + ") UnmarshalJSON(body []byte) error {");
-                    Indent(1);
-                    WriteLineIndent("var array []" + ConvertTypeName(*field->type, field->optional));
-                    WriteLineIndent("err := fbe.Json.Unmarshal(body, &array)");
-                    WriteLineIndent("if err != nil {");
-                    Indent(1);
-                    WriteLineIndent("return err");
-                    Indent(-1);
-                    WriteLineIndent("} else {");
-                    Indent(1);
-                    WriteLineIndent("for _, v := range array {");
-                    Indent(1);
-                    if (IsGoType(*field->key))
-                        WriteLineIndent("(*s)[v] = v");
-                    else
-                        WriteLineIndent("(*s)[v.Key()] = v");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                    WriteLineIndent("return nil");
-                    Indent(-1);
-                    WriteLineIndent("}");
-                }
-            }
-        }
-    }
-
-    // Generate footer
-    GenerateFooter();
-
-    // Store the output file
-    WriteEnd();
-    Store(output);
-
-    // Generate struct field model
-    GenerateStructFieldModel(p, s, path);
-
-    // Generate struct model
-    GenerateStructModel(p, s, path);
-
-    // Generate struct final models
-    if (Final())
-    {
-        GenerateStructFinalModel(p, s, path);
-        GenerateStructModelFinal(p, s, path);
-    }
+  }
 }
 
-void GeneratorGo::GenerateStructFieldModel(const std::shared_ptr<Package>& p, const std::shared_ptr<StructType>& s, const CppCommon::Path& path)
-{
-    std::string struct_name = ConvertToUpper(*s->name);
-    std::string field_model_name = "FieldModel" + struct_name;
+void GeneratorGo::GeneratePackage(const std::shared_ptr<Package> &p) {
+  CppCommon::Path path = CppCommon::Path(_output) / *p->name;
 
-    // Generate the output file
-    CppCommon::Path output = path / (field_model_name + ".go");
-    WriteBegin();
+  // Create package path
+  CppCommon::Directory::CreateTree(path);
 
-    // Generate header
-    GenerateHeader(CppCommon::Path(_input).filename().string());
+  // Generate package version
+  GenerateFBEVersion(*p->name, CppCommon::Path(_input).filename().string());
 
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
+  // Generate namespace
+  if (p->body) {
+    // Generate child enums
+    for (const auto &child_e : p->body->enums)
+      GenerateEnum(p, child_e, path);
 
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
+    // Generate child flags
+    for (const auto &child_f : p->body->flags)
+      GenerateFlags(p, child_f, path);
 
-    std::string base_type = (s->base && !s->base->empty()) ? ConvertTypeName(*s->base, false) : "";
-    std::string base_field_model = (s->base && !s->base->empty()) ? ConvertModelName(*s->base, "FieldModel") : "";
-    std::string base_field_name = "FieldModel" + ConvertBaseName(base_type);
+    // Generate child structs
+    for (const auto &child_s : p->body->structs)
+      GenerateStruct(p, child_s, path);
+  }
 
-    // Generate struct field model type
-    WriteLine();
-    WriteLineIndent("// Fast Binary Encoding " + struct_name + " field model");
-    WriteLineIndent("type " + field_model_name + " struct {");
-    Indent(1);
-    WriteLineIndent("// Field model buffer");
-    WriteLineIndent("buffer *fbe.Buffer");
-    WriteLineIndent("// Field model buffer offset");
-    WriteLineIndent("offset int");
-    if ((s->base && !s->base->empty()) || (s->body && !s->body->fields.empty()))
-    {
-        WriteLine();
-        if (!base_type.empty())
-            WriteLineIndent("*" + base_field_model);
-        if (s->body)
-            for (const auto& field : s->body->fields)
-                WriteLineIndent(ConvertToUpper(*field->name) + " *" + ConvertTypeFieldDeclaration(*field, false));
+  // Generate containers
+  GenerateContainers(p, path, false);
+  if (Final())
+    GenerateContainers(p, path, true);
+
+  // Generate protocol
+  if (Proto()) {
+    // Generate protocol version
+    GenerateProtocolVersion(p, path);
+
+    // Generate sender & receiver
+    GenerateSender(p, path, false);
+    GenerateReceiver(p, path, false);
+    GenerateProxy(p, path, false);
+    if (Final()) {
+      GenerateSender(p, path, true);
+      GenerateReceiver(p, path, true);
     }
-    Indent(-1);
-    WriteLineIndent("}");
+  }
+}
 
-    // Generate struct field model constructor
+void GeneratorGo::GenerateEnum(const std::shared_ptr<Package> &p,
+                               const std::shared_ptr<EnumType> &e,
+                               const CppCommon::Path &path) {
+  std::string enum_name = ConvertToUpper(*e->name);
+
+  // Generate the output file
+  CppCommon::Path output = path / (enum_name + ".go");
+  WriteBegin();
+
+  // Generate header
+  GenerateHeader(CppCommon::Path(_input).filename().string());
+
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
+
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
+
+  std::string enum_type = (e->base && !e->base->empty()) ? *e->base : "int32";
+
+  // Generate enum key
+  WriteLine();
+  WriteLineIndent("// " + enum_name + " enum key");
+  WriteLineIndent("type " + enum_name + "Key " + ConvertEnumType(enum_type));
+
+  // Generate enum key String() method
+  WriteLine();
+  WriteLineIndent("// Convert " + enum_name + " enum key to string");
+  WriteLineIndent("func (k " + enum_name + "Key) String() string {");
+  Indent(1);
+  WriteLineIndent("return " + enum_name + "(k).String()");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate enum type
+  WriteLine();
+  WriteLineIndent("// " + enum_name + " enum");
+  WriteLineIndent("type " + enum_name + " " + ConvertEnumType(enum_type));
+
+  // Generate enum body
+  if (e->body) {
     WriteLine();
-    WriteLineIndent("// Create a new " + struct_name + " field model");
-    WriteLineIndent("func New" + field_model_name + "(buffer *fbe.Buffer, offset int) *" + field_model_name + " {");
+    WriteLineIndent("// " + enum_name + " enum values");
+    WriteLineIndent("//noinspection GoSnakeCaseUsage");
+    WriteLineIndent("const (");
     Indent(1);
-    std::string prev_offset("4");
-    std::string prev_size("4");
-    WriteLineIndent("fbeResult := " + field_model_name + "{buffer: buffer, offset: offset}");
-    if (!base_type.empty())
-    {
-        WriteLineIndent("fbeResult." + base_field_name + " = " + ConvertModelName(*s->base, "NewFieldModel") + "(buffer, " + prev_offset + " + " + prev_size + ")");
-        prev_offset = "fbeResult." + base_field_name + ".FBEOffset()";
-        prev_size = "fbeResult." + base_field_name + ".FBEBody() - 4 - 4";
-    }
-    if (s->body)
-    {
-        for (const auto& field : s->body->fields)
-        {
-            WriteLineIndent("fbeResult." + ConvertToUpper(*field->name) + " = " + ConvertTypeFieldInitialization(*field, prev_offset + " + " + prev_size, false));
-            prev_offset = "fbeResult." + ConvertToUpper(*field->name) + ".FBEOffset()";
-            prev_size = "fbeResult." + ConvertToUpper(*field->name) + ".FBESize()";
+
+    int index = 0;
+    std::string last = ConvertEnumConstant(enum_name, "int32", "0");
+    for (const auto &value : e->body->values) {
+      WriteIndent(enum_name + "_" + *value->name + " = " + enum_name + "(");
+      if (value->value) {
+        if (value->value->constant && !value->value->constant->empty()) {
+          index = 0;
+          last = ConvertEnumConstant(enum_name, enum_type,
+                                     *value->value->constant);
+          Write(last + " + " + std::to_string(index++));
+        } else if (value->value->reference &&
+                   !value->value->reference->empty()) {
+          index = 0;
+          last = ConvertEnumConstant(enum_name, "", *value->value->reference);
+          Write(last);
         }
+      } else
+        Write(last + " + " + std::to_string(index++));
+      Write(")");
+      WriteLine();
     }
-    WriteLineIndent("return &fbeResult");
-    Indent(-1);
-    WriteLineIndent("}");
 
-    // Generate struct field model FBESize() method
-    WriteLine();
-    WriteLineIndent("// Get the field size");
-    WriteLineIndent("func (fm *" + field_model_name + ") FBESize() int { return 4 }");
+    Indent(-1);
+    WriteLineIndent(")");
+  }
 
-    // Generate struct field model FBEBody() method
-    WriteLine();
-    WriteLineIndent("// Get the field body size");
-    WriteLineIndent("func (fm *" + field_model_name + ") FBEBody() int {");
-    Indent(1);
-    WriteLineIndent("fbeResult := 4 + 4 +");
-    Indent(1);
-    if (!base_type.empty())
-        WriteLineIndent("fm." + base_field_name + ".FBEBody() - 4 - 4 +");
-    if (s->body)
-        for (const auto& field : s->body->fields)
-            WriteLineIndent("fm." + ConvertToUpper(*field->name) + ".FBESize() +");
-    WriteLineIndent("0");
-    Indent(-1);
-    WriteLineIndent("return fbeResult");
-    Indent(-1);
-    WriteLineIndent("}");
+  // Generate enum constructor
+  WriteLine();
+  WriteLineIndent("// Create a new " + enum_name + " enum");
+  WriteLineIndent("func New" + enum_name + "() *" + enum_name + " {");
+  Indent(1);
+  WriteLineIndent("return new(" + enum_name + ")");
+  Indent(-1);
+  WriteLineIndent("}");
 
-    // Generate struct field model FBEExtra() method
-    WriteLine();
-    WriteLineIndent("// Get the field extra size");
-    WriteLineIndent("func (fm *" + field_model_name + ") FBEExtra() int {");
-    Indent(1);
-    WriteLineIndent("if (fm.buffer.Offset() + fm.FBEOffset() + fm.FBESize()) > fm.buffer.Size() {");
-    Indent(1);
-    WriteLineIndent("return 0");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fbeStructOffset := int(fbe.ReadUInt32(fm.buffer.Data(), fm.buffer.Offset() + fm.FBEOffset()))");
-    WriteLineIndent("if (fbeStructOffset == 0) || ((fm.buffer.Offset() + fbeStructOffset + 4) > fm.buffer.Size()) {");
-    Indent(1);
-    WriteLineIndent("return 0");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fm.buffer.Shift(fbeStructOffset)");
-    WriteLine();
-    WriteLineIndent("fbeResult := fm.FBEBody() +");
-    Indent(1);
-    if (!base_type.empty())
-        WriteLineIndent("fm." + base_field_name + ".FBEExtra() + ");
-    if (s->body)
-        for (const auto& field : s->body->fields)
-            WriteLineIndent("fm." + ConvertToUpper(*field->name) + ".FBEExtra() +");
-    WriteLineIndent("0");
-    Indent(-1);
-    WriteLine();
-    WriteLineIndent("fm.buffer.Unshift(fbeStructOffset)");
-    WriteLine();
-    WriteLineIndent("return fbeResult");
-    Indent(-1);
-    WriteLineIndent("}");
+  // Generate enum constructor from the given value
+  WriteLine();
+  WriteLineIndent("// Create a new " + enum_name +
+                  " enum from the given value");
+  WriteLineIndent("func New" + enum_name + "FromValue(value " +
+                  ConvertEnumType(enum_type) + ") *" + enum_name + " {");
+  Indent(1);
+  WriteLineIndent("result := " + enum_name + "(value)");
+  WriteLineIndent("return &result");
+  Indent(-1);
+  WriteLineIndent("}");
 
-    // Generate struct field model FBEType() method
-    WriteLine();
-    WriteLineIndent("// Get the field type");
-    if (s->base && !s->base->empty() && (s->type == 0))
-        WriteLineIndent("func (fm *" + field_model_name + ") FBEType() int { return fm." + base_field_name + ".FBEType() }");
-    else
-        WriteLineIndent("func (fm *" + field_model_name + ") FBEType() int { return " + std::to_string(s->type) + " }");
+  // Generate enum Key() method
+  WriteLine();
+  WriteLineIndent("// Get the enum key");
+  WriteLineIndent("func (e " + enum_name + ") Key() " + enum_name + "Key {");
+  Indent(1);
+  WriteLineIndent("return " + enum_name + "Key(e)");
+  Indent(-1);
+  WriteLineIndent("}");
 
-    // Generate struct field model FBEOffset() methods
-    WriteLine();
-    WriteLineIndent("// Get the field offset");
-    WriteLineIndent("func (fm *" + field_model_name + ") FBEOffset() int { return fm.offset }");
-    WriteLineIndent("// Set the field offset");
-    WriteLineIndent("func (fm *" + field_model_name + ") SetFBEOffset(value int) { fm.offset = value }");
+  // Generate enum Optional() method
+  WriteLine();
+  WriteLineIndent("// Convert enum to optional");
+  WriteLineIndent("func (e *" + enum_name + ") Optional() *" + enum_name +
+                  " {");
+  Indent(1);
+  WriteLineIndent("return e");
+  Indent(-1);
+  WriteLineIndent("}");
 
-    // Generate struct field model FBEShift() methods
-    WriteLine();
-    WriteLineIndent("// Shift the current field offset");
-    WriteLineIndent("func (fm *" + field_model_name + ") FBEShift(size int) { fm.offset += size }");
-    WriteLineIndent("// Unshift the current field offset");
-    WriteLineIndent("func (fm *" + field_model_name + ") FBEUnshift(size int) { fm.offset -= size }");
-
-    // Generate struct field model Verify() methods
-    WriteLine();
-    WriteLineIndent("// Check if the struct value is valid");
-    WriteLineIndent("func (fm *" + field_model_name + ") Verify() bool { return fm.VerifyType(true) }");
-    WriteLine();
-    WriteLineIndent("// Check if the struct value and its type are valid");
-    WriteLineIndent("func (fm *" + field_model_name + ") VerifyType(fbeVerifyType bool) bool {");
-    Indent(1);
-    WriteLineIndent("if (fm.buffer.Offset() + fm.FBEOffset() + fm.FBESize()) > fm.buffer.Size() {");
-    Indent(1);
-    WriteLineIndent("return true");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fbeStructOffset := int(fbe.ReadUInt32(fm.buffer.Data(), fm.buffer.Offset() + fm.FBEOffset()))");
-    WriteLineIndent("if (fbeStructOffset == 0) || ((fm.buffer.Offset() + fbeStructOffset + 4 + 4) > fm.buffer.Size()) {");
-    Indent(1);
-    WriteLineIndent("return false");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fbeStructSize := int(fbe.ReadUInt32(fm.buffer.Data(), fm.buffer.Offset() + fbeStructOffset))");
-    WriteLineIndent("if fbeStructSize < (4 + 4) {");
-    Indent(1);
-    WriteLineIndent("return false");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fbeStructType := int(fbe.ReadUInt32(fm.buffer.Data(), fm.buffer.Offset() + fbeStructOffset + 4))");
-    WriteLineIndent("if fbeVerifyType && (fbeStructType != fm.FBEType()) {");
-    Indent(1);
-    WriteLineIndent("return false");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fm.buffer.Shift(fbeStructOffset)");
-    WriteLineIndent("fbeResult := fm.VerifyFields(fbeStructSize)");
-    WriteLineIndent("fm.buffer.Unshift(fbeStructOffset)");
-    WriteLineIndent("return fbeResult");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("// // Check if the struct value fields are valid");
-    WriteLineIndent("func (fm *" + field_model_name + ") VerifyFields(fbeStructSize int) bool {");
-    Indent(1);
-    if ((s->base && !s->base->empty()) || (s->body && !s->body->fields.empty()))
-    {
-        WriteLineIndent("fbeCurrentSize := 4 + 4");
-        if (!base_type.empty())
-        {
-            WriteLine();
-            WriteLineIndent("if (fbeCurrentSize + fm." + base_field_name + ".FBEBody() - 4 - 4) > fbeStructSize {");
-            Indent(1);
-            WriteLineIndent("return true");
-            Indent(-1);
-            WriteLineIndent("}");
-            WriteLineIndent("if !fm." + base_field_name + ".VerifyFields(fbeStructSize) {");
-            Indent(1);
-            WriteLineIndent("return false");
-            Indent(-1);
-            WriteLineIndent("}");
-            WriteLineIndent("fbeCurrentSize += fm." + base_field_name + ".FBEBody() - 4 - 4");
-        }
-        if (s->body)
-        {
-            for (const auto& field : s->body->fields)
-            {
-                WriteLine();
-                WriteLineIndent("if (fbeCurrentSize + fm." + ConvertToUpper(*field->name) + ".FBESize()) > fbeStructSize {");
-                Indent(1);
-                WriteLineIndent("return true");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLineIndent("if !fm." + ConvertToUpper(*field->name) + ".Verify() {");
-                Indent(1);
-                WriteLineIndent("return false");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLineIndent("fbeCurrentSize += fm." + ConvertToUpper(*field->name) + ".FBESize()");
-            }
-        }
-        WriteLine();
+  // Generate enum String() method
+  WriteLine();
+  WriteLineIndent("// Convert enum to string");
+  WriteLineIndent("func (e " + enum_name + ") String() string {");
+  Indent(1);
+  if (e->body && !e->body->values.empty()) {
+    for (auto it = e->body->values.begin(); it != e->body->values.end(); ++it) {
+      WriteLineIndent("if e == " + enum_name + "_" + *(*it)->name + " {");
+      Indent(1);
+      WriteLineIndent("return \"" + *(*it)->name + "\"");
+      Indent(-1);
+      WriteLineIndent("}");
     }
-    WriteLineIndent("return true");
+    WriteLineIndent("return \"<unknown>\"");
+  } else
+    WriteLineIndent("return \"<empty>\"");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  if (JSON()) {
+    // Generate enum MarshalJSON() method
+    WriteLine();
+    WriteLineIndent("// Convert enum to JSON");
+    WriteLineIndent("func (e " + enum_name +
+                    ") MarshalJSON() ([]byte, error) {");
+    Indent(1);
+    WriteLineIndent("value := " + ConvertEnumType(enum_type) + "(e)");
+    WriteLineIndent("return fbe.Json.Marshal(&value)");
     Indent(-1);
     WriteLineIndent("}");
 
-    // Generate struct field model Get() methods
+    // Generate enum UnmarshalJSON() method
     WriteLine();
-    WriteLineIndent("// Get the struct value (begin phase)");
-    WriteLineIndent("func (fm *" + field_model_name + ") GetBegin() (int, error) {");
+    WriteLineIndent("// Convert JSON to enum");
+    WriteLineIndent("func (e *" + enum_name +
+                    ") UnmarshalJSON(buffer []byte) error {");
     Indent(1);
-    WriteLineIndent("if (fm.buffer.Offset() + fm.FBEOffset() + fm.FBESize()) > fm.buffer.Size() {");
-    Indent(1);
-    WriteLineIndent("return 0, nil");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fbeStructOffset := int(fbe.ReadUInt32(fm.buffer.Data(), fm.buffer.Offset() + fm.FBEOffset()))");
-    WriteLineIndent("if (fbeStructOffset == 0) || ((fm.buffer.Offset() + fbeStructOffset + 4 + 4) > fm.buffer.Size()) {");
-    Indent(1);
-    WriteLineIndent("return 0, errors.New(\"model is broken\")");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fbeStructSize := int(fbe.ReadUInt32(fm.buffer.Data(), fm.buffer.Offset() + fbeStructOffset))");
-    WriteLineIndent("if fbeStructSize < (4 + 4) {");
-    Indent(1);
-    WriteLineIndent("return 0, errors.New(\"model is broken\")");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fm.buffer.Shift(fbeStructOffset)");
-    WriteLineIndent("return fbeStructOffset, nil");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("// Get the struct value (end phase)");
-    WriteLineIndent("func (fm *" + field_model_name + ") GetEnd(fbeBegin int) {");
-    Indent(1);
-    WriteLineIndent("fm.buffer.Unshift(fbeBegin)");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("// Get the struct value");
-    WriteLineIndent("func (fm *" + field_model_name + ") Get() (*" + struct_name + ", error) {");
-    Indent(1);
-    WriteLineIndent("fbeResult := New" + struct_name + "()");
-    WriteLineIndent("return fbeResult, fm.GetValue(fbeResult)");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("// Get the struct value by the given pointer");
-    WriteLineIndent("func (fm *" + field_model_name + ") GetValue(fbeValue *" + struct_name + ") error {");
-    Indent(1);
-    WriteLineIndent("fbeBegin, err := fm.GetBegin()");
-    WriteLineIndent("if fbeBegin == 0 {");
+    WriteLineIndent("var result " + ConvertEnumType(enum_type));
+    WriteLineIndent("err := fbe.Json.Unmarshal(buffer, &result)");
+    WriteLineIndent("if err != nil {");
     Indent(1);
     WriteLineIndent("return err");
     Indent(-1);
     WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fbeStructSize := int(fbe.ReadUInt32(fm.buffer.Data(), fm.buffer.Offset()))");
-    WriteLineIndent("fm.GetFields(fbeValue, fbeStructSize)");
-    WriteLineIndent("fm.GetEnd(fbeBegin)");
+    WriteLineIndent("*e = " + enum_name + "(result)");
     WriteLineIndent("return nil");
     Indent(-1);
     WriteLineIndent("}");
+  }
+
+  // Generate footer
+  GenerateFooter();
+
+  // Store the output file
+  WriteEnd();
+  Store(output);
+
+  // Generate enum field model
+  GenerateFBEFieldModelEnumFlags(*p->name, enum_name, enum_type);
+
+  // Generate enum final model
+  if (Final())
+    GenerateFBEFinalModelEnumFlags(*p->name, enum_name, enum_type);
+}
+
+void GeneratorGo::GenerateFlags(const std::shared_ptr<Package> &p,
+                                const std::shared_ptr<FlagsType> &f,
+                                const CppCommon::Path &path) {
+  std::string flags_name = ConvertToUpper(*f->name);
+
+  // Generate the output file
+  CppCommon::Path output = path / (flags_name + ".go");
+  WriteBegin();
+
+  // Generate header
+  GenerateHeader(CppCommon::Path(_input).filename().string());
+
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
+
+  // Generate imports
+  WriteLine();
+  WriteLineIndent("import \"strings\"");
+  GenerateImports(p);
+
+  std::string flags_type = (f->base && !f->base->empty()) ? *f->base : "int32";
+
+  // Generate flags key
+  WriteLine();
+  WriteLineIndent("// " + flags_name + " flags key");
+  WriteLineIndent("type " + flags_name + "Key " + ConvertEnumType(flags_type));
+
+  // Generate flags key String() method
+  WriteLine();
+  WriteLineIndent("// Convert " + flags_name + " flags key to string");
+  WriteLineIndent("func (k " + flags_name + "Key) String() string {");
+  Indent(1);
+  WriteLineIndent("return " + flags_name + "(k).String()");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate flags type
+  WriteLine();
+  WriteLineIndent("// " + flags_name + " flags");
+  WriteLineIndent("type " + flags_name + " " + ConvertEnumType(flags_type));
+
+  // Generate flags body
+  if (f->body) {
     WriteLine();
-    WriteLineIndent("// Get the struct fields values");
-    WriteLineIndent("func (fm *" + field_model_name + ") GetFields(fbeValue *" + struct_name + ", fbeStructSize int) {");
+    WriteLineIndent("// " + flags_name + " flags values");
+    WriteLineIndent("//noinspection GoSnakeCaseUsage");
+    WriteLineIndent("const (");
     Indent(1);
-    if ((s->base && !s->base->empty()) || (s->body && !s->body->fields.empty()))
-    {
-        WriteLineIndent("fbeCurrentSize := 4 + 4");
-        if (!base_type.empty())
-        {
-            WriteLine();
-            WriteLineIndent("if (fbeCurrentSize + fm." + base_field_name + ".FBEBody() - 4 - 4) <= fbeStructSize {");
-            Indent(1);
-            WriteLineIndent("fm." + base_field_name + ".GetFields(fbeValue." + ConvertBaseName(base_type) + ", fbeStructSize)");
-            Indent(-1);
-            WriteLineIndent("}");
-            WriteLineIndent("fbeCurrentSize += fm." + base_field_name + ".FBEBody() - 4 - 4");
-        }
-        if (s->body)
-        {
-            for (const auto& field : s->body->fields)
-            {
-                WriteLine();
-                WriteLineIndent("if (fbeCurrentSize + fm." + ConvertToUpper(*field->name) + ".FBESize()) <= fbeStructSize {");
-                Indent(1);
-                if (field->array)
-                {
-                    WriteLineIndent("slice, _ := fm." + ConvertToUpper(*field->name) + ".Get()");
-                    WriteLineIndent("copy(fbeValue." + ConvertToUpper(*field->name) + "[:], slice)");
-                }
-                else if (field->vector || field->list || field->set || field->map || field->hash || field->optional)
-                    WriteLineIndent("fbeValue." + ConvertToUpper(*field->name) + ", _ = fm." + ConvertToUpper(*field->name) + ".Get()");
-                else if (!IsGoType(*field->type))
-                {
-                    if (field->value)
-                        WriteLineIndent("_ = fm." + ConvertToUpper(*field->name) + ".GetValueDefault(&fbeValue." + ConvertToUpper(*field->name) + ", " + ConvertConstant(*field->type, *field->value, field->optional) + ")");
-                    else
-                        WriteLineIndent("_ = fm." + ConvertToUpper(*field->name) + ".GetValue(&fbeValue." + ConvertToUpper(*field->name) + ")");
-                }
-                else
-                {
-                    if (field->value)
-                        WriteLineIndent("fbeValue." + ConvertToUpper(*field->name) + ", _ = fm." + ConvertToUpper(*field->name) + ".GetDefault(" + ConvertConstant(*field->type, *field->value, field->optional) + ")");
-                    else
-                        WriteLineIndent("fbeValue." + ConvertToUpper(*field->name) + ", _ = fm." + ConvertToUpper(*field->name) + ".Get()");
-                }
-                Indent(-1);
-                WriteLineIndent("} else {");
-                Indent(1);
-                WriteLineIndent("fbeValue." + ConvertToUpper(*field->name) + " = " + ConvertDefault(*field));
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLineIndent("fbeCurrentSize += fm." + ConvertToUpper(*field->name) + ".FBESize()");
-            }
-        }
+
+    for (const auto &value : f->body->values) {
+      WriteIndent(flags_name + "_" + *value->name + " = " + flags_name + "(");
+      if (value->value) {
+        if (value->value->constant && !value->value->constant->empty())
+          Write(ConvertEnumConstant(flags_name, flags_type,
+                                    *value->value->constant));
+        else if (value->value->reference && !value->value->reference->empty())
+          Write(ConvertEnumConstant(flags_name, "", *value->value->reference));
+      }
+      Write(")");
+      WriteLine();
     }
+
+    Indent(-1);
+    WriteLineIndent(")");
+  }
+
+  // Generate flags constructor
+  WriteLine();
+  WriteLineIndent("// Create a new " + flags_name + " flags");
+  WriteLineIndent("func New" + flags_name + "() *" + flags_name + " {");
+  Indent(1);
+  WriteLineIndent("return new(" + flags_name + ")");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate flags constructor from the given flags
+  WriteLine();
+  WriteLineIndent("// Create a new " + flags_name +
+                  " flags from the given flags");
+  WriteLineIndent("func New" + flags_name + "FromValue(flags " +
+                  ConvertEnumType(flags_type) + ") *" + flags_name + " {");
+  Indent(1);
+  WriteLineIndent("result := " + flags_name + "(flags)");
+  WriteLineIndent("return &result");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate flags HasFlags() method
+  WriteLine();
+  WriteLineIndent("// Is flags set?");
+  WriteLineIndent("func (f " + flags_name + ") HasFlags(flags " + flags_name +
+                  ") bool {");
+  Indent(1);
+  WriteLineIndent("return ((f & flags) != 0) && ((f & flags) == flags)");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate flags SetFlags() method
+  WriteLine();
+  WriteLineIndent("// Set flags");
+  WriteLineIndent("func (f *" + flags_name + ") SetFlags(flags " + flags_name +
+                  ") *" + flags_name + " {");
+  Indent(1);
+  WriteLineIndent("*f |= flags");
+  WriteLineIndent("return f");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate flags RemoveFlags() method
+  WriteLine();
+  WriteLineIndent("// Remove flags");
+  WriteLineIndent("func (f *" + flags_name + ") RemoveFlags(flags " +
+                  flags_name + ") *" + flags_name + " {");
+  Indent(1);
+  WriteLineIndent("*f &^= flags");
+  WriteLineIndent("return f");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate flags Key() method
+  WriteLine();
+  WriteLineIndent("// Get the flags key");
+  WriteLineIndent("func (f " + flags_name + ") Key() " + flags_name + "Key {");
+  Indent(1);
+  WriteLineIndent("return " + flags_name + "Key(f)");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate flags Optional() method
+  WriteLine();
+  WriteLineIndent("// Convert flags to optional");
+  WriteLineIndent("func (f *" + flags_name + ") Optional() *" + flags_name +
+                  " {");
+  Indent(1);
+  WriteLineIndent("return f");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate flags String() method
+  WriteLine();
+  WriteLineIndent("// Convert flags to string");
+  WriteLineIndent("//noinspection GoBoolExpressions");
+  WriteLineIndent("func (f " + flags_name + ") String() string {");
+  Indent(1);
+  WriteLineIndent("var sb strings.Builder");
+  if (f->body && !f->body->values.empty()) {
+    WriteLineIndent("first := true");
+    for (auto it = f->body->values.begin(); it != f->body->values.end(); ++it) {
+      std::string flag = flags_name + "_" + *(*it)->name;
+      WriteLineIndent("if ((f & " + flag + ") != 0) && ((f & " + flag +
+                      ") == " + flag + ") {");
+      Indent(1);
+      WriteLineIndent("if first {");
+      Indent(1);
+      WriteLineIndent("first = false");
+      Indent(-1);
+      WriteLineIndent("} else {");
+      Indent(1);
+      WriteLineIndent("sb.WriteRune('|')");
+      Indent(-1);
+      WriteLineIndent("}");
+      WriteLineIndent("sb.WriteString(\"" + *(*it)->name + "\")");
+      Indent(-1);
+      WriteLineIndent("}");
+    }
+  }
+  WriteLineIndent("return sb.String()");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  if (JSON()) {
+    // Generate flags MarshalJSON() method
+    WriteLine();
+    WriteLineIndent("// Convert flags to JSON");
+    WriteLineIndent("func (f " + flags_name +
+                    ") MarshalJSON() ([]byte, error) {");
+    Indent(1);
+    WriteLineIndent("value := " + ConvertEnumType(flags_type) + "(f)");
+    WriteLineIndent("return fbe.Json.Marshal(&value)");
     Indent(-1);
     WriteLineIndent("}");
 
-    // Generate struct field model Set() methods
+    // Generate flags UnmarshalJSON() method
     WriteLine();
-    WriteLineIndent("// Set the struct value (begin phase)");
-    WriteLineIndent("func (fm *" + field_model_name + ") SetBegin() (int, error) {");
+    WriteLineIndent("// Convert JSON to flags");
+    WriteLineIndent("func (f *" + flags_name +
+                    ") UnmarshalJSON(buffer []byte) error {");
     Indent(1);
-    WriteLineIndent("if (fm.buffer.Offset() + fm.FBEOffset() + fm.FBESize()) > fm.buffer.Size() {");
-    Indent(1);
-    WriteLineIndent("return 0, errors.New(\"model is broken\")");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fbeStructSize := fm.FBEBody()");
-    WriteLineIndent("fbeStructOffset := fm.buffer.Allocate(fbeStructSize) - fm.buffer.Offset()");
-    WriteLineIndent("if (fbeStructOffset <= 0) || ((fm.buffer.Offset() + fbeStructOffset + fbeStructSize) > fm.buffer.Size()) {");
-    Indent(1);
-    WriteLineIndent("return 0, errors.New(\"model is broken\")");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fbe.WriteUInt32(fm.buffer.Data(), fm.buffer.Offset() + fm.FBEOffset(), uint32(fbeStructOffset))");
-    WriteLineIndent("fbe.WriteUInt32(fm.buffer.Data(), fm.buffer.Offset() + fbeStructOffset, uint32(fbeStructSize))");
-    WriteLineIndent("fbe.WriteUInt32(fm.buffer.Data(), fm.buffer.Offset() + fbeStructOffset + 4, uint32(fm.FBEType()))");
-    WriteLine();
-    WriteLineIndent("fm.buffer.Shift(fbeStructOffset)");
-    WriteLineIndent("return fbeStructOffset, nil");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("// Set the struct value (end phase)");
-    WriteLineIndent("func (fm *" + field_model_name + ") SetEnd(fbeBegin int) {");
-    Indent(1);
-    WriteLineIndent("fm.buffer.Unshift(fbeBegin)");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("// Set the struct value");
-    WriteLineIndent("func (fm *" + field_model_name + ") Set(fbeValue *" + struct_name + ") error {");
-    Indent(1);
-    WriteLineIndent("fbeBegin, err := fm.SetBegin()");
-    WriteLineIndent("if fbeBegin == 0 {");
+    WriteLineIndent("var result " + ConvertEnumType(flags_type));
+    WriteLineIndent("err := fbe.Json.Unmarshal(buffer, &result)");
+    WriteLineIndent("if err != nil {");
     Indent(1);
     WriteLineIndent("return err");
     Indent(-1);
     WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("err = fm.SetFields(fbeValue)");
-    WriteLineIndent("fm.SetEnd(fbeBegin)");
-    WriteLineIndent("return err");
+    WriteLineIndent("*f = " + flags_name + "(result)");
+    WriteLineIndent("return nil");
     Indent(-1);
     WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("// Set the struct fields values");
-    WriteLineIndent("func (fm *" + field_model_name + ") SetFields(fbeValue *" + struct_name + ") error {");
-    Indent(1);
-    if ((s->base && !s->base->empty()) || (s->body && !s->body->fields.empty()))
-    {
-        WriteLineIndent("var err error = nil");
-        WriteLine();
-        if (!base_type.empty())
-        {
-            WriteLineIndent("if err = fm." + base_field_name + ".SetFields(fbeValue." + ConvertBaseName(base_type) + "); err != nil {");
-            Indent(1);
-            WriteLineIndent("return err");
-            Indent(-1);
-            WriteLineIndent("}");
-        }
-        if (s->body)
-        {
-            for (const auto& field : s->body->fields)
-            {
-                if (field->array)
-                    WriteLineIndent("if err = fm." + ConvertToUpper(*field->name) + ".Set(fbeValue." + ConvertToUpper(*field->name) + "[:]); err != nil {");
-                else
-                    WriteLineIndent("if err = fm." + ConvertToUpper(*field->name) + ".Set(" + ((IsGoType(*field->type) || field->vector || field->list || field->set || field->map || field->hash || field->optional) ? "" : "&") + "fbeValue." + ConvertToUpper(*field->name) + "); err != nil {");
-                Indent(1);
-                WriteLineIndent("return err");
-                Indent(-1);
-                WriteLineIndent("}");
-            }
-        }
-        WriteLineIndent("return err");
-    }
-    else
-        WriteLineIndent("return nil");
-    Indent(-1);
-    WriteLineIndent("}");
+  }
 
-    // Generate footer
-    GenerateFooter();
+  // Generate footer
+  GenerateFooter();
 
-    // Store the output file
-    WriteEnd();
-    Store(output);
+  // Store the output file
+  WriteEnd();
+  Store(output);
+
+  // Generate flags field model
+  GenerateFBEFieldModelEnumFlags(*p->name, flags_name, flags_type);
+
+  // Generate flags final model
+  if (Final())
+    GenerateFBEFinalModelEnumFlags(*p->name, flags_name, flags_type);
 }
 
-void GeneratorGo::GenerateStructModel(const std::shared_ptr<Package>& p, const std::shared_ptr<StructType>& s, const CppCommon::Path& path)
-{
-    std::string struct_name = ConvertToUpper(*s->name);
-    std::string model_name = struct_name + "Model";
-    std::string field_model_name = "FieldModel" + struct_name;
+void GeneratorGo::GenerateStruct(const std::shared_ptr<Package> &p,
+                                 const std::shared_ptr<StructType> &s,
+                                 const CppCommon::Path &path) {
+  std::string struct_name = ConvertToUpper(*s->name);
 
-    // Generate the output file
-    CppCommon::Path output = path / (model_name + ".go");
-    WriteBegin();
+  // Generate the output file
+  CppCommon::Path output = path / (struct_name + ".go");
+  WriteBegin();
 
-    // Generate header
-    GenerateHeader(CppCommon::Path(_input).filename().string());
+  // Generate header
+  GenerateHeader(CppCommon::Path(_input).filename().string());
 
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
 
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
+  // Generate imports
+  WriteLine();
+  WriteLineIndent("import \"fmt\"");
+  WriteLineIndent("import \"strconv\"");
+  WriteLineIndent("import \"strings\"");
+  GenerateImports(p);
 
-    // Generate struct model type
-    WriteLine();
-    WriteLineIndent("// Fast Binary Encoding " + struct_name + " model");
-    WriteLineIndent("type " + model_name + " struct {");
-    Indent(1);
-    WriteLineIndent("// Model buffer");
-    WriteLineIndent("buffer *fbe.Buffer");
-    WriteLine();
-    WriteLineIndent("// Field model");
-    WriteLineIndent("model *" + field_model_name);
-    Indent(-1);
-    WriteLineIndent("}");
+  // Generate workaround for Go unused imports issue
+  WriteLine();
+  WriteLineIndent("// Workaround for Go unused imports issue");
+  WriteLineIndent("var _ = fmt.Print");
+  WriteLineIndent("var _ = strconv.FormatInt");
 
-    // Generate struct model constructor
-    WriteLine();
-    WriteLineIndent("// Create a new " + struct_name + " model");
-    WriteLineIndent("func New" + model_name + "(buffer *fbe.Buffer) *" + model_name + " {");
-    Indent(1);
-    WriteLineIndent("return &" + model_name + "{buffer: buffer, model: New" + field_model_name + "(buffer, 4)}");
-    Indent(-1);
-    WriteLineIndent("}");
+  std::string base_type =
+      (s->base && !s->base->empty()) ? ConvertTypeName(*s->base, false) : "";
 
-    // Generate struct model Buffer() & Model() methods
-    WriteLine();
-    WriteLineIndent("// Get the model buffer");
-    WriteLineIndent("func (m *" + model_name + ") Buffer() *fbe.Buffer { return m.buffer }");
-    WriteLineIndent("// Get the field model");
-    WriteLineIndent("func (m *" + model_name + ") Model() *" + field_model_name + " { return m.model }");
+  // Generate struct key
+  WriteLine();
+  WriteLineIndent("// " + struct_name + " key");
+  WriteLineIndent("type " + struct_name + "Key struct {");
+  Indent(1);
+  if (!base_type.empty())
+    WriteLineIndent(base_type + "Key");
+  if (s->body)
+    for (const auto &field : s->body->fields)
+      if (field->keys)
+        WriteLineIndent(ConvertToUpper(*field->name) + " " +
+                        ConvertTypeName(*field));
+  Indent(-1);
+  WriteLineIndent("}");
 
-    // Generate struct model FBESize() & FBEType() methods
-    WriteLine();
-    WriteLineIndent("// Get the model size");
-    WriteLineIndent("func (m *" + model_name + ") FBESize() int { return m.model.FBESize() + m.model.FBEExtra() }");
-    WriteLineIndent("// // Get the model type");
-    WriteLineIndent("func (m *" + model_name + ") FBEType() int { return m.model.FBEType() }");
-
-    // Generate struct model Verify() method
-    WriteLine();
-    WriteLineIndent("// Check if the struct value is valid");
-    WriteLineIndent("func (m *" + model_name + ") Verify() bool {");
-    Indent(1);
-    WriteLineIndent("if (m.buffer.Offset() + m.model.FBEOffset() - 4) > m.buffer.Size() {");
-    Indent(1);
-    WriteLineIndent("return false");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fbeFullSize := int(fbe.ReadUInt32(m.buffer.Data(), m.buffer.Offset() + m.model.FBEOffset() - 4))");
-    WriteLineIndent("if fbeFullSize < m.model.FBESize() {");
-    Indent(1);
-    WriteLineIndent("return false");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("return m.model.Verify()");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct model CreateBegin() method
-    WriteLine();
-    WriteLineIndent("// Create a new model (begin phase)");
-    WriteLineIndent("func (m *" + model_name + ") CreateBegin() int {");
-    Indent(1);
-    WriteLineIndent("fbeBegin := m.buffer.Allocate(4 + m.model.FBESize())");
-    WriteLineIndent("return fbeBegin");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct model CreateEnd() method
-    WriteLine();
-    WriteLineIndent("// Create a new model (end phase)");
-    WriteLineIndent("func (m *" + model_name + ") CreateEnd(fbeBegin int) int {");
-    Indent(1);
-    WriteLineIndent("fbeEnd := m.buffer.Size()");
-    WriteLineIndent("fbeFullSize := fbeEnd - fbeBegin");
-    WriteLineIndent("fbe.WriteUInt32(m.buffer.Data(), m.buffer.Offset() + m.model.FBEOffset() - 4, uint32(fbeFullSize))");
-    WriteLineIndent("return fbeFullSize");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct model Serialize() method
-    WriteLine();
-    WriteLineIndent("// Serialize the struct value");
-    WriteLineIndent("func (m *" + model_name + ") Serialize(value *" + struct_name + ") (int, error) {");
-    Indent(1);
-    WriteLineIndent("fbeBegin := m.CreateBegin()");
-    WriteLineIndent("err := m.model.Set(value)");
-    WriteLineIndent("fbeFullSize := m.CreateEnd(fbeBegin)");
-    WriteLineIndent("return fbeFullSize, err");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct model Deserialize() method
-    WriteLine();
-    WriteLineIndent("// Deserialize the struct value");
-    WriteLineIndent("func (m *" + model_name + ") Deserialize() (*" + struct_name + ", int, error) {");
-    Indent(1);
-    WriteLineIndent("value := New" + struct_name + "()");
-    WriteLineIndent("fbeFullSize, err := m.DeserializeValue(value)");
-    WriteLineIndent("return value, fbeFullSize, err");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct model DeserializeValue() method
-    WriteLine();
-    WriteLineIndent("// Deserialize the struct value by the given pointer");
-    WriteLineIndent("func (m *" + model_name + ") DeserializeValue(value *" + struct_name + ") (int, error) {");
-    Indent(1);
-    WriteLineIndent("if (m.buffer.Offset() + m.model.FBEOffset() - 4) > m.buffer.Size() {");
-    Indent(1);
-    WriteLineIndent("value = New" + struct_name + "()");
-    WriteLineIndent("return 0, nil");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fbeFullSize := int(fbe.ReadUInt32(m.buffer.Data(), m.buffer.Offset() + m.model.FBEOffset() - 4))");
-    WriteLineIndent("if fbeFullSize < m.model.FBESize() {");
-    Indent(1);
-    WriteLineIndent("value = New" + struct_name + "()");
-    WriteLineIndent("return 0, errors.New(\"model is broken\")");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("err := m.model.GetValue(value)");
-    WriteLineIndent("return fbeFullSize, err");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct model Next() method
-    WriteLine();
-    WriteLineIndent("// Move to the next struct value");
-    WriteLineIndent("func (m *" + model_name + ") Next(prev int) {");
-    Indent(1);
-    WriteLineIndent("m.model.FBEShift(prev)");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate footer
-    GenerateFooter();
-
-    // Store the output file
-    WriteEnd();
-    Store(output);
-}
-
-void GeneratorGo::GenerateStructFinalModel(const std::shared_ptr<Package>& p, const std::shared_ptr<StructType>& s, const CppCommon::Path& path)
-{
-    std::string struct_name = ConvertToUpper(*s->name);
-    std::string final_model_name = "FinalModel" + struct_name;
-
-    // Generate the output file
-    CppCommon::Path output = path / (final_model_name + ".go");
-    WriteBegin();
-
-    // Generate header
-    GenerateHeader(CppCommon::Path(_input).filename().string());
-
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
-
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
-
-    std::string base_type = (s->base && !s->base->empty()) ? ConvertTypeName(*s->base, false) : "";
-    std::string base_final_model = (s->base && !s->base->empty()) ? ConvertModelName(*s->base, "FinalModel") : "";
-    std::string base_final_name = "FinalModel" + ConvertBaseName(base_type);
-
-    // Generate struct final model type
-    WriteLine();
-    WriteLineIndent("// Fast Binary Encoding " + struct_name + " final model");
-    WriteLineIndent("type " + final_model_name + " struct {");
-    Indent(1);
-    WriteLineIndent("buffer *fbe.Buffer  // Final model buffer");
-    WriteLineIndent("offset int          // Final model buffer offset");
-    if ((s->base && !s->base->empty()) || (s->body && !s->body->fields.empty()))
-    {
-        WriteLine();
-        if (!base_type.empty())
-            WriteLineIndent("*" + base_final_model);
-        if (s->body)
-            for (const auto& field : s->body->fields)
-                WriteLineIndent(ConvertToUpper(*field->name) + " *" + ConvertTypeFieldDeclaration(*field, true));
+  // Generate struct key String() method
+  WriteLine();
+  WriteLineIndent("// Convert " + struct_name + " flags key to string");
+  WriteLineIndent("func (k *" + struct_name + "Key) String() string {");
+  Indent(1);
+  WriteLineIndent("var sb strings.Builder");
+  WriteLineIndent("sb.WriteString(\"" + *s->name + "Key(\")");
+  bool first = true;
+  if (!base_type.empty()) {
+    WriteLineIndent("sb.WriteString(k." + ConvertBaseName(base_type) +
+                    "Key.String())");
+    first = false;
+  }
+  if (s->body) {
+    for (const auto &field : s->body->fields) {
+      if (field->keys) {
+        WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") +
+                        *field->name + "=\")");
+        if (field->attributes && field->attributes->hidden)
+          WriteLineIndent("sb.WriteString(\"***\")");
+        else if (field->array) {
+          WriteLineIndent("if true {");
+          Indent(1);
+          WriteLineIndent("first := true");
+          WriteLineIndent(
+              "sb.WriteString(\"[\" + strconv.FormatInt(int64(len(k." +
+              ConvertToUpper(*field->name) + ")), 10) + \"][\")");
+          WriteLineIndent("for _, v := range k." +
+                          ConvertToUpper(*field->name) + " {");
+          Indent(1);
+          WriteOutputStreamValue(*field->type, "v", field->optional, true);
+          WriteLineIndent("first = false");
+          Indent(-1);
+          WriteLineIndent("}");
+          WriteLineIndent("sb.WriteString(\"]\")");
+          Indent(-1);
+          WriteLineIndent("} else {");
+          Indent(1);
+          WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") +
+                          *field->name + "=[0][]\")");
+          Indent(-1);
+          WriteLineIndent("}");
+        } else if (field->vector) {
+          WriteLineIndent("if k." + ConvertToUpper(*field->name) + " != nil {");
+          Indent(1);
+          WriteLineIndent("first := true");
+          WriteLineIndent(
+              "sb.WriteString(\"[\" + strconv.FormatInt(int64(len(k." +
+              ConvertToUpper(*field->name) + ")), 10) + \"][\")");
+          WriteLineIndent("for _, v := range k." +
+                          ConvertToUpper(*field->name) + " {");
+          Indent(1);
+          WriteOutputStreamValue(*field->type, "v", field->optional, true);
+          WriteLineIndent("first = false");
+          Indent(-1);
+          WriteLineIndent("}");
+          WriteLineIndent("sb.WriteString(\"]\")");
+          Indent(-1);
+          WriteLineIndent("} else {");
+          Indent(1);
+          WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") +
+                          *field->name + "=[0][]\")");
+          Indent(-1);
+          WriteLineIndent("}");
+        } else if (field->list) {
+          WriteLineIndent("if k." + ConvertToUpper(*field->name) + " != nil {");
+          Indent(1);
+          WriteLineIndent("first := true");
+          WriteLineIndent(
+              "sb.WriteString(\"[\" + strconv.FormatInt(int64(len(k." +
+              ConvertToUpper(*field->name) + ")), 10) + \"]<\")");
+          WriteLineIndent("for _, v := range k." +
+                          ConvertToUpper(*field->name) + " {");
+          Indent(1);
+          WriteOutputStreamValue(*field->type, "v", field->optional, true);
+          WriteLineIndent("first = false");
+          Indent(-1);
+          WriteLineIndent("}");
+          WriteLineIndent("sb.WriteString(\">\")");
+          Indent(-1);
+          WriteLineIndent("} else {");
+          Indent(1);
+          WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") +
+                          *field->name + "=[0]<>\")");
+          Indent(-1);
+          WriteLineIndent("}");
+        } else if (field->set) {
+          WriteLineIndent("if k." + ConvertToUpper(*field->name) + " != nil {");
+          Indent(1);
+          WriteLineIndent("first := true");
+          WriteLineIndent("sb.WriteString(\"[\" + strconv.FormatInt(int64(k." +
+                          ConvertToUpper(*field->name) +
+                          ".Size()), 10) + \"]{\")");
+          WriteLineIndent("for _, v := range k." +
+                          ConvertToUpper(*field->name) + " {");
+          Indent(1);
+          WriteOutputStreamValue(*field->type, "v", field->optional, true);
+          WriteLineIndent("first = false");
+          Indent(-1);
+          WriteLineIndent("}");
+          WriteLineIndent("sb.WriteString(\"}\")");
+          Indent(-1);
+          WriteLineIndent("} else {");
+          Indent(1);
+          WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") +
+                          *field->name + "=[0]{}\")");
+          Indent(-1);
+          WriteLineIndent("}");
+        } else if (field->map) {
+          WriteLineIndent("if k." + ConvertToUpper(*field->name) + " != nil {");
+          Indent(1);
+          WriteLineIndent("first := true");
+          WriteLineIndent(
+              "sb.WriteString(\"[\" + strconv.FormatInt(int64(len(k." +
+              ConvertToUpper(*field->name) + ")), 10) + \"]<{\")");
+          WriteLineIndent(
+              "for " + std::string(IsGoType(*field->key) ? "k" : "_") +
+              ", v := range k." + ConvertToUpper(*field->name) + " {");
+          Indent(1);
+          WriteOutputStreamValue(*field->key,
+                                 (IsGoType(*field->key) ? "k" : "v.Key"), false,
+                                 true);
+          WriteLineIndent("sb.WriteString(\"->\")");
+          WriteOutputStreamValue(*field->type,
+                                 (IsGoType(*field->key) ? "v" : "v.Value"),
+                                 field->optional, false);
+          WriteLineIndent("first = false");
+          Indent(-1);
+          WriteLineIndent("}");
+          WriteLineIndent("sb.WriteString(\"}>\")");
+          Indent(-1);
+          WriteLineIndent("} else {");
+          Indent(1);
+          WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") +
+                          *field->name + "=[0]<{}>\")");
+          Indent(-1);
+          WriteLineIndent("}");
+        } else if (field->hash) {
+          WriteLineIndent("if k." + ConvertToUpper(*field->name) + " != nil {");
+          Indent(1);
+          WriteLineIndent("first := true");
+          WriteLineIndent(
+              "sb.WriteString(\"[\" + strconv.FormatInt(int64(len(k." +
+              ConvertToUpper(*field->name) + ")), 10) + \"][{\")");
+          WriteLineIndent(
+              "for " + std::string(IsGoType(*field->key) ? "k" : "_") +
+              ", v := range k." + ConvertToUpper(*field->name) + " {");
+          Indent(1);
+          WriteOutputStreamValue(*field->key,
+                                 (IsGoType(*field->key) ? "k" : "v.Key"), false,
+                                 true);
+          WriteLineIndent("sb.WriteString(\"->\")");
+          WriteOutputStreamValue(*field->type,
+                                 (IsGoType(*field->key) ? "v" : "v.Value"),
+                                 field->optional, false);
+          WriteLineIndent("first = false");
+          Indent(-1);
+          WriteLineIndent("}");
+          WriteLineIndent("sb.WriteString(\"}]\")");
+          Indent(-1);
+          WriteLineIndent("} else {");
+          Indent(1);
+          WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") +
+                          *field->name + "=[0][{}]\")");
+          Indent(-1);
+          WriteLineIndent("}");
+        } else
+          WriteOutputStreamValue(*field->type,
+                                 "k." + ConvertToUpper(*field->name),
+                                 field->optional, false);
+        first = false;
+      }
     }
-    Indent(-1);
-    WriteLineIndent("}");
+  }
+  WriteLineIndent("sb.WriteString(\")\")");
+  WriteLineIndent("return sb.String()");
+  Indent(-1);
+  WriteLineIndent("}");
 
-    // Generate struct final model constructor
-    WriteLine();
-    WriteLineIndent("// Create a new " + struct_name + " final model");
-    WriteLineIndent("func New" + final_model_name + "(buffer *fbe.Buffer, offset int) *" + final_model_name + " {");
-    Indent(1);
-    WriteLineIndent("fbeResult := " + final_model_name + "{buffer: buffer, offset: offset}");
-    if (!base_type.empty())
-        WriteLineIndent("fbeResult." + base_final_name + " = " + ConvertModelName(*s->base, "NewFinalModel") + "(buffer, 0)");
-    if (s->body)
-        for (const auto& field : s->body->fields)
-            WriteLineIndent("fbeResult." + ConvertToUpper(*field->name) + " = " + ConvertTypeFieldInitialization(*field, "0", true));
-    WriteLineIndent("return &fbeResult");
-    Indent(-1);
-    WriteLineIndent("}");
+  // Generate struct body
+  WriteLine();
+  WriteLineIndent("// " + struct_name + " struct");
+  WriteLineIndent("type " + struct_name + " struct {");
+  Indent(1);
+  if (!base_type.empty())
+    WriteLineIndent("*" + base_type);
+  if (s->body)
+    for (const auto &field : s->body->fields)
+      WriteLineIndent(ConvertToUpper(*field->name) + " " +
+                      ConvertTypeName(*field) + " `json:\"" + *field->name +
+                      "\"`");
+  Indent(-1);
+  WriteLineIndent("}");
 
-    // Generate struct final model FBEAllocationSize() method
-    WriteLine();
-    WriteLineIndent("// Get the allocation size");
-    WriteLineIndent("func (fm *" + final_model_name + ") FBEAllocationSize(fbeValue *" + struct_name + ") int {");
-    Indent(1);
-    WriteLineIndent("fbeResult := 0 +");
-    Indent(1);
-    if (!base_type.empty())
-        WriteLineIndent("fm." + base_final_name + ".FBEAllocationSize(fbeValue." + ConvertBaseName(base_type) + ") + ");
-    if (s->body)
-    {
-        for (const auto& field : s->body->fields)
-        {
-            if (field->array)
-                WriteLineIndent("fm." + ConvertToUpper(*field->name) + ".FBEAllocationSize(fbeValue." + ConvertToUpper(*field->name) + "[:]) +");
-            else if (field->vector || field->list || field->set || field->map || field->hash || field->optional)
-                WriteLineIndent("fm." + ConvertToUpper(*field->name) + ".FBEAllocationSize(fbeValue." + ConvertToUpper(*field->name) + ") +");
-            else if (!IsGoType(*field->type))
-                WriteLineIndent("fm." + ConvertToUpper(*field->name) + ".FBEAllocationSize(&fbeValue." + ConvertToUpper(*field->name) + ") +");
-            else
-                WriteLineIndent("fm." + ConvertToUpper(*field->name) + ".FBEAllocationSize(fbeValue." + ConvertToUpper(*field->name) + ") +");
-        }
+  // Generate struct constructor
+  WriteLine();
+  WriteLineIndent("// Create a new " + struct_name + " struct");
+  WriteLineIndent("func New" + struct_name + "() *" + struct_name + " {");
+  Indent(1);
+  WriteLineIndent("return &" + struct_name + "{");
+  Indent(1);
+  if (!base_type.empty())
+    WriteLineIndent(ConvertBaseName(base_type) + ": " +
+                    ConvertNewName(base_type) + "(),");
+  if (s->body) {
+    for (const auto &field : s->body->fields) {
+      WriteIndent(ConvertToUpper(*field->name) + ": ");
+      if (field->value)
+        Write(ConvertConstant(*field->type, *field->value, field->optional));
+      else
+        Write(ConvertDefault(*field));
+      WriteLine(",");
     }
-    WriteLineIndent("0");
-    Indent(-1);
-    WriteLineIndent("return fbeResult");
-    Indent(-1);
-    WriteLineIndent("}");
+  }
+  Indent(-1);
+  WriteLineIndent("}");
+  Indent(-1);
+  WriteLineIndent("}");
 
-    // Generate struct final model FBESize() method
-    WriteLine();
-    WriteLineIndent("// Get the final size");
-    WriteLineIndent("func (fm *" + final_model_name + ") FBESize() int { return 0 }");
-
-    // Generate struct final model FBEExtra() method
-    WriteLine();
-    WriteLineIndent("// Get the final extra size");
-    WriteLineIndent("func (fm *" + final_model_name + ") FBEExtra() int { return 0 }");
-
-    // Generate struct final model FBEType() method
-    WriteLine();
-    WriteLineIndent("// Get the final type");
-    if (s->base && !s->base->empty() && (s->type == 0))
-        WriteLineIndent("func (fm *" + final_model_name + ") FBEType() int { return fm." + base_final_name + ".FBEType() }");
-    else
-        WriteLineIndent("func (fm *" + final_model_name + ") FBEType() int { return " + std::to_string(s->type) + " }");
-
-    // Generate struct final model FBEOffset() methods
-    WriteLine();
-    WriteLineIndent("// Get the final offset");
-    WriteLineIndent("func (fm *" + final_model_name + ") FBEOffset() int { return fm.offset }");
-    WriteLineIndent("// Set the final offset");
-    WriteLineIndent("func (fm *" + final_model_name + ") SetFBEOffset(value int) { fm.offset = value }");
-
-    // Generate struct final model FBEShift() methods
-    WriteLine();
-    WriteLineIndent("// Shift the current final offset");
-    WriteLineIndent("func (fm *" + final_model_name + ") FBEShift(size int) { fm.offset += size }");
-    WriteLineIndent("// Unshift the current final offset");
-    WriteLineIndent("func (fm *" + final_model_name + ") FBEUnshift(size int) { fm.offset -= size }");
-
-    // Generate struct final model Verify() methods
-    WriteLine();
-    WriteLineIndent("// Check if the struct value is valid");
-    WriteLineIndent("func (fm *" + final_model_name + ") Verify() int {");
-    Indent(1);
-    WriteLineIndent("fm.buffer.Shift(fm.FBEOffset())");
-    WriteLineIndent("fbeResult := fm.VerifyFields()");
-    WriteLineIndent("fm.buffer.Unshift(fm.FBEOffset())");
-    WriteLineIndent("return fbeResult");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("// Check if the struct fields are valid");
-    WriteLineIndent("func (fm *" + final_model_name + ") VerifyFields() int {");
-    Indent(1);
-    if ((s->base && !s->base->empty()) || (s->body && !s->body->fields.empty()))
-    {
-        WriteLineIndent("fbeCurrentOffset := 0");
-        WriteLineIndent("fbeFieldSize := 0");
-        WriteLine();
-        if (!base_type.empty())
-        {
-            WriteLine();
-            WriteLineIndent("fm." + base_final_name + ".SetFBEOffset(fbeCurrentOffset)");
-            WriteLineIndent("if fbeFieldSize = fm." + base_final_name + ".VerifyFields(); fbeFieldSize == fbe.MaxInt {");
-            Indent(1);
-            WriteLineIndent("return fbe.MaxInt");
-            Indent(-1);
-            WriteLineIndent("}");
-            WriteLineIndent("fbeCurrentOffset += fbeFieldSize");
-        }
-        if (s->body)
-        {
-            for (const auto& field : s->body->fields)
-            {
-                WriteLine();
-                WriteLineIndent("fm." + ConvertToUpper(*field->name) + ".SetFBEOffset(fbeCurrentOffset)");
-                WriteLineIndent("if fbeFieldSize = fm." + ConvertToUpper(*field->name) + ".Verify(); fbeFieldSize == fbe.MaxInt {");
-                Indent(1);
-                WriteLineIndent("return fbe.MaxInt");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLineIndent("fbeCurrentOffset += fbeFieldSize");
-            }
-        }
-        WriteLine();
-        WriteLineIndent("return fbeCurrentOffset");
+  // Generate struct constructor from the given field values
+  WriteLine();
+  WriteLineIndent("// Create a new " + struct_name +
+                  " struct from the given field values");
+  WriteIndent("func New" + struct_name + "FromFieldValues(");
+  first = true;
+  if (!base_type.empty()) {
+    Write("Parent *" + base_type);
+    first = false;
+  }
+  if (s->body) {
+    for (const auto &field : s->body->fields) {
+      Write(std::string(first ? "" : ", ") + ConvertToUpper(*field->name) +
+            " " + ConvertTypeName(*field));
+      first = false;
     }
-    else
-        WriteLineIndent("return 0");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct final model Get() methods
-    WriteLine();
-    WriteLineIndent("// Get the struct value");
-    WriteLineIndent("func (fm *" + final_model_name + ") Get() (*" + struct_name + ", int, error) {");
-    Indent(1);
-    WriteLineIndent("fbeResult := New" + struct_name + "()");
-    WriteLineIndent("fbeSize, err := fm.GetValue(fbeResult)");
-    WriteLineIndent("return fbeResult, fbeSize, err");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("// Get the struct value by the given pointer");
-    WriteLineIndent("func (fm *" + final_model_name + ") GetValue(fbeValue *" + struct_name + ") (int, error) {");
-    Indent(1);
-    WriteLineIndent("fm.buffer.Shift(fm.FBEOffset())");
-    WriteLineIndent("fbeSize, err := fm.GetFields(fbeValue)");
-    WriteLineIndent("fm.buffer.Unshift(fm.FBEOffset())");
-    WriteLineIndent("return fbeSize, err");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("// Get the struct fields values");
-    WriteLineIndent("func (fm *" + final_model_name + ") GetFields(fbeValue *" + struct_name + ") (int, error) {");
-    Indent(1);
-    if ((s->base && !s->base->empty()) || (s->body && !s->body->fields.empty()))
-    {
-        WriteLineIndent("var err error = nil");
-        WriteLineIndent("fbeCurrentSize := 0");
-        WriteLineIndent("fbeCurrentOffset := 0");
-        WriteLineIndent("fbeFieldSize := 0");
-        if (!base_type.empty())
-        {
-            WriteLine();
-            WriteLineIndent("fm." + base_final_name + ".SetFBEOffset(fbeCurrentOffset)");
-            WriteLineIndent("if fbeFieldSize, err = fm." + base_final_name + ".GetFields(fbeValue." + ConvertBaseName(base_type) + "); err != nil {");
-            Indent(1);
-            WriteLineIndent("return fbeCurrentSize, err");
-            Indent(-1);
-            WriteLineIndent("}");
-            WriteLineIndent("fbeCurrentOffset += fbeFieldSize");
-            WriteLineIndent("fbeCurrentSize += fbeFieldSize");
-        }
-        if (s->body)
-        {
-            for (const auto& field : s->body->fields)
-            {
-                WriteLine();
-                WriteLineIndent("fm." + ConvertToUpper(*field->name) + ".SetFBEOffset(fbeCurrentOffset)");
-                if (field->array)
-                    WriteLineIndent("if slice, size, err := fm." + ConvertToUpper(*field->name) + ".Get(); err != nil {");
-                else if (field->vector || field->list || field->set || field->map || field->hash || field->optional)
-                    WriteLineIndent("if fbeValue." + ConvertToUpper(*field->name) + ", fbeFieldSize, err = fm." + ConvertToUpper(*field->name) + ".Get(); err != nil {");
-                else if (!IsGoType(*field->type))
-                    WriteLineIndent("if fbeFieldSize, err = fm." + ConvertToUpper(*field->name) + ".GetValue(&fbeValue." + ConvertToUpper(*field->name) + "); err != nil {");
-                else
-                    WriteLineIndent("if fbeValue." + ConvertToUpper(*field->name) + ", fbeFieldSize, err = fm." + ConvertToUpper(*field->name) + ".Get(); err != nil {");
-                Indent(1);
-                WriteLineIndent("return fbeCurrentSize, err");
-                Indent(-1);
-                if (field->array)
-                {
-                    WriteLineIndent("} else {");
-                    Indent(1);
-                    WriteLineIndent("copy(fbeValue." + ConvertToUpper(*field->name) + "[:], slice)");
-                    WriteLineIndent("fbeFieldSize = size");
-                    Indent(-1);
-                }
-                WriteLineIndent("}");
-                WriteLineIndent("fbeCurrentOffset += fbeFieldSize");
-                WriteLineIndent("fbeCurrentSize += fbeFieldSize");
-            }
-        }
-        WriteLine();
-        WriteLineIndent("return fbeCurrentSize, err");
+  }
+  WriteLine(") *" + struct_name + " {");
+  Indent(1);
+  WriteIndent("return &" + struct_name + "{");
+  first = true;
+  if (!base_type.empty()) {
+    Write("Parent");
+    first = false;
+  }
+  if (s->body) {
+    for (const auto &field : s->body->fields) {
+      Write(std::string(first ? "" : ", ") + ConvertToUpper(*field->name));
+      first = false;
     }
-    else
-        WriteLineIndent("return 0, nil");
+  }
+  WriteLine("}");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  if (JSON()) {
+    // Generate struct JSON constructor
+    WriteLine();
+    WriteLineIndent("// Create a new " + struct_name + " struct from JSON");
+    WriteLineIndent("func New" + struct_name + "FromJSON(buffer []byte) (*" +
+                    struct_name + ", error) {");
+    Indent(1);
+    WriteLineIndent("result := *New" + struct_name + "()");
+    WriteLineIndent("err := fbe.Json.Unmarshal(buffer, &result)");
+    WriteLineIndent("if err != nil {");
+    Indent(1);
+    WriteLineIndent("return nil, err");
     Indent(-1);
     WriteLineIndent("}");
-
-    // Generate struct final model Set() methods
-    WriteLine();
-    WriteLineIndent("// Set the struct value");
-    WriteLineIndent("func (fm *" + final_model_name + ") Set(fbeValue *" + struct_name + ") (int, error) {");
-    Indent(1);
-    WriteLineIndent("fm.buffer.Shift(fm.FBEOffset())");
-    WriteLineIndent("fbeResult, err := fm.SetFields(fbeValue)");
-    WriteLineIndent("fm.buffer.Unshift(fm.FBEOffset())");
-    WriteLineIndent("return fbeResult, err");
+    WriteLineIndent("return &result, nil");
     Indent(-1);
     WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("// Set the struct fields values");
-    WriteLineIndent("func (fm *" + final_model_name + ") SetFields(fbeValue *" + struct_name + ") (int, error) {");
-    Indent(1);
-    if ((s->base && !s->base->empty()) || (s->body && !s->body->fields.empty()))
-    {
-        WriteLineIndent("var err error = nil");
-        WriteLineIndent("fbeCurrentSize := 0");
-        WriteLineIndent("fbeCurrentOffset := 0");
-        WriteLineIndent("fbeFieldSize := 0");
-        if (!base_type.empty())
-        {
-            WriteLine();
-            WriteLineIndent("fm." + base_final_name + ".SetFBEOffset(fbeCurrentOffset)");
-            WriteLineIndent("if fbeFieldSize, err = fm." + base_final_name + ".SetFields(fbeValue." + ConvertBaseName(base_type) + "); err != nil {");
-            Indent(1);
-            WriteLineIndent("return fbeCurrentSize, err");
-            Indent(-1);
-            WriteLineIndent("}");
-            WriteLineIndent("fbeCurrentOffset += fbeFieldSize");
-            WriteLineIndent("fbeCurrentSize += fbeFieldSize");
-        }
-        if (s->body)
-        {
-            for (const auto& field : s->body->fields)
-            {
-                WriteLine();
-                WriteLineIndent("fm." + ConvertToUpper(*field->name) + ".SetFBEOffset(fbeCurrentOffset)");
-                if (field->array)
-                    WriteLineIndent("if fbeFieldSize, err = fm." + ConvertToUpper(*field->name) + ".Set(fbeValue." + ConvertToUpper(*field->name) + "[:]); err != nil {");
-                else
-                    WriteLineIndent("if fbeFieldSize, err = fm." + ConvertToUpper(*field->name) + ".Set(" + ((IsGoType(*field->type) || field->vector || field->list || field->set || field->map || field->hash || field->optional) ? "" : "&") + "fbeValue." + ConvertToUpper(*field->name) + "); err != nil {");
-                Indent(1);
-                WriteLineIndent("return fbeCurrentSize, err");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLineIndent("fbeCurrentOffset += fbeFieldSize");
-                WriteLineIndent("fbeCurrentSize += fbeFieldSize");
-            }
-        }
-        WriteLine();
-        WriteLineIndent("return fbeCurrentSize, err");
-    }
-    else
-        WriteLineIndent("return 0, nil");
-    Indent(-1);
-    WriteLineIndent("}");
+  }
 
-    // Generate footer
-    GenerateFooter();
+  // Generate struct Copy() method
+  WriteLine();
+  WriteLineIndent("// Struct shallow copy");
+  WriteLineIndent("func (s *" + struct_name + ") Copy() *" + struct_name +
+                  " {");
+  Indent(1);
+  WriteLineIndent("var result = *s");
+  WriteLineIndent("return &result");
+  Indent(-1);
+  WriteLineIndent("}");
 
-    // Store the output file
-    WriteEnd();
-    Store(output);
-}
+  // Generate struct Clone() method
+  WriteLine();
+  WriteLineIndent("// Struct deep clone");
+  WriteLineIndent("func (s *" + struct_name + ") Clone() *" + struct_name +
+                  " {");
+  Indent(1);
+  WriteLineIndent("// Serialize the struct to the FBE stream");
+  WriteLineIndent("writer := New" + struct_name +
+                  "Model(fbe.NewEmptyBuffer())");
+  WriteLineIndent("_, _ = writer.Serialize(s)");
+  WriteLine();
+  WriteLineIndent("// Deserialize the struct from the FBE stream");
+  WriteLineIndent("reader := New" + struct_name + "Model(writer.Buffer())");
+  WriteLineIndent("result, _, _ := reader.Deserialize()");
+  WriteLineIndent("return result");
+  Indent(-1);
+  WriteLineIndent("}");
 
-void GeneratorGo::GenerateStructModelFinal(const std::shared_ptr<Package>& p, const std::shared_ptr<StructType>& s, const CppCommon::Path& path)
-{
-    std::string struct_name = ConvertToUpper(*s->name);
-    std::string model_name = struct_name + "FinalModel";
-    std::string final_model_name = "FinalModel" + struct_name;
+  // Generate struct Key() method
+  WriteLine();
+  WriteLineIndent("// Get the struct key");
+  WriteLineIndent("func (s *" + struct_name + ") Key() " + struct_name +
+                  "Key {");
+  Indent(1);
+  WriteLineIndent("return " + struct_name + "Key{");
+  Indent(1);
+  if (!base_type.empty())
+    WriteLineIndent(ConvertBaseName(base_type) + "Key: s." +
+                    ConvertBaseName(base_type) + ".Key(),");
+  if (s->body)
+    for (const auto &field : s->body->fields)
+      if (field->keys)
+        WriteLineIndent(ConvertToUpper(*field->name) + ": s." +
+                        ConvertToUpper(*field->name) + ",");
+  Indent(-1);
+  WriteLineIndent("}");
+  Indent(-1);
+  WriteLineIndent("}");
 
-    // Generate the output file
-    CppCommon::Path output = path / (model_name + ".go");
-    WriteBegin();
+  // Generate struct Optional() method
+  WriteLine();
+  WriteLineIndent("// Convert struct to optional");
+  WriteLineIndent("func (s *" + struct_name + ") Optional() *" + struct_name +
+                  " {");
+  Indent(1);
+  WriteLineIndent("return s");
+  Indent(-1);
+  WriteLineIndent("}");
 
-    // Generate header
-    GenerateHeader(CppCommon::Path(_input).filename().string());
+  // Generate struct FBE type property
+  WriteLine();
+  WriteLineIndent("// Get the FBE type");
+  if (s->base && !s->base->empty() && (s->type == 0))
+    WriteLineIndent("func (s *" + struct_name + ") FBEType() int { return s." +
+                    ConvertBaseName(base_type) + ".FBEType() }");
+  else
+    WriteLineIndent("func (s *" + struct_name + ") FBEType() int { return " +
+                    std::to_string(s->type) + " }");
 
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
-
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
-
-    // Generate struct model final type
-    WriteLine();
-    WriteLineIndent("// Fast Binary Encoding " + struct_name + " final model");
-    WriteLineIndent("type " + model_name + " struct {");
-    Indent(1);
-    WriteLineIndent("// Model buffer");
-    WriteLineIndent("buffer *fbe.Buffer");
-    WriteLine();
-    WriteLineIndent("// Final model");
-    WriteLineIndent("model *" + final_model_name);
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct model final constructor
-    WriteLine();
-    WriteLineIndent("// Create a new " + struct_name + " final model");
-    WriteLineIndent("func New" + model_name + "(buffer *fbe.Buffer) *" + model_name + " {");
-    Indent(1);
-    WriteLineIndent("return &" + model_name + "{buffer: buffer, model: New" + final_model_name + "(buffer, 8)}");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct model final Buffer() & Model() methods
-    WriteLine();
-    WriteLineIndent("// Get the final model buffer");
-    WriteLineIndent("func (m *" + model_name + ") Buffer() *fbe.Buffer { return m.buffer }");
-    WriteLineIndent("// Get the final model");
-    WriteLineIndent("func (m *" + model_name + ") Model() *" + final_model_name + " { return m.model }");
-
-    // Generate struct model final FBEType() method
-    WriteLine();
-    WriteLineIndent("// // Get the final model type");
-    WriteLineIndent("func (m *" + model_name + ") FBEType() int { return m.model.FBEType() }");
-
-    // Generate struct model final Verify() method
-    WriteLine();
-    WriteLineIndent("// Check if the struct value is valid");
-    WriteLineIndent("func (m *" + model_name + ") Verify() bool {");
-    Indent(1);
-    WriteLineIndent("if (m.buffer.Offset() + m.model.FBEOffset() - 4) > m.buffer.Size() {");
-    Indent(1);
-    WriteLineIndent("return false");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fbeStructSize := int(fbe.ReadUInt32(m.buffer.Data(), m.buffer.Offset() + m.model.FBEOffset() - 8))");
-    WriteLineIndent("fbeStructType := int(fbe.ReadUInt32(m.buffer.Data(), m.buffer.Offset() + m.model.FBEOffset() - 4))");
-    WriteLineIndent("if (fbeStructSize <= 0) || (fbeStructType != m.FBEType()) {");
-    Indent(1);
-    WriteLineIndent("return false");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("return (8 + m.model.Verify()) == fbeStructSize");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct model final CreateBegin() method
-    WriteLine();
-    WriteLineIndent("// Create a new final model (begin phase)");
-    WriteLineIndent("func (m *" + model_name + ") CreateBegin() int {");
-    Indent(1);
-    WriteLineIndent("fbeBegin := m.buffer.Allocate(4 + m.model.FBESize())");
-    WriteLineIndent("return fbeBegin");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct model final CreateEnd() method
-    WriteLine();
-    WriteLineIndent("// Create a new final model (end phase)");
-    WriteLineIndent("func (m *" + model_name + ") CreateEnd(fbeBegin int) int {");
-    Indent(1);
-    WriteLineIndent("fbeEnd := m.buffer.Size()");
-    WriteLineIndent("fbeFullSize := fbeEnd - fbeBegin");
-    WriteLineIndent("fbe.WriteUInt32(m.buffer.Data(), m.buffer.Offset() + m.model.FBEOffset() - 4, uint32(fbeFullSize))");
-    WriteLineIndent("return fbeFullSize");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct model final Serialize() method
-    WriteLine();
-    WriteLineIndent("// Serialize the struct value");
-    WriteLineIndent("func (m *" + model_name + ") Serialize(value *" + struct_name + ") (int, error) {");
-    Indent(1);
-    WriteLineIndent("fbeInitialSize := m.buffer.Size()");
-    WriteLine();
-    WriteLineIndent("fbeStructType := m.FBEType()");
-    WriteLineIndent("fbeStructSize := 8 + m.model.FBEAllocationSize(value)");
-    WriteLineIndent("fbeStructOffset := m.buffer.Allocate(fbeStructSize) - m.buffer.Offset()");
-    WriteLineIndent("if (m.buffer.Offset() + fbeStructOffset + fbeStructSize) > m.buffer.Size() {");
-    Indent(1);
-    WriteLineIndent("return 0, errors.New(\"model is broken\")");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fbeStructSize, err := m.model.Set(value)");
-    WriteLineIndent("fbeStructSize += 8");
-    WriteLineIndent("m.buffer.Resize(fbeInitialSize + fbeStructSize)");
-    WriteLine();
-    WriteLineIndent("fbe.WriteUInt32(m.buffer.Data(), m.buffer.Offset() + m.model.FBEOffset() - 8, uint32(fbeStructSize))");
-    WriteLineIndent("fbe.WriteUInt32(m.buffer.Data(), m.buffer.Offset() + m.model.FBEOffset() - 4, uint32(fbeStructType))");
-    WriteLine();
-    WriteLineIndent("return fbeStructSize, err");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct model final Deserialize() method
-    WriteLine();
-    WriteLineIndent("// Deserialize the struct value");
-    WriteLineIndent("func (m *" + model_name + ") Deserialize() (*" + struct_name + ", int, error) {");
-    Indent(1);
-    WriteLineIndent("value := New" + struct_name + "()");
-    WriteLineIndent("fbeFullSize, err := m.DeserializeValue(value)");
-    WriteLineIndent("return value, fbeFullSize, err");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct model final DeserializeValue() method
-    WriteLine();
-    WriteLineIndent("// Deserialize the struct value by the given pointer");
-    WriteLineIndent("func (m *" + model_name + ") DeserializeValue(value *" + struct_name + ") (int, error) {");
-    Indent(1);
-    WriteLineIndent("if (m.buffer.Offset() + m.model.FBEOffset()) > m.buffer.Size() {");
-    Indent(1);
-    WriteLineIndent("value = New" + struct_name + "()");
-    WriteLineIndent("return 0, errors.New(\"model is broken\")");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fbeStructSize := int(fbe.ReadUInt32(m.buffer.Data(), m.buffer.Offset() + m.model.FBEOffset() - 8))");
-    WriteLineIndent("fbeStructType := int(fbe.ReadUInt32(m.buffer.Data(), m.buffer.Offset() + m.model.FBEOffset() - 4))");
-    WriteLineIndent("if (fbeStructSize <= 0) || (fbeStructType != m.FBEType()) {");
-    Indent(1);
-    WriteLineIndent("value = New" + struct_name + "()");
-    WriteLineIndent("return 8, errors.New(\"model is broken\")");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("fbeStructSize, err := m.model.GetValue(value)");
-    WriteLineIndent("return 8 + fbeStructSize, err");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate struct model final Next() method
-    WriteLine();
-    WriteLineIndent("// Move to the next struct value");
-    WriteLineIndent("func (m *" + model_name + ") Next(prev int) {");
-    Indent(1);
-    WriteLineIndent("m.model.FBEShift(prev)");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate footer
-    GenerateFooter();
-
-    // Store the output file
-    WriteEnd();
-    Store(output);
-}
-
-void GeneratorGo::GenerateProtocolVersion(const std::shared_ptr<Package>& p, const CppCommon::Path& path)
-{
-    // Generate the output file
-    CppCommon::Path output = path / "ProtocolVersion.go";
-    WriteBegin();
-
-    // Generate header
-    GenerateHeader(CppCommon::Path(_input).filename().string());
-
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
-
-    // Generate protocol version constants
-    WriteLine();
-    WriteLineIndent("// Protocol major version");
-    WriteLineIndent("const ProtocolVersionMajor = " + std::to_string(p->version->major));
-    WriteLineIndent("// Protocol minor version");
-    WriteLineIndent("const ProtocolVersionMinor = " + std::to_string(p->version->minor));
-
-    // Generate footer
-    GenerateFooter();
-
-    // Store the output file
-    WriteEnd();
-    Store(output);
-}
-
-void GeneratorGo::GenerateSender(const std::shared_ptr<Package>& p, const CppCommon::Path& path, bool final)
-{
-    std::string sender_name = std::string(final ? "Final" : "") + "Sender";
-
-    // Generate the output file
-    CppCommon::Path output = path / (sender_name + ".go");
-    WriteBegin();
-
-    // Generate header
-    GenerateHeader(CppCommon::Path(_input).filename().string());
-
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
-
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
-
-    // Generate sender type
-    WriteLine();
-    WriteLineIndent("// Fast Binary Encoding " + *p->name + (final ? " final " : " ") + "sender");
-    WriteLineIndent("type " + sender_name + " struct {");
-    Indent(1);
-    WriteLineIndent("*fbe.Sender");
-    if (p->body)
-    {
-        if (p->import)
-            for (const auto& import : p->import->imports)
-                WriteLineIndent(ConvertToLower(*import) + "Sender *" + *import + (final ? ".Final" : ".") + "Sender");
-        for (const auto& s : p->body->structs)
-            if (s->message)
-                WriteLineIndent(ConvertToLower(*s->name) + "Model *" + ConvertToUpper(*s->name) + (final ? "Final" : "") + "Model");
-    }
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate sender constructor
-    WriteLine();
-    WriteLineIndent("// Create a new " + *p->name + (final ? " final " : " ") + "sender with an empty buffer");
-    WriteLineIndent("func New" + sender_name + "() *" + sender_name + " {");
-    Indent(1);
-    WriteLineIndent("return New" + sender_name + "WithBuffer(fbe.NewEmptyBuffer())");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("// Create a new " + *p->name + (final ? " final " : " ") + "sender with the given buffer");
-    WriteLineIndent("func New" + sender_name + "WithBuffer(buffer *fbe.Buffer) *" + sender_name + " {");
-    Indent(1);
-    WriteLineIndent("return &" + sender_name + "{");
-    Indent(1);
-    WriteLineIndent("fbe.NewSender(buffer, " + std::string(final ? "true" : "false") + "),");
-    if (p->body)
-    {
-        if (p->import)
-            for (const auto& import : p->import->imports)
-                WriteLineIndent(*import + ".New" + (final ? "Final" : "") + "SenderWithBuffer(buffer),");
-        for (const auto& s : p->body->structs)
-            if (s->message)
-                WriteLineIndent("New" + ConvertToUpper(*s->name) + (final ? "Final" : "") + "Model(buffer),");
-    }
-    Indent(-1);
-    WriteLineIndent("}");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate sender imported senders
-    if (p->import)
-    {
-        WriteLine();
-        WriteLineIndent("// Imported senders");
-        WriteLine();
-        for (const auto& import : p->import->imports)
-            WriteLineIndent("func (s *" + sender_name + ") " + ConvertToUpper(*import) + "Sender" + "() *" + *import + (final ? ".Final" : ".") + "Sender" + " { return s." + ConvertToLower(*import) + "Sender" + " }");
-    }
-
-    // Generate sender models accessors
-    WriteLine();
-    WriteLineIndent("// Sender models accessors");
-    WriteLine();
-    if (p->body)
-        for (const auto& s : p->body->structs)
-            if (s->message)
-                WriteLineIndent("func (s *" + sender_name + ") " + ConvertToUpper(*s->name) + "Model" + "() *" + ConvertToUpper(*s->name) + (final ? "Final" : "") + "Model" + " { return s." + ConvertToLower(*s->name) + "Model" + " }");
-
-    // Generate sender methods
-    WriteLine();
-    WriteLineIndent("// Send methods");
-    WriteLine();
-    WriteLineIndent("func (s *" + sender_name + ") Send(value interface{}) (int, error) {");
-    Indent(1);
-    if (p->body)
-    {
-        WriteLineIndent("switch value := value.(type) {");
-        for (const auto& s : p->body->structs)
-        {
-            if (s->message)
-            {
-                WriteLineIndent("case *" + ConvertToUpper(*s->name) + ":");
-                Indent(1);
-                WriteLineIndent("if value.FBEType() == s." + ConvertToLower(*s->name) + "Model.FBEType() {");
-                Indent(1);
-                WriteLineIndent("return s.Send" + ConvertToUpper(*s->name) + "(value)");
-                Indent(-1);
-                WriteLineIndent("}");
-                Indent(-1);
-            }
-        }
-        WriteLineIndent("default:");
+  // Generate struct String() method
+  WriteLine();
+  WriteLineIndent("// Convert struct to string");
+  WriteLineIndent("func (s *" + struct_name + ") String() string {");
+  Indent(1);
+  WriteLineIndent("var sb strings.Builder");
+  WriteLineIndent("sb.WriteString(\"" + *s->name + "(\")");
+  first = true;
+  if (!base_type.empty()) {
+    WriteLineIndent("sb.WriteString(s." + ConvertBaseName(base_type) +
+                    ".String())");
+    first = false;
+  }
+  if (s->body) {
+    for (const auto &field : s->body->fields) {
+      WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") +
+                      *field->name + "=\")");
+      if (field->attributes && field->attributes->hidden)
+        WriteLineIndent("sb.WriteString(\"***\")");
+      else if (field->array) {
+        WriteLineIndent("if true {");
         Indent(1);
-        WriteLineIndent("_ = value");
-        WriteLineIndent("break");
+        WriteLineIndent("first := true");
+        WriteLineIndent(
+            "sb.WriteString(\"[\" + strconv.FormatInt(int64(len(s." +
+            ConvertToUpper(*field->name) + ")), 10) + \"][\")");
+        WriteLineIndent("for _, v := range s." + ConvertToUpper(*field->name) +
+                        " {");
+        Indent(1);
+        WriteOutputStreamValue(*field->type, "v", field->optional, true);
+        WriteLineIndent("first = false");
         Indent(-1);
         WriteLineIndent("}");
-        if (p->import)
-        {
-            for (const auto& import : p->import->imports)
-            {
-                WriteLineIndent("if result, err := s." + ConvertToLower(*import) + "Sender.Send(value); (result > 0) || (err != nil) {");
-                Indent(1);
-                WriteLineIndent("return result, err");
-                Indent(-1);
-                WriteLineIndent("}");
-            }
-        }
-    }
-    WriteLineIndent("return 0, nil");
-    Indent(-1);
-    WriteLineIndent("}");
-    if (p->body)
-    {
-        for (const auto& s : p->body->structs)
-        {
-            if (s->message)
-            {
-                WriteLine();
-                WriteLineIndent("func (s *" + sender_name + ") Send" + ConvertToUpper(*s->name) + "(value *" + ConvertToUpper(*s->name) + ") (int, error) {");
-                Indent(1);
-                WriteLineIndent("// Serialize the value into the FBE stream");
-                WriteLineIndent("serialized, err := s." + ConvertToLower(*s->name) + "Model.Serialize(value)");
-                WriteLineIndent("if serialized <= 0 {");
-                Indent(1);
-                WriteLineIndent("return 0, errors.New(\"" + *p->name + "." + *s->name + " serialization failed\")");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLineIndent("if err != nil {");
-                Indent(1);
-                WriteLineIndent("return 0, err");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLineIndent("if !s." + ConvertToLower(*s->name) + "Model.Verify() {");
-                Indent(1);
-                WriteLineIndent("return 0, errors.New(\"" + *p->name + "." + *s->name + " validation failed\")");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLine();
-                WriteLineIndent("// Log the value");
-                WriteLineIndent("if s.Logging() {");
-                Indent(1);
-                WriteLineIndent("message := value.String()");
-                WriteLineIndent("s.HandlerOnSendLog.OnSendLog(message)");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLine();
-                WriteLineIndent("// Send the serialized value");
-                WriteLineIndent("return s.SendSerialized(serialized)");
-                Indent(-1);
-                WriteLineIndent("}");
-            }
-        }
-    }
-
-    // Generate footer
-    GenerateFooter();
-
-    // Store the output file
-    WriteEnd();
-    Store(output);
-}
-
-void GeneratorGo::GenerateReceiver(const std::shared_ptr<Package>& p, const CppCommon::Path& path, bool final)
-{
-    std::string receiver_name = std::string(final ? "Final" : "") + "Receiver";
-
-    // Generate the output file
-    CppCommon::Path output = path / (receiver_name + ".go");
-    WriteBegin();
-
-    // Generate header
-    GenerateHeader(CppCommon::Path(_input).filename().string());
-
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
-
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
-
-    // Generate receiver interfaces
-    if (!final && p->body)
-    {
-        for (const auto& s : p->body->structs)
-        {
-            if (s->message)
-            {
-                std::string struct_name = ConvertToUpper(*s->name);
-                WriteLine();
-                WriteLineIndent("// Receive " + *s->name + " interface");
-                WriteLineIndent("type OnReceive" + struct_name + " interface {");
-                Indent(1);
-                WriteLineIndent("OnReceive" + struct_name + "(value *" + struct_name + ")");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLine();
-                WriteLineIndent("// Receive " + *s->name + " function");
-                WriteLineIndent("type OnReceive" + struct_name + "Func func(value *" + struct_name + ")");
-                WriteLineIndent("func (f OnReceive" + struct_name + "Func) OnReceive" + struct_name + "(value *" + struct_name + ") {");
-                Indent(1);
-                WriteLineIndent("f(value)");
-                Indent(-1);
-                WriteLineIndent("}");
-            }
-        }
-    }
-
-    // Generate receiver type
-    WriteLine();
-    WriteLineIndent("// Fast Binary Encoding " + *p->name + (final ? " final " : " ") + "receiver");
-    WriteLineIndent("type " + receiver_name + " struct {");
-    Indent(1);
-    WriteLineIndent("*fbe.Receiver");
-    if (p->import)
-        for (const auto& import : p->import->imports)
-            WriteLineIndent(ConvertToLower(*import) + "Receiver *" + *import + (final ? ".Final" : ".") + "Receiver");
-    if (p->body)
-    {
-        for (const auto& s : p->body->structs)
-        {
-            if (s->message)
-            {
-                WriteLineIndent(ConvertToLower(*s->name) + "Value *" + ConvertToUpper(*s->name));
-                WriteLineIndent(ConvertToLower(*s->name) + "Model *" + ConvertToUpper(*s->name) + (final ? "Final" : "") + "Model");
-            }
-        }
-
-        WriteLine();
-        for (const auto& s : p->body->structs)
-        {
-            if (s->message)
-            {
-                std::string struct_name = ConvertToUpper(*s->name);
-                WriteLineIndent("// Receive " + *s->name + " handler");
-                WriteLineIndent("HandlerOnReceive" + struct_name + " OnReceive" + struct_name);
-            }
-        }
-    }
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate receiver constructor
-    WriteLine();
-    WriteLineIndent("// Create a new " + *p->name + (final ? " final " : " ") + "receiver with an empty buffer");
-    WriteLineIndent("func New" + receiver_name + "() *" + receiver_name + " {");
-    Indent(1);
-    WriteLineIndent("return New" + receiver_name + "WithBuffer(fbe.NewEmptyBuffer())");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("// Create a new " + *p->name + (final ? " final " : " ") + "receiver with the given buffer");
-    WriteLineIndent("func New" + receiver_name + "WithBuffer(buffer *fbe.Buffer) *" + receiver_name + " {");
-    Indent(1);
-    WriteLineIndent("receiver := &" + receiver_name + "{");
-    Indent(1);
-    WriteLineIndent("fbe.NewReceiver(buffer, " + std::string(final ? "true" : "false") + "),");
-    if (p->import)
-        for (const auto& import : p->import->imports)
-            WriteLineIndent(*import + ".New" + (final ? "Final" : "") + "ReceiverWithBuffer(buffer),");
-    if (p->body)
-    {
-        for (const auto& s : p->body->structs)
-        {
-            if (s->message)
-            {
-                WriteLineIndent("New" + ConvertToUpper(*s->name) + "(),");
-                WriteLineIndent("New" + ConvertToUpper(*s->name) + (final ? "Final" : "") + "Model(buffer),");
-            }
-        }
-        for (size_t i = 0; i < p->body->structs.size(); ++i)
-            if (p->body->structs[i]->message)
-                WriteLineIndent("nil,");
-    }
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLineIndent("receiver.SetupHandlerOnReceive(receiver)");
-    for (const auto& s : p->body->structs)
-        if (s->message)
-            WriteLineIndent("receiver.SetupHandlerOnReceive" + ConvertToUpper(*s->name) + "Func(func(value *" + ConvertToUpper(*s->name) + ") {})");
-    WriteLineIndent("return receiver");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    if (p->import)
-    {
-        // Generate receiver imports
-        WriteLine();
-        WriteLineIndent("// Imported receivers");
-        WriteLine();
-        for (const auto& import : p->import->imports)
-        {
-            WriteLineIndent("// Get the " + *import + " receiver");
-            WriteLineIndent("func (r *" + receiver_name + ") " + ConvertToUpper(*import) + "Receiver() *" + *import + (final ? ".Final" : ".") + "Receiver { return r." + ConvertToLower(*import) + "Receiver }");
-            WriteLineIndent("// Set the " + *import + " receiver");
-            WriteLineIndent("func (r *" + receiver_name + ") Set" + ConvertToUpper(*import) + "Receiver(receiver *" + *import + (final ? ".Final" : ".") + "Receiver) { r." + ConvertToLower(*import) + "Receiver = receiver }");
-        }
-    }
-
-    // Generate receiver setup handlers
-    WriteLine();
-    WriteLineIndent("// Setup handlers");
-    WriteLineIndent("func (r *" + receiver_name + ") SetupHandlers(handlers interface{}) {");
-    Indent(1);
-    WriteLineIndent("r.Receiver.SetupHandlers(handlers)");
-    if (p->import)
-        for (const auto& import : p->import->imports)
-            WriteLineIndent("r." + ConvertToLower(*import) + "Receiver.SetupHandlers(handlers)");
-    if (p->body)
-    {
-        for (const auto& s : p->body->structs)
-        {
-            if (s->message)
-            {
-                std::string struct_name = ConvertToUpper(*s->name);
-                WriteLineIndent("if handler, ok := handlers.(OnReceive" + struct_name + "); ok {");
-                Indent(1);
-                WriteLineIndent("r.SetupHandlerOnReceive" + struct_name + "(handler)");
-                Indent(-1);
-                WriteLineIndent("}");
-            }
-        }
-    }
-    Indent(-1);
-    WriteLineIndent("}");
-    if (p->body)
-    {
-        WriteLine();
-        for (const auto& s : p->body->structs)
-        {
-            if (s->message)
-            {
-                std::string struct_name = ConvertToUpper(*s->name);
-                WriteLineIndent("// Setup receive " + *s->name + " handler");
-                WriteLineIndent("func (r *" + receiver_name + ") SetupHandlerOnReceive" + struct_name + "(handler OnReceive" + struct_name + ") { r.HandlerOnReceive" + struct_name + " = handler }");
-                WriteLineIndent("// Setup receive " + *s->name + " handler function");
-                WriteLineIndent("func (r *" + receiver_name + ") SetupHandlerOnReceive" + struct_name + "Func(function func(value *" + struct_name + ")) { r.HandlerOnReceive" + struct_name + " = OnReceive" + struct_name + "Func(function) }");
-            }
-        }
-    }
-
-
-    // Generate receiver message handler
-    WriteLine();
-    WriteLineIndent("// Receive message handler");
-    WriteLineIndent("func (r *" + receiver_name + ") OnReceive(fbeType int, buffer []byte) (bool, error) {");
-    Indent(1);
-    if (p->body)
-    {
-        WriteLineIndent("switch fbeType {");
-        for (const auto& s : p->body->structs)
-        {
-            if (s->message)
-            {
-                std::string struct_name = ConvertToUpper(*s->name);
-                std::string struct_model = ConvertToLower(*s->name) + "Model";
-                std::string struct_value = ConvertToLower(*s->name) + "Value";
-                WriteLineIndent("case r." + struct_model + ".FBEType():");
-                Indent(1);
-                WriteLineIndent("// Deserialize the value from the FBE stream");
-                WriteLineIndent("r." + struct_model + ".Buffer().Attach(buffer)");
-                WriteLineIndent("if !r." + struct_model + ".Verify() {");
-                Indent(1);
-                WriteLineIndent("return false, errors.New(\"" + *p->name + "." + *s->name + " validation failed\")");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLineIndent("deserialized, err := r." + struct_model + ".DeserializeValue(r." + struct_value + ")");
-                WriteLineIndent("if deserialized <= 0 {");
-                Indent(1);
-                WriteLineIndent("return false, errors.New(\"" + *p->name + "." + *s->name + " deserialization failed\")");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLineIndent("if err != nil {");
-                Indent(1);
-                WriteLineIndent("return false, err");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLine();
-                WriteLineIndent("// Log the value");
-                WriteLineIndent("if r.Logging() {");
-                Indent(1);
-                WriteLineIndent("message := r." + struct_value + ".String()");
-                WriteLineIndent("r.HandlerOnReceiveLog.OnReceiveLog(message)");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLine();
-                WriteLineIndent("// Call receive handler with deserialized value");
-                WriteLineIndent("r.HandlerOnReceive" + struct_name + ".OnReceive" + struct_name + "(r." + struct_value + ")");
-                WriteLineIndent("return true, nil");
-                Indent(-1);
-            }
-        }
-        WriteLineIndent("default:");
-        Indent(1);
-        WriteLineIndent("_ = fbeType");
-        WriteLineIndent("break");
-        Indent(-1);
-        WriteLineIndent("}");
-    }
-    if (p->import)
-    {
-        WriteLine();
-        for (const auto& import : p->import->imports)
-        {
-            WriteLineIndent("if r." + ConvertToLower(*import) + "Receiver != nil {");
-            Indent(1);
-            WriteLineIndent("if ok, err := r." + ConvertToLower(*import) + "Receiver.OnReceive(fbeType, buffer); ok {");
-            Indent(1);
-            WriteLineIndent("return ok, err");
-            Indent(-1);
-            WriteLineIndent("}");
-            Indent(-1);
-            WriteLineIndent("}");
-        }
-    }
-    WriteLine();
-    WriteLineIndent("return false, nil");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate footer
-    GenerateFooter();
-
-    // Store the output file
-    WriteEnd();
-    Store(output);
-}
-
-void GeneratorGo::GenerateProxy(const std::shared_ptr<Package>& p, const CppCommon::Path& path, bool final)
-{
-    std::string proxy_name = std::string(final ? "Final" : "") + "Proxy";
-
-    // Generate the output file
-    CppCommon::Path output = path / (proxy_name + ".go");
-    WriteBegin();
-
-    // Generate header
-    GenerateHeader(CppCommon::Path(_input).filename().string());
-
-    // Generate package
-    WriteLine();
-    WriteLineIndent("package " + *p->name);
-
-    // Generate imports
-    WriteLine();
-    GenerateImports(p);
-
-    // Generate proxy interfaces
-    if (p->body)
-    {
-        for (const auto& s : p->body->structs)
-        {
-            if (s->message)
-            {
-                std::string struct_name = ConvertToUpper(*s->name);
-                std::string struct_model = ConvertToUpper(*s->name) + (final ? "Final" : "") + "Model";
-                WriteLine();
-                WriteLineIndent("// Proxy " + *s->name + " interface");
-                WriteLineIndent("type OnProxy" + std::string(final ? "Final" : "") + struct_name + " interface {");
-                Indent(1);
-                WriteLineIndent("OnProxy" + struct_name + "(model *" + struct_model + ", fbeType int, buffer []byte)");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLine();
-                WriteLineIndent("// Proxy " + *s->name + " function");
-                WriteLineIndent("type OnProxy" + std::string(final ? "Final" : "") + struct_name + "Func func(model *" + struct_model + ", fbeType int, buffer []byte)");
-                WriteLineIndent("func (f OnProxy" + std::string(final ? "Final" : "") + struct_name + "Func) OnProxy" + struct_name + "(model *" + struct_model + ", fbeType int, buffer []byte) {");
-                Indent(1);
-                WriteLineIndent("f(model, fbeType, buffer)");
-                Indent(-1);
-                WriteLineIndent("}");
-            }
-        }
-    }
-
-    // Generate proxy type
-    WriteLine();
-    WriteLineIndent("// Fast Binary Encoding " + *p->name + (final ? " final " : " ") + "proxy");
-    WriteLineIndent("type " + proxy_name + " struct {");
-    Indent(1);
-    WriteLineIndent("*fbe.Receiver");
-    if (p->import)
-        for (const auto& import : p->import->imports)
-            WriteLineIndent(ConvertToLower(*import) + "Proxy *" + *import + (final ? ".Final" : ".") + "Proxy");
-    if (p->body)
-    {
-        for (const auto& s : p->body->structs)
-            if (s->message)
-                WriteLineIndent(ConvertToLower(*s->name) + "Model *" + ConvertToUpper(*s->name) + (final ? "Final" : "") + "Model");
-
-        WriteLine();
-        for (const auto& s : p->body->structs)
-        {
-            if (s->message)
-            {
-                std::string struct_name = ConvertToUpper(*s->name);
-
-                WriteLineIndent("// Proxy " + *s->name + " handler");
-                WriteLineIndent("HandlerOnProxy" + struct_name + " OnProxy" + std::string(final ? "Final" : "") + struct_name);
-            }
-        }
-    }
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate proxy constructor
-    WriteLine();
-    WriteLineIndent("// Create a new " + *p->name + (final ? " final " : " ") + "proxy with an empty buffer");
-    WriteLineIndent("func New" + proxy_name + "() *" + proxy_name + " {");
-    Indent(1);
-    WriteLineIndent("return New" + proxy_name + "WithBuffer(fbe.NewEmptyBuffer())");
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLine();
-    WriteLineIndent("// Create a new " + *p->name + (final ? " final " : " ") + "proxy with the given buffer");
-    WriteLineIndent("func New" + proxy_name + "WithBuffer(buffer *fbe.Buffer) *" + proxy_name + " {");
-    Indent(1);
-    WriteLineIndent("proxy := &" + proxy_name + "{");
-    Indent(1);
-    WriteLineIndent("fbe.NewReceiver(buffer, " + std::string(final ? "true" : "false") + "),");
-    if (p->import)
-        for (const auto& import : p->import->imports)
-            WriteLineIndent(*import + ".New" + (final ? "Final" : "") + "ProxyWithBuffer(buffer),");
-    if (p->body)
-    {
-        for (const auto& s : p->body->structs)
-            if (s->message)
-                WriteLineIndent("New" + ConvertToUpper(*s->name) + (final ? "Final" : "") + "Model(buffer),");
-        for (size_t i = 0; i < p->body->structs.size(); ++i)
-            if (p->body->structs[i]->message)
-                WriteLineIndent("nil,");
-    }
-    Indent(-1);
-    WriteLineIndent("}");
-    WriteLineIndent("proxy.SetupHandlerOnReceive(proxy)");
-    for (const auto& s : p->body->structs)
-    {
-        if (s->message)
-        {
-            std::string struct_model = ConvertToUpper(*s->name) + (final ? "Final" : "") + "Model";
-            WriteLineIndent("proxy.SetupHandlerOnProxy" + ConvertToUpper(*s->name) + "Func(func(model *" + struct_model + ", fbeType int, buffer []byte) {})");
-        }
-    }
-    WriteLineIndent("return proxy");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    if (p->import)
-    {
-        // Generate proxy imports
-        WriteLine();
-        WriteLineIndent("// Imported proxy");
-        WriteLine();
-        for (const auto& import : p->import->imports)
-        {
-            WriteLineIndent("// Get the " + *import + " proxy");
-            WriteLineIndent("func (p *" + proxy_name + ") " + ConvertToUpper(*import) + "Proxy() *" + *import + (final ? ".Final" : ".") + "Proxy { return p." + ConvertToLower(*import) + "Proxy }");
-            WriteLineIndent("// Set the " + *import + " proxy");
-            WriteLineIndent("func (p *" + proxy_name + ") Set" + ConvertToUpper(*import) + "Proxy(proxy *" + *import + (final ? ".Final" : ".") + "Proxy) { p." + ConvertToLower(*import) + "Proxy = proxy }");
-        }
-    }
-
-    // Generate proxy setup handlers
-    WriteLine();
-    WriteLineIndent("// Setup handlers");
-    WriteLineIndent("func (p *" + proxy_name + ") SetupHandlers(handlers interface{}) {");
-    Indent(1);
-    WriteLineIndent("p.Receiver.SetupHandlers(handlers)");
-    if (p->import)
-        for (const auto& import : p->import->imports)
-            WriteLineIndent("p." + ConvertToLower(*import) + "Proxy.SetupHandlers(handlers)");
-    if (p->body)
-    {
-        for (const auto& s : p->body->structs)
-        {
-            if (s->message)
-            {
-                std::string struct_name = ConvertToUpper(*s->name);
-                WriteLineIndent("if handler, ok := handlers.(OnProxy" + std::string(final ? "Final" : "") + struct_name + "); ok {");
-                Indent(1);
-                WriteLineIndent("p.SetupHandlerOnProxy" + struct_name + "(handler)");
-                Indent(-1);
-                WriteLineIndent("}");
-            }
-        }
-    }
-    Indent(-1);
-    WriteLineIndent("}");
-    if (p->body)
-    {
-        WriteLine();
-        for (const auto& s : p->body->structs)
-        {
-            if (s->message)
-            {
-                std::string struct_name = ConvertToUpper(*s->name);
-                std::string struct_model = ConvertToUpper(*s->name) + (final ? "Final" : "") + "Model";
-                WriteLineIndent("// Setup proxy " + *s->name + " handler");
-                WriteLineIndent("func (p *" + proxy_name + ") SetupHandlerOnProxy" + struct_name + "(handler OnProxy" + std::string(final ? "Final" : "") + struct_name + ") { p.HandlerOnProxy" + struct_name + " = handler }");
-                WriteLineIndent("// Setup proxy " + *s->name + " handler function");
-                WriteLineIndent("func (p *" + proxy_name + ") SetupHandlerOnProxy" + struct_name + "Func(function func(model *" + struct_model + ", fbeType int, buffer []byte)) { p.HandlerOnProxy" + struct_name + " = OnProxy" + std::string(final ? "Final" : "") + struct_name + "Func(function) }");
-            }
-        }
-    }
-
-
-    // Generate proxy message handler
-    WriteLine();
-    WriteLineIndent("// Receive message handler");
-    WriteLineIndent("func (p *" + proxy_name + ") OnReceive(fbeType int, buffer []byte) (bool, error) {");
-    Indent(1);
-    if (p->body)
-    {
-        WriteLineIndent("switch fbeType {");
-        for (const auto& s : p->body->structs)
-        {
-            if (s->message)
-            {
-                std::string struct_name = ConvertToUpper(*s->name);
-                std::string struct_model = ConvertToLower(*s->name) + "Model";
-                WriteLineIndent("case p." + struct_model + ".FBEType():");
-                Indent(1);
-                WriteLineIndent("// Attach the FBE stream to the proxy model");
-                WriteLineIndent("p." + struct_model + ".Buffer().Attach(buffer)");
-                WriteLineIndent("if !p." + struct_model + ".Verify() {");
-                Indent(1);
-                WriteLineIndent("return false, errors.New(\"" + *p->name + "." + *s->name + " validation failed\")");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLine();
-                WriteLineIndent("fbeBegin, err := p." + struct_model + ".model.GetBegin()");
-                WriteLineIndent("if fbeBegin == 0 {");
-                Indent(1);
-                WriteLineIndent("return false, err");
-                Indent(-1);
-                WriteLineIndent("}");
-                WriteLineIndent("// Call proxy handler");
-                WriteLineIndent("p.HandlerOnProxy" + struct_name + ".OnProxy" + struct_name + "(p." + struct_model + ", fbeType, buffer)");
-                WriteLineIndent("p." + struct_model + ".model.GetEnd(fbeBegin)");
-                WriteLineIndent("return true, nil");
-                Indent(-1);
-            }
-        }
-        WriteLineIndent("default:");
-        Indent(1);
-        WriteLineIndent("_ = fbeType");
-        WriteLineIndent("break");
-        Indent(-1);
-        WriteLineIndent("}");
-    }
-    if (p->import)
-    {
-        WriteLine();
-        for (const auto& import : p->import->imports)
-        {
-            WriteLineIndent("if p." + ConvertToLower(*import) + "Proxy != nil {");
-            Indent(1);
-            WriteLineIndent("if ok, err := p." + ConvertToLower(*import) + "Proxy.OnReceive(fbeType, buffer); ok {");
-            Indent(1);
-            WriteLineIndent("return ok, err");
-            Indent(-1);
-            WriteLineIndent("}");
-            Indent(-1);
-            WriteLineIndent("}");
-        }
-    }
-    WriteLine();
-    WriteLineIndent("return false, nil");
-    Indent(-1);
-    WriteLineIndent("}");
-
-    // Generate footer
-    GenerateFooter();
-
-    // Store the output file
-    WriteEnd();
-    Store(output);
-}
-
-bool GeneratorGo::IsPrimitiveType(const std::string& type)
-{
-    return ((type == "bool") || (type == "byte") ||
-            (type == "char") || (type == "wchar") ||
-            (type == "int8") || (type == "uint8") ||
-            (type == "int16") || (type == "uint16") ||
-            (type == "int32") || (type == "uint32") ||
-            (type == "int64") || (type == "uint64") ||
-            (type == "float") || (type == "double"));
-}
-
-bool GeneratorGo::IsGoType(const std::string& type)
-{
-    return IsPrimitiveType(type) || (type == "bytes") || (type == "decimal") || (type == "string") || (type == "timestamp") || (type == "uuid");
-}
-
-std::string GeneratorGo::ConvertToLower(const std::string& type)
-{
-    std::string result = CppCommon::StringUtils::ToTrim(type);
-    result[0] = std::tolower(result[0]);
-    return result;
-}
-
-std::string GeneratorGo::ConvertToUpper(const std::string& type)
-{
-    std::string result = CppCommon::StringUtils::ToTrim(type);
-    result[0] = std::toupper(result[0]);
-    return result;
-}
-
-std::string GeneratorGo::ConvertEnumBase(const std::string& type)
-{
-    if (type == "byte")
-        return "Byte";
-    else if (type == "char")
-        return "UInt8";
-    else if (type == "wchar")
-        return "UInt32";
-    else if (type == "int8")
-        return "Int8";
-    else if (type == "uint8")
-        return "UInt8";
-    else if (type == "int16")
-        return "Int16";
-    else if (type == "uint16")
-        return "UInt16";
-    else if (type == "int32")
-        return "Int32";
-    else if (type == "uint32")
-        return "UInt32";
-    else if (type == "int64")
-        return "Int64";
-    else if (type == "uint64")
-        return "UInt64";
-
-    yyerror("Unsupported enum base type - " + type);
-    return "";
-}
-
-std::string GeneratorGo::ConvertEnumSize(const std::string& type)
-{
-    if (type == "byte")
-        return "1";
-    else if (type == "char")
-        return "1";
-    else if (type == "wchar")
-        return "4";
-    else if (type == "int8")
-        return "1";
-    else if (type == "uint8")
-        return "1";
-    else if (type == "int16")
-        return "2";
-    else if (type == "uint16")
-        return "2";
-    else if (type == "int32")
-        return "4";
-    else if (type == "uint32")
-        return "4";
-    else if (type == "int64")
-        return "8";
-    else if (type == "uint64")
-        return "8";
-
-    yyerror("Unsupported enum base type - " + type);
-    return "";
-}
-
-std::string GeneratorGo::ConvertEnumType(const std::string& type)
-{
-    if (type == "byte")
-        return "byte";
-    else if (type == "char")
-        return "uint8";
-    else if (type == "wchar")
-        return "uint32";
-    else if (type == "int8")
-        return "int8";
-    else if (type == "uint8")
-        return "uint8";
-    else if (type == "int16")
-        return "int16";
-    else if (type == "uint16")
-        return "uint16";
-    else if (type == "int32")
-        return "int32";
-    else if (type == "uint32")
-        return "uint32";
-    else if (type == "int64")
-        return "int64";
-    else if (type == "uint64")
-        return "uint64";
-
-    yyerror("Unsupported enum base type - " + type);
-    return "";
-}
-
-std::string GeneratorGo::ConvertEnumConstant(const std::string& value)
-{
-    std::string ns = "";
-    std::string t = "";
-    std::string v = "";
-
-    size_t pos = value.find_last_of('.');
-    if (pos != std::string::npos)
-    {
-        t.assign(value, 0, pos);
-        v.assign(value, pos + 1, value.size() - pos);
-    }
-
-    pos = t.find_last_of('.');
-    if (pos != std::string::npos)
-    {
-        ns.assign(t, 0, pos);
-        t.assign(t, pos + 1, t.size() - pos);
-    }
-
-    return ns + ConvertToUpper(t) + "_" + v;
-}
-
-std::string GeneratorGo::ConvertEnumConstant(const std::string& name, const std::string& type, const std::string& value)
-{
-    if (((type == "char") || (type == "wchar")) && CppCommon::StringUtils::StartsWith(value, "'"))
-        return name + "(" + value + ")";
-
-    std::string result = value;
-
-    if (type.empty())
-    {
-        // Fill flags values
-        std::vector<std::string> flags = CppCommon::StringUtils::Split(value, '|', true);
-
-        // Generate flags combination
-        if (!flags.empty())
-        {
-            result = "";
-            bool first = true;
-            for (const auto& it : flags)
-            {
-                result += (first ? "" : " | ") + name + "_" + CppCommon::StringUtils::ToTrim(it);
-                first = false;
-            }
-        }
-    }
-
-    return result;
-}
-
-std::string GeneratorGo::ConvertBaseName(const std::string& type)
-{
-    if (IsGoType(type))
-        return type;
-
-    std::string ns = "";
-    std::string t = type;
-
-    size_t pos = type.find_last_of('.');
-    if (pos != std::string::npos)
-    {
-        ns.assign(type, 0, pos + 1);
-        t.assign(type, pos + 1, type.size() - pos);
-    }
-
-    return ConvertToUpper(t);
-}
-
-std::string GeneratorGo::ConvertKeyName(const std::string& type)
-{
-    if (IsGoType(type))
-        return type;
-
-    std::string ns = "";
-    std::string t = type;
-
-    size_t pos = type.find_last_of('.');
-    if (pos != std::string::npos)
-    {
-        ns.assign(type, 0, pos + 1);
-        t.assign(type, pos + 1, type.size() - pos);
-    }
-
-    return ns + ConvertToUpper(t) + "Key";
-}
-
-std::string GeneratorGo::ConvertModelName(const std::string& type, const std::string& model)
-{
-    std::string ns = "";
-    std::string t = type;
-
-    size_t pos = type.find_last_of('.');
-    if (pos != std::string::npos)
-    {
-        ns.assign(type, 0, pos + 1);
-        t.assign(type, pos + 1, type.size() - pos);
-    }
-
-    return ns + model + ConvertToUpper(t);
-}
-
-std::string GeneratorGo::ConvertNewName(const std::string& type)
-{
-    std::string ns = "";
-    std::string t = type;
-
-    size_t pos = type.find_last_of('.');
-    if (pos != std::string::npos)
-    {
-        ns.assign(type, 0, pos + 1);
-        t.assign(type, pos + 1, type.size() - pos);
-    }
-
-    return ns + "New" + ConvertToUpper(t);
-}
-
-std::string GeneratorGo::ConvertOptional(const std::string& type)
-{
-    if (type == "bool")
-        return "fbe.OptionalBool(false)";
-    else if (type == "byte")
-        return "fbe.OptionalByte(0)";
-    else if (type == "bytes")
-        return "fbe.OptionalBytes(make([]byte, 0))";
-    else if ((type == "char") || (type == "wchar"))
-        return "fbe.OptionalRune('\\000')";
-    else if (type == "int8")
-        return "fbe.OptionalInt8(0)";
-    else if (type == "uint8")
-        return "fbe.OptionalUInt8(0)";
-    else if (type == "int16")
-        return "fbe.OptionalInt16(0)";
-    else if (type == "uint16")
-        return "fbe.OptionalUInt16(0)";
-    else if (type == "int32")
-        return "fbe.OptionalInt32(0)";
-    else if (type == "uint32")
-        return "fbe.OptionalUInt32(0)";
-    else if (type == "int64")
-        return "fbe.OptionalInt64(0)";
-    else if (type == "uint64")
-        return "fbe.OptionalUInt64(0)";
-    else if (type == "float")
-        return "fbe.OptionalFloat32(0.0)";
-    else if (type == "double")
-        return "fbe.OptionalFloat64(0.0)";
-    else if (type == "decimal")
-        return "fbe.OptionalDecimal(fbe.DecimalZero())";
-    else if (type == "timestamp")
-        return "fbe.OptionalTimestamp(fbe.TimestampEpoch())";
-    else if (type == "string")
-        return "fbe.OptionalString(\"\")";
-    else if (type == "uuid")
-        return "fbe.OptionalUUID(fbe.UUIDNil())";
-
-    return ConvertNewName(type) + "()" + ".Optional()";
-}
-
-std::string GeneratorGo::ConvertOptional(const std::string& type, const std::string& value)
-{
-    if (value == "null")
-        return "nil";
-
-    if (type == "bool")
-        return "fbe.OptionalBool(" + ConvertConstant(type, value, false) + ")";
-    else if (type == "byte")
-        return "fbe.OptionalByte(" + ConvertConstant(type, value, false) + ")";
-    else if (type == "bytes")
-        return "fbe.OptionalBytes(" + ConvertConstant(type, value, false) + ")";
-    else if ((type == "char") || (type == "wchar"))
-        return "fbe.OptionalRune(" + ConvertConstant(type, value, false) + ")";
-    else if (type == "int8")
-        return "fbe.OptionalInt8(" + ConvertConstant(type, value, false) + ")";
-    else if (type == "uint8")
-        return "fbe.OptionalUInt8(" + ConvertConstant(type, value, false) + ")";
-    else if (type == "int16")
-        return "fbe.OptionalInt16(" + ConvertConstant(type, value, false) + ")";
-    else if (type == "uint16")
-        return "fbe.OptionalUInt16(" + ConvertConstant(type, value, false) + ")";
-    else if (type == "int32")
-        return "fbe.OptionalInt32(" + ConvertConstant(type, value, false) + ")";
-    else if (type == "uint32")
-        return "fbe.OptionalUInt32(" + ConvertConstant(type, value, false) + ")";
-    else if (type == "int64")
-        return "fbe.OptionalInt64(" + ConvertConstant(type, value, false) + ")";
-    else if (type == "uint64")
-        return "fbe.OptionalUInt64(" + ConvertConstant(type, value, false) + ")";
-    else if (type == "float")
-        return "fbe.OptionalFloat32(" + ConvertConstant(type, value, false) + ")";
-    else if (type == "double")
-        return "fbe.OptionalFloat64(" + ConvertConstant(type, value, false) + ")";
-    else if (type == "decimal")
-        return "fbe.OptionalDecimal(" + ConvertConstant(type, value, false) + ")";
-    else if (type == "timestamp")
-        return "fbe.OptionalTimestamp(" + ConvertConstant(type, value, false) + ")";
-    else if (type == "string")
-        return "fbe.OptionalString(" + ConvertConstant(type, value, false) + ")";
-    else if (type == "uuid")
-        return "fbe.OptionalUUID(" + ConvertConstant(type, value, false) + ")";
-
-    return ConvertConstant(type, value, false) + ".Optional()";
-}
-
-std::string GeneratorGo::ConvertTypeName(const std::string& type, bool optional)
-{
-    std::string opt = optional ? "*" : "";
-
-    if ((type == "bool") || (type == "byte") || (type == "int8") || (type == "uint8") || (type == "int16") || (type == "uint16") || (type == "int32") || (type == "uint32") || (type == "int64") || (type == "uint64") || (type == "string"))
-        return opt + type;
-    else if ((type == "char") || (type == "wchar"))
-        return opt + "rune";
-    else if (type == "bytes")
-        return opt + "[]byte";
-    else if (type == "float")
-        return opt + "float32";
-    else if (type == "double")
-        return opt + "float64";
-    else if (type == "decimal")
-        return opt + "fbe.Decimal";
-    else if (type == "timestamp")
-        return opt + "fbe.Timestamp";
-    else if (type == "uuid")
-        return opt + "fbe.UUID";
-
-    std::string ns = "";
-    std::string t = type;
-
-    size_t pos = type.find_last_of('.');
-    if (pos != std::string::npos)
-    {
-        ns.assign(type, 0, pos + 1);
-        t.assign(type, pos + 1, type.size() - pos);
-    }
-
-    return opt + ns + ConvertToUpper(t);
-}
-
-std::string GeneratorGo::ConvertTypeName(const StructField& field)
-{
-    if (field.array)
-        return "[" + std::to_string(field.N) + "]" + ConvertTypeName(*field.type, field.optional);
-    else if ((field.vector) || (field.list))
-        return "[]" + ConvertTypeName(*field.type, field.optional);
-    else if (field.set)
-        return "set" + ConvertToUpper(*field.name);
-    else if ((field.set) || (field.map) || (field.hash))
-    {
-        if (IsGoType(*field.key))
-            return "map[" + ConvertKeyName(*field.key) + "]" + ConvertTypeName(*field.type, field.optional);
-        else
-            return "map[" + ConvertKeyName(*field.key) + "]struct{Key " + ConvertTypeName(*field.key, false) + "; Value " + ConvertTypeName(*field.type, field.optional) + "}";
-    }
-
-    return ConvertTypeName(*field.type, field.optional);
-}
-
-std::string GeneratorGo::ConvertTypeFieldName(const std::string& type)
-{
-    if (type == "bool")
-        return "Bool";
-    else if (type == "byte")
-        return "Byte";
-    else if (type == "bytes")
-        return "Bytes";
-    else if (type == "char")
-        return "Char";
-    else if (type == "wchar")
-        return "WChar";
-    else if (type == "int8")
-        return "Int8";
-    else if (type == "uint8")
-        return "UInt8";
-    else if (type == "int16")
-        return "Int16";
-    else if (type == "uint16")
-        return "UInt16";
-    else if (type == "int32")
-        return "Int32";
-    else if (type == "uint32")
-        return "UInt32";
-    else if (type == "int64")
-        return "Int64";
-    else if (type == "uint64")
-        return "UInt64";
-    else if (type == "float")
-        return "Float";
-    else if (type == "double")
-        return "Double";
-    else if (type == "decimal")
-        return "Decimal";
-    else if (type == "timestamp")
-        return "Timestamp";
-    else if (type == "string")
-        return "String";
-    else if (type == "uuid")
-        return "UUID";
-
-    std::string ns = "";
-    std::string t = type;
-
-    size_t pos = type.find_last_of('.');
-    if (pos != std::string::npos)
-    {
-        ns.assign(type, 0, pos + 1);
-        t.assign(type, pos + 1, type.size() - pos);
-    }
-
-    CppCommon::StringUtils::ReplaceAll(ns, ".", "");
-    return ns + ConvertToUpper(t);
-}
-
-std::string GeneratorGo::ConvertTypeFieldType(const std::string& type, bool optional)
-{
-    if (IsGoType(type))
-        return ConvertTypeName(type, optional);
-
-    std::string ns = "";
-    std::string opt = optional ? "*" : "";
-    std::string t = type;
-
-    size_t pos = type.find_last_of('.');
-    if (pos != std::string::npos)
-    {
-        ns.assign(type, 0, pos + 1);
-        t.assign(type, pos + 1, type.size() - pos);
-    }
-
-    return ns + opt + ConvertToUpper(t);
-}
-
-std::string GeneratorGo::ConvertTypeFieldDeclaration(const std::string& type, bool optional, bool final)
-{
-    std::string modelType = final ? "Final" : "Field";
-
-    if (IsGoType(type) && !optional)
-        return "fbe." + modelType + "Model" + ConvertTypeFieldName(type);
-
-    std::string ns = "";
-    std::string opt = optional ? "Optional" : "";
-    std::string t = type;
-
-    size_t pos = type.find_last_of('.');
-    if (pos != std::string::npos)
-    {
-        ns.assign(type, 0, pos + 1);
-        t.assign(type, pos + 1, type.size() - pos);
-    }
-
-    return ns + modelType + "Model" + opt + ConvertTypeFieldName(t);
-}
-
-std::string GeneratorGo::ConvertTypeFieldDeclaration(const StructField& field, bool final)
-{
-    std::string modelType = final ? "Final" : "Field";
-
-    if (field.array)
-        return modelType + "ModelArray" + std::string(field.optional ? "Optional" : "") + ConvertTypeFieldName(*field.type);
-    else if (field.vector || field.list)
-        return modelType + "ModelVector" + std::string(field.optional ? "Optional" : "") + ConvertTypeFieldName(*field.type);
-    else if (field.set)
-        return modelType + "ModelSet" + std::string(field.optional ? "Optional" : "") + ConvertTypeFieldName(*field.type);
-    else if (field.map || field.hash)
-        return modelType + "ModelMap" + ConvertTypeFieldName(*field.key) + std::string(field.optional ? "Optional" : "") + ConvertTypeFieldName(*field.type);
-    else if (field.optional)
-        return modelType + "ModelOptional" + ConvertTypeFieldName(*field.type);
-
-    return ConvertTypeFieldDeclaration(*field.type, field.optional, final);
-}
-
-std::string GeneratorGo::ConvertTypeFieldInitialization(const std::string& type, bool optional, const std::string& offset, bool final)
-{
-    std::string modelType = final ? "Final" : "Field";
-
-    if (IsGoType(type))
-        return "fbe.New" + modelType + "Model" + ConvertTypeFieldName(type) + "(buffer, " + offset + ")";
-
-    std::string ns = "";
-    std::string t = type;
-
-    size_t pos = type.find_last_of('.');
-    if (pos != std::string::npos)
-    {
-        ns.assign(type, 0, pos + 1);
-        t.assign(type, pos + 1, type.size() - pos);
-    }
-
-    return ns + "New" + modelType + "Model" + ConvertTypeFieldName(t) + "(buffer, " + offset + ")";
-}
-
-std::string GeneratorGo::ConvertTypeFieldInitialization(const StructField& field, const std::string& offset, bool final)
-{
-    std::string modelType = final ? "Final" : "Field";
-
-    if (field.array)
-        return "New" + modelType + "ModelArray" + std::string(field.optional ? "Optional" : "") + ConvertTypeFieldName(*field.type) + "(buffer, " + offset + ", " + std::to_string(field.N) + ")";
-    else if (field.vector || field.list)
-        return "New" + modelType + "ModelVector" + std::string(field.optional ? "Optional" : "") + ConvertTypeFieldName(*field.type) + "(buffer, " + offset + ")";
-    else if (field.set)
-        return "New" + modelType + "ModelSet" + std::string(field.optional ? "Optional" : "") + ConvertTypeFieldName(*field.type) + "(buffer, " + offset + ")";
-    else if (field.map || field.hash)
-        return "New" + modelType + "ModelMap" + ConvertTypeFieldName(*field.key) + std::string(field.optional ? "Optional" : "") + ConvertTypeFieldName(*field.type) + "(buffer, " + offset + ")";
-    else if (field.optional)
-        return "New" + modelType + "ModelOptional" + ConvertTypeFieldName(*field.type) + "(buffer, " + offset + ")";
-
-    return ConvertTypeFieldInitialization(*field.type, field.optional, offset, final);
-}
-
-std::string GeneratorGo::ConvertConstant(const std::string& type, const std::string& value, bool optional)
-{
-    if (optional)
-        return ConvertOptional(type, value);
-
-    if (value == "true")
-        return "true";
-    else if (value == "false")
-        return "false";
-    else if (value == "null")
-        return "nil";
-    else if (value == "min")
-    {
-        if ((type == "byte") || (type == "uint8") || (type == "uint16") || (type == "uint32") || (type == "uint64"))
-            return "0";
-        else if (type == "int8")
-            return "-128";
-        else if (type == "int16")
-            return "-32768";
-        else if (type == "int32")
-            return "-2147483648";
-        else if (type == "int64")
-            return "-9223372036854775808";
-
-        yyerror("Unsupported type " + type + " for 'min' constant");
-        return "";
-    }
-    else if (value == "max")
-    {
-        if (type == "byte")
-            return "255";
-        else if (type == "int8")
-            return "127";
-        else if (type == "uint8")
-            return "255";
-        else if (type == "int16")
-            return "32767";
-        else if (type == "uint16")
-            return "65535";
-        else if (type == "int32")
-            return "2147483647";
-        else if (type == "uint32")
-            return "4294967295";
-        else if (type == "int64")
-            return "9223372036854775807";
-        else if (type == "uint64")
-            return "18446744073709551615";
-
-        yyerror("Unsupported type " + type + " for 'max' constant");
-        return "";
-    }
-    else if (value == "epoch")
-        return "fbe.TimestampEpoch()";
-    else if (value == "utc")
-        return "fbe.TimestampUTC()";
-    else if (value == "uuid0")
-        return "fbe.UUIDNil()";
-    else if (value == "uuid1")
-        return "fbe.UUIDSequential()";
-    else if (value == "uuid4")
-        return "fbe.UUIDRandom()";
-
-    if ((type == "bool") || (type == "byte") || (type == "int8") || (type == "uint8") || (type == "int16") || (type == "uint16") || (type == "int32") || (type == "uint32") || (type == "int64") || (type == "uint64"))
-        return type + "(" + value + ")";
-    else if (((type == "char") || (type == "wchar")) && !CppCommon::StringUtils::StartsWith(value, "'"))
-        return "rune(" + value + ")";
-    else if (type == "float")
-        return "float32(" + value + ")";
-    else if (type == "double")
-        return "float64(" + value + ")";
-    else if (type == "decimal")
-        return "fbe.DecimalFromString(\"" + value + "\")";
-    else if (type == "uuid")
-        return "fbe.UUIDFromString(" + value + ")";
-
-    std::string result = value;
-
-    if (!IsGoType(type))
-    {
-        // Fill flags values
-        std::vector<std::string> flags = CppCommon::StringUtils::Split(value, '|', true);
-
-        // Generate flags combination
-        if (flags.size() > 1)
-        {
-            result = "";
-            bool first = true;
-            for (const auto& it : flags)
-            {
-                result += (first ? "" : " | ") + ConvertEnumConstant(CppCommon::StringUtils::ToTrim(it));
-                first = false;
-            }
-        }
-        // Generate single flag
-        else if (flags.size() > 0)
-            result = ConvertEnumConstant(CppCommon::StringUtils::ToTrim(flags.front()));
-    }
-
-    return result;
-}
-
-std::string GeneratorGo::ConvertDefault(const std::string& type, bool optional)
-{
-    if (optional)
-        return "nil";
-
-    if (type == "bool")
-        return "false";
-    else if (type == "byte")
-        return "0";
-    else if (type == "bytes")
-        return "make([]byte, 0)";
-    else if ((type == "char") || (type == "wchar"))
-        return "'\\000'";
-    else if ((type == "int8") || (type == "uint8") || (type == "int16") || (type == "uint16") || (type == "int32") || (type == "uint32") || (type == "int64") || (type == "uint64"))
-        return "0";
-    else if ((type == "float") || (type == "double"))
-        return "0.0";
-    else if (type == "decimal")
-        return "fbe.DecimalZero()";
-    else if (type == "timestamp")
-        return "fbe.TimestampEpoch()";
-    else if (type == "string")
-        return "\"\"";
-    else if (type == "uuid")
-        return "fbe.UUIDNil()";
-
-    return "*" + ConvertNewName(type) + "()";
-}
-
-std::string GeneratorGo::ConvertDefault(const StructField& field)
-{
-    if (field.value)
-        return ConvertConstant(*field.type, *field.value, field.optional);
-
-    if (field.array)
-        return ConvertTypeName(field) + "{}";
-    else if (field.vector || field.list)
-        return "make(" + ConvertTypeName(field) + ", 0)";
-    else if (field.set)
-        return "make(set" + ConvertToUpper(*field.name) + ")";
-    else if (field.map || field.hash)
-        return "make(" + ConvertTypeName(field) + ")";
-
-    return ConvertDefault(*field.type, field.optional);
-}
-
-void GeneratorGo::WriteOutputStreamType(const std::string& type, const std::string& name, bool optional)
-{
-    if (type == "bool")
-        Write("sb.WriteString(strconv.FormatBool(" + std::string(optional ? "*" : "") + name + "))");
-    else if (type == "byte")
-        Write("sb.WriteString(strconv.FormatUint(uint64(" + std::string(optional ? "*" : "") + name + "), 10))");
-    else if ((type == "int8") || (type == "int16") || (type == "int32") || (type == "int64"))
-        Write("sb.WriteString(strconv.FormatInt(int64(" + std::string(optional ? "*" : "") + name + "), 10))");
-    else if ((type == "uint8") || (type == "uint16") || (type == "uint32") || (type == "uint64"))
-        Write("sb.WriteString(strconv.FormatUint(uint64(" + std::string(optional ? "*" : "") + name + "), 10))");
-    else if ((type == "char") || (type == "wchar"))
-        Write("sb.WriteString(\"'\" + string(" + std::string(optional ? "*" : "") + name + ") + \"'\")");
-    else if (type == "float")
-        Write("sb.WriteString(strconv.FormatFloat(float64(" + std::string(optional ? "*" : "") + name + "), 'g', -1, 32))");
-    else if (type == "double")
-        Write("sb.WriteString(strconv.FormatFloat(float64(" + std::string(optional ? "*" : "") + name + "), 'g', -1, 64))");
-    else if (type == "bytes")
-        Write("sb.WriteString(\"bytes[\" + strconv.FormatInt(int64(len(" + std::string(optional ? "*" : "") + name + ")), 10) + \"]\")");
-    else if (type == "string")
-        Write("sb.WriteString(\"\\\"\" + " + std::string(optional ? "*" : "") + name + " + \"\\\"\")");
-    else if (type == "decimal")
-        Write("sb.WriteString(" + std::string(optional ? "(*" : "") + name + std::string(optional ? ")" : "") + ".String())");
-    else if (type == "timestamp")
-        Write("sb.WriteString(strconv.FormatInt(" + std::string(optional ? "(*" : "") + name + std::string(optional ? ")" : "") +  + ".UnixNano(), 10))");
-    else if (type == "uuid")
-        Write("sb.WriteString(\"\\\"\" + " + std::string(optional ? "(*" : "") + name + std::string(optional ? ")" : "") + ".String() + \"\\\"\")");
-    else
-        Write("sb.WriteString(" + name + ".String())");
-}
-
-void GeneratorGo::WriteOutputStreamValue(const std::string& type, const std::string& name, bool optional, bool separate)
-{
-    if (optional || (type == "bytes"))
-    {
-        WriteLineIndent("if " + name + " != nil { ");
-        Indent(1);
-        if (separate)
-            WriteLineIndent("if first { sb.WriteString(\"\") } else { sb.WriteString(\",\") }");
-        WriteIndent();
-        WriteOutputStreamType(type, name, optional);
-        WriteLine();
+        WriteLineIndent("sb.WriteString(\"]\")");
         Indent(-1);
         WriteLineIndent("} else {");
         Indent(1);
-        if (separate)
-            WriteLineIndent("if first { sb.WriteString(\"\") } else { sb.WriteString(\",\") }");
-        WriteLineIndent("sb.WriteString(\"null\")");
+        WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") +
+                        *field->name + "=[0][]\")");
         Indent(-1);
         WriteLineIndent("}");
+      } else if (field->vector) {
+        WriteLineIndent("if s." + ConvertToUpper(*field->name) + " != nil {");
+        Indent(1);
+        WriteLineIndent("first := true");
+        WriteLineIndent(
+            "sb.WriteString(\"[\" + strconv.FormatInt(int64(len(s." +
+            ConvertToUpper(*field->name) + ")), 10) + \"][\")");
+        WriteLineIndent("for _, v := range s." + ConvertToUpper(*field->name) +
+                        " {");
+        Indent(1);
+        WriteOutputStreamValue(*field->type, "v", field->optional, true);
+        WriteLineIndent("first = false");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLineIndent("sb.WriteString(\"]\")");
+        Indent(-1);
+        WriteLineIndent("} else {");
+        Indent(1);
+        WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") +
+                        *field->name + "=[0][]\")");
+        Indent(-1);
+        WriteLineIndent("}");
+      } else if (field->list) {
+        WriteLineIndent("if s." + ConvertToUpper(*field->name) + " != nil {");
+        Indent(1);
+        WriteLineIndent("first := true");
+        WriteLineIndent(
+            "sb.WriteString(\"[\" + strconv.FormatInt(int64(len(s." +
+            ConvertToUpper(*field->name) + ")), 10) + \"]<\")");
+        WriteLineIndent("for _, v := range s." + ConvertToUpper(*field->name) +
+                        " {");
+        Indent(1);
+        WriteOutputStreamValue(*field->type, "v", field->optional, true);
+        WriteLineIndent("first = false");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLineIndent("sb.WriteString(\">\")");
+        Indent(-1);
+        WriteLineIndent("} else {");
+        Indent(1);
+        WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") +
+                        *field->name + "=[0]<>\")");
+        Indent(-1);
+        WriteLineIndent("}");
+      } else if (field->set) {
+        WriteLineIndent("if s." + ConvertToUpper(*field->name) + " != nil {");
+        Indent(1);
+        WriteLineIndent("first := true");
+        WriteLineIndent("sb.WriteString(\"[\" + strconv.FormatInt(int64(s." +
+                        ConvertToUpper(*field->name) +
+                        ".Size()), 10) + \"]{\")");
+        WriteLineIndent("for _, v := range s." + ConvertToUpper(*field->name) +
+                        " {");
+        Indent(1);
+        WriteOutputStreamValue(*field->type, "v", field->optional, true);
+        WriteLineIndent("first = false");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLineIndent("sb.WriteString(\"}\")");
+        Indent(-1);
+        WriteLineIndent("} else {");
+        Indent(1);
+        WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") +
+                        *field->name + "=[0]{}\")");
+        Indent(-1);
+        WriteLineIndent("}");
+      } else if (field->map) {
+        WriteLineIndent("if s." + ConvertToUpper(*field->name) + " != nil {");
+        Indent(1);
+        WriteLineIndent("first := true");
+        WriteLineIndent(
+            "sb.WriteString(\"[\" + strconv.FormatInt(int64(len(s." +
+            ConvertToUpper(*field->name) + ")), 10) + \"]<{\")");
+        WriteLineIndent(
+            "for " + std::string(IsGoType(*field->key) ? "k" : "_") +
+            ", v := range s." + ConvertToUpper(*field->name) + " {");
+        Indent(1);
+        WriteOutputStreamValue(
+            *field->key, (IsGoType(*field->key) ? "k" : "v.Key"), false, true);
+        WriteLineIndent("sb.WriteString(\"->\")");
+        WriteOutputStreamValue(*field->type,
+                               (IsGoType(*field->key) ? "v" : "v.Value"),
+                               field->optional, false);
+        WriteLineIndent("first = false");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLineIndent("sb.WriteString(\"}>\")");
+        Indent(-1);
+        WriteLineIndent("} else {");
+        Indent(1);
+        WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") +
+                        *field->name + "=[0]<{}>\")");
+        Indent(-1);
+        WriteLineIndent("}");
+      } else if (field->hash) {
+        WriteLineIndent("if s." + ConvertToUpper(*field->name) + " != nil {");
+        Indent(1);
+        WriteLineIndent("first := true");
+        WriteLineIndent(
+            "sb.WriteString(\"[\" + strconv.FormatInt(int64(len(s." +
+            ConvertToUpper(*field->name) + ")), 10) + \"][{\")");
+        WriteLineIndent(
+            "for " + std::string(IsGoType(*field->key) ? "k" : "_") +
+            ", v := range s." + ConvertToUpper(*field->name) + " {");
+        Indent(1);
+        WriteOutputStreamValue(
+            *field->key, (IsGoType(*field->key) ? "k" : "v.Key"), false, true);
+        WriteLineIndent("sb.WriteString(\"->\")");
+        WriteOutputStreamValue(*field->type,
+                               (IsGoType(*field->key) ? "v" : "v.Value"),
+                               field->optional, false);
+        WriteLineIndent("first = false");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLineIndent("sb.WriteString(\"}]\")");
+        Indent(-1);
+        WriteLineIndent("} else {");
+        Indent(1);
+        WriteLineIndent("sb.WriteString(\"" + std::string(first ? "" : ",") +
+                        *field->name + "=[0][{}]\")");
+        Indent(-1);
+        WriteLineIndent("}");
+      } else
+        WriteOutputStreamValue(*field->type,
+                               "s." + ConvertToUpper(*field->name),
+                               field->optional, false);
+      first = false;
     }
-    else
-    {
-        if (separate)
-            WriteLineIndent("if first { sb.WriteString(\"\") } else { sb.WriteString(\",\") }");
-        WriteIndent();
-        WriteOutputStreamType(type, name, optional);
+  }
+  WriteLineIndent("sb.WriteString(\")\")");
+  WriteLineIndent("return sb.String()");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  if (JSON()) {
+    // Generate struct JSON() method
+    WriteLine();
+    WriteLineIndent("// Convert struct to JSON");
+    WriteLineIndent("func (s *" + struct_name + ") JSON() ([]byte, error) {");
+    Indent(1);
+    WriteLineIndent("return fbe.Json.Marshal(s)");
+    Indent(-1);
+    WriteLineIndent("}");
+  }
+
+  // Generate set wrappers
+  if (s->body) {
+    for (const auto &field : s->body->fields) {
+      if (field->set) {
         WriteLine();
+        WriteLineIndent("// Set wrapper for the field " +
+                        ConvertToUpper(*field->name));
+        WriteLineIndent("type set" + ConvertToUpper(*field->name) + " map[" +
+                        ConvertKeyName(*field->key) + "]" +
+                        ConvertTypeName(*field->type, field->optional));
+
+        if (JSON()) {
+          // Generate set wrapper IsEmpty() method
+          WriteLine();
+          WriteLineIndent("// Is the set empty?");
+          WriteLineIndent("func (s set" + ConvertToUpper(*field->name) +
+                          ") IsEmpty() bool {");
+          Indent(1);
+          WriteLineIndent("return s.Size() > 0");
+          Indent(-1);
+          WriteLineIndent("}");
+
+          // Generate set wrapper Size() method
+          WriteLine();
+          WriteLineIndent("// Get the set size");
+          WriteLineIndent("func (s set" + ConvertToUpper(*field->name) +
+                          ") Size() int {");
+          Indent(1);
+          WriteLineIndent("return len(s)");
+          Indent(-1);
+          WriteLineIndent("}");
+
+          // Generate set wrapper Add() method
+          WriteLine();
+          WriteLineIndent("// Add the given item to the set");
+          WriteLineIndent(
+              "func (s set" + ConvertToUpper(*field->name) + ") Add(item " +
+              ConvertTypeName(*field->type, field->optional) + ") {");
+          Indent(1);
+          if (IsGoType(*field->key))
+            WriteLineIndent("s[item] = item");
+          else
+            WriteLineIndent("s[item.Key()] = item");
+          Indent(-1);
+          WriteLineIndent("}");
+
+          // Generate set wrapper Contains() method
+          WriteLine();
+          WriteLineIndent("// Contains the given item in the set?");
+          WriteLineIndent("func (s set" + ConvertToUpper(*field->name) +
+                          ") Contains(item " +
+                          ConvertTypeName(*field->type, field->optional) +
+                          ") bool {");
+          Indent(1);
+          if (IsGoType(*field->key))
+            WriteLineIndent("_, exists := s[item]");
+          else
+            WriteLineIndent("_, exists := s[item.Key()]");
+          Indent(-1);
+          WriteLineIndent("return exists");
+          WriteLineIndent("}");
+
+          // Generate set wrapper Remove() method
+          WriteLine();
+          WriteLineIndent("// Remove the given item from the set");
+          WriteLineIndent(
+              "func (s set" + ConvertToUpper(*field->name) + ") Remove(item " +
+              ConvertTypeName(*field->type, field->optional) + ") {");
+          Indent(1);
+          if (IsGoType(*field->key))
+            WriteLineIndent("delete(s, item)");
+          else
+            WriteLineIndent("delete(s, item.Key())");
+          Indent(-1);
+          WriteLineIndent("}");
+
+          // Generate set wrapper Clear() method
+          WriteLine();
+          WriteLineIndent("// Clear the set");
+          WriteLineIndent("func (s set" + ConvertToUpper(*field->name) +
+                          ") Clear() {");
+          Indent(1);
+          WriteLineIndent("for i := range s {");
+          Indent(1);
+          WriteLineIndent("delete(s, i)");
+          Indent(-1);
+          WriteLineIndent("}");
+          Indent(-1);
+          WriteLineIndent("}");
+
+          // Generate set wrapper Enumerate() method
+          WriteLine();
+          WriteLineIndent("// Enumerate the set");
+          WriteLineIndent("func (s set" + ConvertToUpper(*field->name) +
+                          ") Enumerate() []" +
+                          ConvertTypeName(*field->type, field->optional) +
+                          " {");
+          Indent(1);
+          WriteLineIndent("array := make([]" +
+                          ConvertTypeName(*field->type, field->optional) +
+                          ", 0)");
+          WriteLineIndent("for _, v := range s {");
+          Indent(1);
+          WriteLineIndent("array = append(array, v)");
+          Indent(-1);
+          WriteLineIndent("}");
+          WriteLineIndent("return array");
+          Indent(-1);
+          WriteLineIndent("}");
+
+          // Generate set wrapper Subset() method
+          WriteLine();
+          WriteLineIndent("// Is the current set a subset of the given set?");
+          WriteLineIndent("func (s set" + ConvertToUpper(*field->name) +
+                          ") Subset(set set" + ConvertToUpper(*field->name) +
+                          ") bool {");
+          Indent(1);
+          WriteLineIndent("result := true");
+          WriteLineIndent("for _, v := range s {");
+          Indent(1);
+          WriteLineIndent("if !set.Contains(v) {");
+          Indent(1);
+          WriteLineIndent("result = false");
+          WriteLineIndent("break");
+          Indent(-1);
+          WriteLineIndent("}");
+          Indent(-1);
+          WriteLineIndent("}");
+          WriteLineIndent("return result");
+          Indent(-1);
+          WriteLineIndent("}");
+
+          // Generate set wrapper Union() method
+          WriteLine();
+          WriteLineIndent("// Union of the current set and the given set");
+          WriteLineIndent("func (s set" + ConvertToUpper(*field->name) +
+                          ") Union(set set" + ConvertToUpper(*field->name) +
+                          ") set" + ConvertToUpper(*field->name) + " {");
+          Indent(1);
+          WriteLineIndent("result := make(set" + ConvertToUpper(*field->name) +
+                          ")");
+          WriteLineIndent("for _, v := range s {");
+          Indent(1);
+          WriteLineIndent("result.Add(v)");
+          Indent(-1);
+          WriteLineIndent("}");
+          WriteLineIndent("for _, v := range set {");
+          Indent(1);
+          WriteLineIndent("result.Add(v)");
+          Indent(-1);
+          WriteLineIndent("}");
+          WriteLineIndent("return result");
+          Indent(-1);
+          WriteLineIndent("}");
+
+          // Generate set wrapper Intersection() method
+          WriteLine();
+          WriteLineIndent(
+              "// Intersection of the current set and the given set");
+          WriteLineIndent("func (s set" + ConvertToUpper(*field->name) +
+                          ") Intersection(set set" +
+                          ConvertToUpper(*field->name) + ") set" +
+                          ConvertToUpper(*field->name) + " {");
+          Indent(1);
+          WriteLineIndent("result := make(set" + ConvertToUpper(*field->name) +
+                          ")");
+          WriteLineIndent("for _, v := range set {");
+          Indent(1);
+          WriteLineIndent("if s.Contains(v) {");
+          Indent(1);
+          WriteLineIndent("result.Add(v)");
+          Indent(-1);
+          WriteLineIndent("}");
+          Indent(-1);
+          WriteLineIndent("}");
+          WriteLineIndent("return result");
+          Indent(-1);
+          WriteLineIndent("}");
+
+          // Generate set wrapper Difference() method
+          WriteLine();
+          WriteLineIndent(
+              "// Difference between the current set and the given set");
+          WriteLineIndent("func (s set" + ConvertToUpper(*field->name) +
+                          ") Difference(set set" +
+                          ConvertToUpper(*field->name) + ") set" +
+                          ConvertToUpper(*field->name) + " {");
+          Indent(1);
+          WriteLineIndent("result := make(set" + ConvertToUpper(*field->name) +
+                          ")");
+          WriteLineIndent("for _, v := range set {");
+          Indent(1);
+          WriteLineIndent("if !s.Contains(v) {");
+          Indent(1);
+          WriteLineIndent("result.Add(v)");
+          Indent(-1);
+          WriteLineIndent("}");
+          Indent(-1);
+          WriteLineIndent("}");
+          WriteLineIndent("for _, v := range s {");
+          Indent(1);
+          WriteLineIndent("if !set.Contains(v) {");
+          Indent(1);
+          WriteLineIndent("result.Add(v)");
+          Indent(-1);
+          WriteLineIndent("}");
+          Indent(-1);
+          WriteLineIndent("}");
+          WriteLineIndent("return result");
+          Indent(-1);
+          WriteLineIndent("}");
+
+          // Generate set wrapper MarshalJSON() method
+          WriteLine();
+          WriteLineIndent("// Convert set to JSON");
+          WriteLineIndent("func (s set" + ConvertToUpper(*field->name) +
+                          ") MarshalJSON() ([]byte, error) {");
+          Indent(1);
+          WriteLineIndent("array := make([]" +
+                          ConvertTypeName(*field->type, field->optional) +
+                          ", 0)");
+          WriteLineIndent("for _, v := range s {");
+          Indent(1);
+          WriteLineIndent("array = append(array, v)");
+          Indent(-1);
+          WriteLineIndent("}");
+          WriteLineIndent("return fbe.Json.Marshal(&array)");
+          Indent(-1);
+          WriteLineIndent("}");
+
+          // Generate set wrapper UnmarshalJSON() method
+          WriteLine();
+          WriteLineIndent("// Convert JSON to set");
+          WriteLineIndent("func (s *set" + ConvertToUpper(*field->name) +
+                          ") UnmarshalJSON(body []byte) error {");
+          Indent(1);
+          WriteLineIndent("var array []" +
+                          ConvertTypeName(*field->type, field->optional));
+          WriteLineIndent("err := fbe.Json.Unmarshal(body, &array)");
+          WriteLineIndent("if err != nil {");
+          Indent(1);
+          WriteLineIndent("return err");
+          Indent(-1);
+          WriteLineIndent("} else {");
+          Indent(1);
+          WriteLineIndent("for _, v := range array {");
+          Indent(1);
+          if (IsGoType(*field->key))
+            WriteLineIndent("(*s)[v] = v");
+          else
+            WriteLineIndent("(*s)[v.Key()] = v");
+          Indent(-1);
+          WriteLineIndent("}");
+          Indent(-1);
+          WriteLineIndent("}");
+          WriteLineIndent("return nil");
+          Indent(-1);
+          WriteLineIndent("}");
+        }
+      }
     }
+  }
+
+  // Generate footer
+  GenerateFooter();
+
+  // Store the output file
+  WriteEnd();
+  Store(output);
+
+  // Generate struct field model
+  GenerateStructFieldModel(p, s, path);
+
+  // Generate struct model
+  GenerateStructModel(p, s, path);
+
+  // Generate struct final models
+  if (Final()) {
+    GenerateStructFinalModel(p, s, path);
+    GenerateStructModelFinal(p, s, path);
+  }
+}
+
+void GeneratorGo::GenerateStructFieldModel(const std::shared_ptr<Package> &p,
+                                           const std::shared_ptr<StructType> &s,
+                                           const CppCommon::Path &path) {
+  std::string struct_name = ConvertToUpper(*s->name);
+  std::string field_model_name = "FieldModel" + struct_name;
+
+  // Generate the output file
+  CppCommon::Path output = path / (field_model_name + ".go");
+  WriteBegin();
+
+  // Generate header
+  GenerateHeader(CppCommon::Path(_input).filename().string());
+
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
+
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
+
+  std::string base_type =
+      (s->base && !s->base->empty()) ? ConvertTypeName(*s->base, false) : "";
+  std::string base_field_model = (s->base && !s->base->empty())
+                                     ? ConvertModelName(*s->base, "FieldModel")
+                                     : "";
+  std::string base_field_name = "FieldModel" + ConvertBaseName(base_type);
+
+  // Generate struct field model type
+  WriteLine();
+  WriteLineIndent("// Fast Binary Encoding " + struct_name + " field model");
+  WriteLineIndent("type " + field_model_name + " struct {");
+  Indent(1);
+  WriteLineIndent("// Field model buffer");
+  WriteLineIndent("buffer *fbe.Buffer");
+  WriteLineIndent("// Field model buffer offset");
+  WriteLineIndent("offset int");
+  if ((s->base && !s->base->empty()) || (s->body && !s->body->fields.empty())) {
+    WriteLine();
+    if (!base_type.empty())
+      WriteLineIndent("*" + base_field_model);
+    if (s->body)
+      for (const auto &field : s->body->fields)
+        WriteLineIndent(ConvertToUpper(*field->name) + " *" +
+                        ConvertTypeFieldDeclaration(*field, false));
+  }
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct field model constructor
+  WriteLine();
+  WriteLineIndent("// Create a new " + struct_name + " field model");
+  WriteLineIndent("func New" + field_model_name +
+                  "(buffer *fbe.Buffer, offset int) *" + field_model_name +
+                  " {");
+  Indent(1);
+  std::string prev_offset("4");
+  std::string prev_size("4");
+  WriteLineIndent("fbeResult := " + field_model_name +
+                  "{buffer: buffer, offset: offset}");
+  if (!base_type.empty()) {
+    WriteLineIndent("fbeResult." + base_field_name + " = " +
+                    ConvertModelName(*s->base, "NewFieldModel") + "(buffer, " +
+                    prev_offset + " + " + prev_size + ")");
+    prev_offset = "fbeResult." + base_field_name + ".FBEOffset()";
+    prev_size = "fbeResult." + base_field_name + ".FBEBody() - 4 - 4";
+  }
+  if (s->body) {
+    for (const auto &field : s->body->fields) {
+      WriteLineIndent("fbeResult." + ConvertToUpper(*field->name) + " = " +
+                      ConvertTypeFieldInitialization(
+                          *field, prev_offset + " + " + prev_size, false));
+      prev_offset =
+          "fbeResult." + ConvertToUpper(*field->name) + ".FBEOffset()";
+      prev_size = "fbeResult." + ConvertToUpper(*field->name) + ".FBESize()";
+    }
+  }
+  WriteLineIndent("return &fbeResult");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct field model FBESize() method
+  WriteLine();
+  WriteLineIndent("// Get the field size");
+  WriteLineIndent("func (fm *" + field_model_name +
+                  ") FBESize() int { return 4 }");
+
+  // Generate struct field model FBEBody() method
+  WriteLine();
+  WriteLineIndent("// Get the field body size");
+  WriteLineIndent("func (fm *" + field_model_name + ") FBEBody() int {");
+  Indent(1);
+  WriteLineIndent("fbeResult := 4 + 4 +");
+  Indent(1);
+  if (!base_type.empty())
+    WriteLineIndent("fm." + base_field_name + ".FBEBody() - 4 - 4 +");
+  if (s->body)
+    for (const auto &field : s->body->fields)
+      WriteLineIndent("fm." + ConvertToUpper(*field->name) + ".FBESize() +");
+  WriteLineIndent("0");
+  Indent(-1);
+  WriteLineIndent("return fbeResult");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct field model FBEExtra() method
+  WriteLine();
+  WriteLineIndent("// Get the field extra size");
+  WriteLineIndent("func (fm *" + field_model_name + ") FBEExtra() int {");
+  Indent(1);
+  WriteLineIndent("if (fm.buffer.Offset() + fm.FBEOffset() + fm.FBESize()) > "
+                  "fm.buffer.Size() {");
+  Indent(1);
+  WriteLineIndent("return 0");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fbeStructOffset := int(fbe.ReadUInt32(fm.buffer.Data(), "
+                  "fm.buffer.Offset() + fm.FBEOffset()))");
+  WriteLineIndent("if (fbeStructOffset == 0) || ((fm.buffer.Offset() + "
+                  "fbeStructOffset + 4) > fm.buffer.Size()) {");
+  Indent(1);
+  WriteLineIndent("return 0");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fm.buffer.Shift(fbeStructOffset)");
+  WriteLine();
+  WriteLineIndent("fbeResult := fm.FBEBody() +");
+  Indent(1);
+  if (!base_type.empty())
+    WriteLineIndent("fm." + base_field_name + ".FBEExtra() + ");
+  if (s->body)
+    for (const auto &field : s->body->fields)
+      WriteLineIndent("fm." + ConvertToUpper(*field->name) + ".FBEExtra() +");
+  WriteLineIndent("0");
+  Indent(-1);
+  WriteLine();
+  WriteLineIndent("fm.buffer.Unshift(fbeStructOffset)");
+  WriteLine();
+  WriteLineIndent("return fbeResult");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct field model FBEType() method
+  WriteLine();
+  WriteLineIndent("// Get the field type");
+  if (s->base && !s->base->empty() && (s->type == 0))
+    WriteLineIndent("func (fm *" + field_model_name +
+                    ") FBEType() int { return fm." + base_field_name +
+                    ".FBEType() }");
+  else
+    WriteLineIndent("func (fm *" + field_model_name +
+                    ") FBEType() int { return " + std::to_string(s->type) +
+                    " }");
+
+  // Generate struct field model FBEOffset() methods
+  WriteLine();
+  WriteLineIndent("// Get the field offset");
+  WriteLineIndent("func (fm *" + field_model_name +
+                  ") FBEOffset() int { return fm.offset }");
+  WriteLineIndent("// Set the field offset");
+  WriteLineIndent("func (fm *" + field_model_name +
+                  ") SetFBEOffset(value int) { fm.offset = value }");
+
+  // Generate struct field model FBEShift() methods
+  WriteLine();
+  WriteLineIndent("// Shift the current field offset");
+  WriteLineIndent("func (fm *" + field_model_name +
+                  ") FBEShift(size int) { fm.offset += size }");
+  WriteLineIndent("// Unshift the current field offset");
+  WriteLineIndent("func (fm *" + field_model_name +
+                  ") FBEUnshift(size int) { fm.offset -= size }");
+
+  // Generate struct field model Verify() methods
+  WriteLine();
+  WriteLineIndent("// Check if the struct value is valid");
+  WriteLineIndent("func (fm *" + field_model_name +
+                  ") Verify() bool { return fm.VerifyType(true) }");
+  WriteLine();
+  WriteLineIndent("// Check if the struct value and its type are valid");
+  WriteLineIndent("func (fm *" + field_model_name +
+                  ") VerifyType(fbeVerifyType bool) bool {");
+  Indent(1);
+  WriteLineIndent("if (fm.buffer.Offset() + fm.FBEOffset() + fm.FBESize()) > "
+                  "fm.buffer.Size() {");
+  Indent(1);
+  WriteLineIndent("return true");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fbeStructOffset := int(fbe.ReadUInt32(fm.buffer.Data(), "
+                  "fm.buffer.Offset() + fm.FBEOffset()))");
+  WriteLineIndent("if (fbeStructOffset == 0) || ((fm.buffer.Offset() + "
+                  "fbeStructOffset + 4 + 4) > fm.buffer.Size()) {");
+  Indent(1);
+  WriteLineIndent("return false");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fbeStructSize := int(fbe.ReadUInt32(fm.buffer.Data(), "
+                  "fm.buffer.Offset() + fbeStructOffset))");
+  WriteLineIndent("if fbeStructSize < (4 + 4) {");
+  Indent(1);
+  WriteLineIndent("return false");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fbeStructType := int(fbe.ReadUInt32(fm.buffer.Data(), "
+                  "fm.buffer.Offset() + fbeStructOffset + 4))");
+  WriteLineIndent("if fbeVerifyType && (fbeStructType != fm.FBEType()) {");
+  Indent(1);
+  WriteLineIndent("return false");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fm.buffer.Shift(fbeStructOffset)");
+  WriteLineIndent("fbeResult := fm.VerifyFields(fbeStructSize)");
+  WriteLineIndent("fm.buffer.Unshift(fbeStructOffset)");
+  WriteLineIndent("return fbeResult");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("// // Check if the struct value fields are valid");
+  WriteLineIndent("func (fm *" + field_model_name +
+                  ") VerifyFields(fbeStructSize int) bool {");
+  Indent(1);
+  if ((s->base && !s->base->empty()) || (s->body && !s->body->fields.empty())) {
+    WriteLineIndent("fbeCurrentSize := 4 + 4");
+    if (!base_type.empty()) {
+      WriteLine();
+      WriteLineIndent("if (fbeCurrentSize + fm." + base_field_name +
+                      ".FBEBody() - 4 - 4) > fbeStructSize {");
+      Indent(1);
+      WriteLineIndent("return true");
+      Indent(-1);
+      WriteLineIndent("}");
+      WriteLineIndent("if !fm." + base_field_name +
+                      ".VerifyFields(fbeStructSize) {");
+      Indent(1);
+      WriteLineIndent("return false");
+      Indent(-1);
+      WriteLineIndent("}");
+      WriteLineIndent("fbeCurrentSize += fm." + base_field_name +
+                      ".FBEBody() - 4 - 4");
+    }
+    if (s->body) {
+      for (const auto &field : s->body->fields) {
+        WriteLine();
+        WriteLineIndent("if (fbeCurrentSize + fm." +
+                        ConvertToUpper(*field->name) +
+                        ".FBESize()) > fbeStructSize {");
+        Indent(1);
+        WriteLineIndent("return true");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLineIndent("if !fm." + ConvertToUpper(*field->name) +
+                        ".Verify() {");
+        Indent(1);
+        WriteLineIndent("return false");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLineIndent("fbeCurrentSize += fm." + ConvertToUpper(*field->name) +
+                        ".FBESize()");
+      }
+    }
+    WriteLine();
+  }
+  WriteLineIndent("return true");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct field model Get() methods
+  WriteLine();
+  WriteLineIndent("// Get the struct value (begin phase)");
+  WriteLineIndent("func (fm *" + field_model_name +
+                  ") GetBegin() (int, error) {");
+  Indent(1);
+  WriteLineIndent("if (fm.buffer.Offset() + fm.FBEOffset() + fm.FBESize()) > "
+                  "fm.buffer.Size() {");
+  Indent(1);
+  WriteLineIndent("return 0, nil");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fbeStructOffset := int(fbe.ReadUInt32(fm.buffer.Data(), "
+                  "fm.buffer.Offset() + fm.FBEOffset()))");
+  WriteLineIndent("if (fbeStructOffset == 0) || ((fm.buffer.Offset() + "
+                  "fbeStructOffset + 4 + 4) > fm.buffer.Size()) {");
+  Indent(1);
+  WriteLineIndent("return 0, errors.New(\"model is broken\")");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fbeStructSize := int(fbe.ReadUInt32(fm.buffer.Data(), "
+                  "fm.buffer.Offset() + fbeStructOffset))");
+  WriteLineIndent("if fbeStructSize < (4 + 4) {");
+  Indent(1);
+  WriteLineIndent("return 0, errors.New(\"model is broken\")");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fm.buffer.Shift(fbeStructOffset)");
+  WriteLineIndent("return fbeStructOffset, nil");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("// Get the struct value (end phase)");
+  WriteLineIndent("func (fm *" + field_model_name + ") GetEnd(fbeBegin int) {");
+  Indent(1);
+  WriteLineIndent("fm.buffer.Unshift(fbeBegin)");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("// Get the struct value");
+  WriteLineIndent("func (fm *" + field_model_name + ") Get() (*" + struct_name +
+                  ", error) {");
+  Indent(1);
+  WriteLineIndent("fbeResult := New" + struct_name + "()");
+  WriteLineIndent("return fbeResult, fm.GetValue(fbeResult)");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("// Get the struct value by the given pointer");
+  WriteLineIndent("func (fm *" + field_model_name + ") GetValue(fbeValue *" +
+                  struct_name + ") error {");
+  Indent(1);
+  WriteLineIndent("fbeBegin, err := fm.GetBegin()");
+  WriteLineIndent("if fbeBegin == 0 {");
+  Indent(1);
+  WriteLineIndent("return err");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fbeStructSize := int(fbe.ReadUInt32(fm.buffer.Data(), "
+                  "fm.buffer.Offset()))");
+  WriteLineIndent("fm.GetFields(fbeValue, fbeStructSize)");
+  WriteLineIndent("fm.GetEnd(fbeBegin)");
+  WriteLineIndent("return nil");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("// Get the struct fields values");
+  WriteLineIndent("func (fm *" + field_model_name + ") GetFields(fbeValue *" +
+                  struct_name + ", fbeStructSize int) {");
+  Indent(1);
+  if ((s->base && !s->base->empty()) || (s->body && !s->body->fields.empty())) {
+    WriteLineIndent("fbeCurrentSize := 4 + 4");
+    if (!base_type.empty()) {
+      WriteLine();
+      WriteLineIndent("if (fbeCurrentSize + fm." + base_field_name +
+                      ".FBEBody() - 4 - 4) <= fbeStructSize {");
+      Indent(1);
+      WriteLineIndent("fm." + base_field_name + ".GetFields(fbeValue." +
+                      ConvertBaseName(base_type) + ", fbeStructSize)");
+      Indent(-1);
+      WriteLineIndent("}");
+      WriteLineIndent("fbeCurrentSize += fm." + base_field_name +
+                      ".FBEBody() - 4 - 4");
+    }
+    if (s->body) {
+      for (const auto &field : s->body->fields) {
+        WriteLine();
+        WriteLineIndent("if (fbeCurrentSize + fm." +
+                        ConvertToUpper(*field->name) +
+                        ".FBESize()) <= fbeStructSize {");
+        Indent(1);
+        if (field->array) {
+          WriteLineIndent("slice, _ := fm." + ConvertToUpper(*field->name) +
+                          ".Get()");
+          WriteLineIndent("copy(fbeValue." + ConvertToUpper(*field->name) +
+                          "[:], slice)");
+        } else if (field->vector || field->list || field->set || field->map ||
+                   field->hash || field->optional)
+          WriteLineIndent("fbeValue." + ConvertToUpper(*field->name) +
+                          ", _ = fm." + ConvertToUpper(*field->name) +
+                          ".Get()");
+        else if (!IsGoType(*field->type)) {
+          if (field->value)
+            WriteLineIndent(
+                "_ = fm." + ConvertToUpper(*field->name) +
+                ".GetValueDefault(&fbeValue." + ConvertToUpper(*field->name) +
+                ", " +
+                ConvertConstant(*field->type, *field->value, field->optional) +
+                ")");
+          else
+            WriteLineIndent("_ = fm." + ConvertToUpper(*field->name) +
+                            ".GetValue(&fbeValue." +
+                            ConvertToUpper(*field->name) + ")");
+        } else {
+          if (field->value)
+            WriteLineIndent(
+                "fbeValue." + ConvertToUpper(*field->name) + ", _ = fm." +
+                ConvertToUpper(*field->name) + ".GetDefault(" +
+                ConvertConstant(*field->type, *field->value, field->optional) +
+                ")");
+          else
+            WriteLineIndent("fbeValue." + ConvertToUpper(*field->name) +
+                            ", _ = fm." + ConvertToUpper(*field->name) +
+                            ".Get()");
+        }
+        Indent(-1);
+        WriteLineIndent("} else {");
+        Indent(1);
+        WriteLineIndent("fbeValue." + ConvertToUpper(*field->name) + " = " +
+                        ConvertDefault(*field));
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLineIndent("fbeCurrentSize += fm." + ConvertToUpper(*field->name) +
+                        ".FBESize()");
+      }
+    }
+  }
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct field model Set() methods
+  WriteLine();
+  WriteLineIndent("// Set the struct value (begin phase)");
+  WriteLineIndent("func (fm *" + field_model_name +
+                  ") SetBegin() (int, error) {");
+  Indent(1);
+  WriteLineIndent("if (fm.buffer.Offset() + fm.FBEOffset() + fm.FBESize()) > "
+                  "fm.buffer.Size() {");
+  Indent(1);
+  WriteLineIndent("return 0, errors.New(\"model is broken\")");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fbeStructSize := fm.FBEBody()");
+  WriteLineIndent("fbeStructOffset := fm.buffer.Allocate(fbeStructSize) - "
+                  "fm.buffer.Offset()");
+  WriteLineIndent("if (fbeStructOffset <= 0) || ((fm.buffer.Offset() + "
+                  "fbeStructOffset + fbeStructSize) > fm.buffer.Size()) {");
+  Indent(1);
+  WriteLineIndent("return 0, errors.New(\"model is broken\")");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fbe.WriteUInt32(fm.buffer.Data(), fm.buffer.Offset() + "
+                  "fm.FBEOffset(), uint32(fbeStructOffset))");
+  WriteLineIndent("fbe.WriteUInt32(fm.buffer.Data(), fm.buffer.Offset() + "
+                  "fbeStructOffset, uint32(fbeStructSize))");
+  WriteLineIndent("fbe.WriteUInt32(fm.buffer.Data(), fm.buffer.Offset() + "
+                  "fbeStructOffset + 4, uint32(fm.FBEType()))");
+  WriteLine();
+  WriteLineIndent("fm.buffer.Shift(fbeStructOffset)");
+  WriteLineIndent("return fbeStructOffset, nil");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("// Set the struct value (end phase)");
+  WriteLineIndent("func (fm *" + field_model_name + ") SetEnd(fbeBegin int) {");
+  Indent(1);
+  WriteLineIndent("fm.buffer.Unshift(fbeBegin)");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("// Set the struct value");
+  WriteLineIndent("func (fm *" + field_model_name + ") Set(fbeValue *" +
+                  struct_name + ") error {");
+  Indent(1);
+  WriteLineIndent("fbeBegin, err := fm.SetBegin()");
+  WriteLineIndent("if fbeBegin == 0 {");
+  Indent(1);
+  WriteLineIndent("return err");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("err = fm.SetFields(fbeValue)");
+  WriteLineIndent("fm.SetEnd(fbeBegin)");
+  WriteLineIndent("return err");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("// Set the struct fields values");
+  WriteLineIndent("func (fm *" + field_model_name + ") SetFields(fbeValue *" +
+                  struct_name + ") error {");
+  Indent(1);
+  if ((s->base && !s->base->empty()) || (s->body && !s->body->fields.empty())) {
+    WriteLineIndent("var err error = nil");
+    WriteLine();
+    if (!base_type.empty()) {
+      WriteLineIndent("if err = fm." + base_field_name +
+                      ".SetFields(fbeValue." + ConvertBaseName(base_type) +
+                      "); err != nil {");
+      Indent(1);
+      WriteLineIndent("return err");
+      Indent(-1);
+      WriteLineIndent("}");
+    }
+    if (s->body) {
+      for (const auto &field : s->body->fields) {
+        if (field->array)
+          WriteLineIndent("if err = fm." + ConvertToUpper(*field->name) +
+                          ".Set(fbeValue." + ConvertToUpper(*field->name) +
+                          "[:]); err != nil {");
+        else
+          WriteLineIndent(
+              "if err = fm." + ConvertToUpper(*field->name) + ".Set(" +
+              ((IsGoType(*field->type) || field->vector || field->list ||
+                field->set || field->map || field->hash || field->optional)
+                   ? ""
+                   : "&") +
+              "fbeValue." + ConvertToUpper(*field->name) + "); err != nil {");
+        Indent(1);
+        WriteLineIndent("return err");
+        Indent(-1);
+        WriteLineIndent("}");
+      }
+    }
+    WriteLineIndent("return err");
+  } else
+    WriteLineIndent("return nil");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate footer
+  GenerateFooter();
+
+  // Store the output file
+  WriteEnd();
+  Store(output);
+}
+
+void GeneratorGo::GenerateStructModel(const std::shared_ptr<Package> &p,
+                                      const std::shared_ptr<StructType> &s,
+                                      const CppCommon::Path &path) {
+  std::string struct_name = ConvertToUpper(*s->name);
+  std::string model_name = struct_name + "Model";
+  std::string field_model_name = "FieldModel" + struct_name;
+
+  // Generate the output file
+  CppCommon::Path output = path / (model_name + ".go");
+  WriteBegin();
+
+  // Generate header
+  GenerateHeader(CppCommon::Path(_input).filename().string());
+
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
+
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
+
+  // Generate struct model type
+  WriteLine();
+  WriteLineIndent("// Fast Binary Encoding " + struct_name + " model");
+  WriteLineIndent("type " + model_name + " struct {");
+  Indent(1);
+  WriteLineIndent("// Model buffer");
+  WriteLineIndent("buffer *fbe.Buffer");
+  WriteLine();
+  WriteLineIndent("// Field model");
+  WriteLineIndent("model *" + field_model_name);
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct model constructor
+  WriteLine();
+  WriteLineIndent("// Create a new " + struct_name + " model");
+  WriteLineIndent("func New" + model_name + "(buffer *fbe.Buffer) *" +
+                  model_name + " {");
+  Indent(1);
+  WriteLineIndent("return &" + model_name + "{buffer: buffer, model: New" +
+                  field_model_name + "(buffer, 4)}");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct model Buffer() & Model() methods
+  WriteLine();
+  WriteLineIndent("// Get the model buffer");
+  WriteLineIndent("func (m *" + model_name +
+                  ") Buffer() *fbe.Buffer { return m.buffer }");
+  WriteLineIndent("// Get the field model");
+  WriteLineIndent("func (m *" + model_name + ") Model() *" + field_model_name +
+                  " { return m.model }");
+
+  // Generate struct model FBESize() & FBEType() methods
+  WriteLine();
+  WriteLineIndent("// Get the model size");
+  WriteLineIndent(
+      "func (m *" + model_name +
+      ") FBESize() int { return m.model.FBESize() + m.model.FBEExtra() }");
+  WriteLineIndent("// // Get the model type");
+  WriteLineIndent("func (m *" + model_name +
+                  ") FBEType() int { return m.model.FBEType() }");
+
+  // Generate struct model Verify() method
+  WriteLine();
+  WriteLineIndent("// Check if the struct value is valid");
+  WriteLineIndent("func (m *" + model_name + ") Verify() bool {");
+  Indent(1);
+  WriteLineIndent(
+      "if (m.buffer.Offset() + m.model.FBEOffset() - 4) > m.buffer.Size() {");
+  Indent(1);
+  WriteLineIndent("return false");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fbeFullSize := int(fbe.ReadUInt32(m.buffer.Data(), "
+                  "m.buffer.Offset() + m.model.FBEOffset() - 4))");
+  WriteLineIndent("if fbeFullSize < m.model.FBESize() {");
+  Indent(1);
+  WriteLineIndent("return false");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("return m.model.Verify()");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct model CreateBegin() method
+  WriteLine();
+  WriteLineIndent("// Create a new model (begin phase)");
+  WriteLineIndent("func (m *" + model_name + ") CreateBegin() int {");
+  Indent(1);
+  WriteLineIndent("fbeBegin := m.buffer.Allocate(4 + m.model.FBESize())");
+  WriteLineIndent("return fbeBegin");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct model CreateEnd() method
+  WriteLine();
+  WriteLineIndent("// Create a new model (end phase)");
+  WriteLineIndent("func (m *" + model_name + ") CreateEnd(fbeBegin int) int {");
+  Indent(1);
+  WriteLineIndent("fbeEnd := m.buffer.Size()");
+  WriteLineIndent("fbeFullSize := fbeEnd - fbeBegin");
+  WriteLineIndent("fbe.WriteUInt32(m.buffer.Data(), m.buffer.Offset() + "
+                  "m.model.FBEOffset() - 4, uint32(fbeFullSize))");
+  WriteLineIndent("return fbeFullSize");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct model Serialize() method
+  WriteLine();
+  WriteLineIndent("// Serialize the struct value");
+  WriteLineIndent("func (m *" + model_name + ") Serialize(value *" +
+                  struct_name + ") (int, error) {");
+  Indent(1);
+  WriteLineIndent("fbeBegin := m.CreateBegin()");
+  WriteLineIndent("err := m.model.Set(value)");
+  WriteLineIndent("fbeFullSize := m.CreateEnd(fbeBegin)");
+  WriteLineIndent("return fbeFullSize, err");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct model Deserialize() method
+  WriteLine();
+  WriteLineIndent("// Deserialize the struct value");
+  WriteLineIndent("func (m *" + model_name + ") Deserialize() (*" +
+                  struct_name + ", int, error) {");
+  Indent(1);
+  WriteLineIndent("value := New" + struct_name + "()");
+  WriteLineIndent("fbeFullSize, err := m.DeserializeValue(value)");
+  WriteLineIndent("return value, fbeFullSize, err");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct model DeserializeValue() method
+  WriteLine();
+  WriteLineIndent("// Deserialize the struct value by the given pointer");
+  WriteLineIndent("func (m *" + model_name + ") DeserializeValue(value *" +
+                  struct_name + ") (int, error) {");
+  Indent(1);
+  WriteLineIndent(
+      "if (m.buffer.Offset() + m.model.FBEOffset() - 4) > m.buffer.Size() {");
+  Indent(1);
+  WriteLineIndent("value = New" + struct_name + "()");
+  WriteLineIndent("return 0, nil");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fbeFullSize := int(fbe.ReadUInt32(m.buffer.Data(), "
+                  "m.buffer.Offset() + m.model.FBEOffset() - 4))");
+  WriteLineIndent("if fbeFullSize < m.model.FBESize() {");
+  Indent(1);
+  WriteLineIndent("value = New" + struct_name + "()");
+  WriteLineIndent("return 0, errors.New(\"model is broken\")");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("err := m.model.GetValue(value)");
+  WriteLineIndent("return fbeFullSize, err");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct model Next() method
+  WriteLine();
+  WriteLineIndent("// Move to the next struct value");
+  WriteLineIndent("func (m *" + model_name + ") Next(prev int) {");
+  Indent(1);
+  WriteLineIndent("m.model.FBEShift(prev)");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate footer
+  GenerateFooter();
+
+  // Store the output file
+  WriteEnd();
+  Store(output);
+}
+
+void GeneratorGo::GenerateStructFinalModel(const std::shared_ptr<Package> &p,
+                                           const std::shared_ptr<StructType> &s,
+                                           const CppCommon::Path &path) {
+  std::string struct_name = ConvertToUpper(*s->name);
+  std::string final_model_name = "FinalModel" + struct_name;
+
+  // Generate the output file
+  CppCommon::Path output = path / (final_model_name + ".go");
+  WriteBegin();
+
+  // Generate header
+  GenerateHeader(CppCommon::Path(_input).filename().string());
+
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
+
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
+
+  std::string base_type =
+      (s->base && !s->base->empty()) ? ConvertTypeName(*s->base, false) : "";
+  std::string base_final_model = (s->base && !s->base->empty())
+                                     ? ConvertModelName(*s->base, "FinalModel")
+                                     : "";
+  std::string base_final_name = "FinalModel" + ConvertBaseName(base_type);
+
+  // Generate struct final model type
+  WriteLine();
+  WriteLineIndent("// Fast Binary Encoding " + struct_name + " final model");
+  WriteLineIndent("type " + final_model_name + " struct {");
+  Indent(1);
+  WriteLineIndent("buffer *fbe.Buffer  // Final model buffer");
+  WriteLineIndent("offset int          // Final model buffer offset");
+  if ((s->base && !s->base->empty()) || (s->body && !s->body->fields.empty())) {
+    WriteLine();
+    if (!base_type.empty())
+      WriteLineIndent("*" + base_final_model);
+    if (s->body)
+      for (const auto &field : s->body->fields)
+        WriteLineIndent(ConvertToUpper(*field->name) + " *" +
+                        ConvertTypeFieldDeclaration(*field, true));
+  }
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct final model constructor
+  WriteLine();
+  WriteLineIndent("// Create a new " + struct_name + " final model");
+  WriteLineIndent("func New" + final_model_name +
+                  "(buffer *fbe.Buffer, offset int) *" + final_model_name +
+                  " {");
+  Indent(1);
+  WriteLineIndent("fbeResult := " + final_model_name +
+                  "{buffer: buffer, offset: offset}");
+  if (!base_type.empty())
+    WriteLineIndent("fbeResult." + base_final_name + " = " +
+                    ConvertModelName(*s->base, "NewFinalModel") +
+                    "(buffer, 0)");
+  if (s->body)
+    for (const auto &field : s->body->fields)
+      WriteLineIndent("fbeResult." + ConvertToUpper(*field->name) + " = " +
+                      ConvertTypeFieldInitialization(*field, "0", true));
+  WriteLineIndent("return &fbeResult");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct final model FBEAllocationSize() method
+  WriteLine();
+  WriteLineIndent("// Get the allocation size");
+  WriteLineIndent("func (fm *" + final_model_name +
+                  ") FBEAllocationSize(fbeValue *" + struct_name + ") int {");
+  Indent(1);
+  WriteLineIndent("fbeResult := 0 +");
+  Indent(1);
+  if (!base_type.empty())
+    WriteLineIndent("fm." + base_final_name + ".FBEAllocationSize(fbeValue." +
+                    ConvertBaseName(base_type) + ") + ");
+  if (s->body) {
+    for (const auto &field : s->body->fields) {
+      if (field->array)
+        WriteLineIndent("fm." + ConvertToUpper(*field->name) +
+                        ".FBEAllocationSize(fbeValue." +
+                        ConvertToUpper(*field->name) + "[:]) +");
+      else if (field->vector || field->list || field->set || field->map ||
+               field->hash || field->optional)
+        WriteLineIndent("fm." + ConvertToUpper(*field->name) +
+                        ".FBEAllocationSize(fbeValue." +
+                        ConvertToUpper(*field->name) + ") +");
+      else if (!IsGoType(*field->type))
+        WriteLineIndent("fm." + ConvertToUpper(*field->name) +
+                        ".FBEAllocationSize(&fbeValue." +
+                        ConvertToUpper(*field->name) + ") +");
+      else
+        WriteLineIndent("fm." + ConvertToUpper(*field->name) +
+                        ".FBEAllocationSize(fbeValue." +
+                        ConvertToUpper(*field->name) + ") +");
+    }
+  }
+  WriteLineIndent("0");
+  Indent(-1);
+  WriteLineIndent("return fbeResult");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct final model FBESize() method
+  WriteLine();
+  WriteLineIndent("// Get the final size");
+  WriteLineIndent("func (fm *" + final_model_name +
+                  ") FBESize() int { return 0 }");
+
+  // Generate struct final model FBEExtra() method
+  WriteLine();
+  WriteLineIndent("// Get the final extra size");
+  WriteLineIndent("func (fm *" + final_model_name +
+                  ") FBEExtra() int { return 0 }");
+
+  // Generate struct final model FBEType() method
+  WriteLine();
+  WriteLineIndent("// Get the final type");
+  if (s->base && !s->base->empty() && (s->type == 0))
+    WriteLineIndent("func (fm *" + final_model_name +
+                    ") FBEType() int { return fm." + base_final_name +
+                    ".FBEType() }");
+  else
+    WriteLineIndent("func (fm *" + final_model_name +
+                    ") FBEType() int { return " + std::to_string(s->type) +
+                    " }");
+
+  // Generate struct final model FBEOffset() methods
+  WriteLine();
+  WriteLineIndent("// Get the final offset");
+  WriteLineIndent("func (fm *" + final_model_name +
+                  ") FBEOffset() int { return fm.offset }");
+  WriteLineIndent("// Set the final offset");
+  WriteLineIndent("func (fm *" + final_model_name +
+                  ") SetFBEOffset(value int) { fm.offset = value }");
+
+  // Generate struct final model FBEShift() methods
+  WriteLine();
+  WriteLineIndent("// Shift the current final offset");
+  WriteLineIndent("func (fm *" + final_model_name +
+                  ") FBEShift(size int) { fm.offset += size }");
+  WriteLineIndent("// Unshift the current final offset");
+  WriteLineIndent("func (fm *" + final_model_name +
+                  ") FBEUnshift(size int) { fm.offset -= size }");
+
+  // Generate struct final model Verify() methods
+  WriteLine();
+  WriteLineIndent("// Check if the struct value is valid");
+  WriteLineIndent("func (fm *" + final_model_name + ") Verify() int {");
+  Indent(1);
+  WriteLineIndent("fm.buffer.Shift(fm.FBEOffset())");
+  WriteLineIndent("fbeResult := fm.VerifyFields()");
+  WriteLineIndent("fm.buffer.Unshift(fm.FBEOffset())");
+  WriteLineIndent("return fbeResult");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("// Check if the struct fields are valid");
+  WriteLineIndent("func (fm *" + final_model_name + ") VerifyFields() int {");
+  Indent(1);
+  if ((s->base && !s->base->empty()) || (s->body && !s->body->fields.empty())) {
+    WriteLineIndent("fbeCurrentOffset := 0");
+    WriteLineIndent("fbeFieldSize := 0");
+    WriteLine();
+    if (!base_type.empty()) {
+      WriteLine();
+      WriteLineIndent("fm." + base_final_name +
+                      ".SetFBEOffset(fbeCurrentOffset)");
+      WriteLineIndent("if fbeFieldSize = fm." + base_final_name +
+                      ".VerifyFields(); fbeFieldSize == fbe.MaxInt {");
+      Indent(1);
+      WriteLineIndent("return fbe.MaxInt");
+      Indent(-1);
+      WriteLineIndent("}");
+      WriteLineIndent("fbeCurrentOffset += fbeFieldSize");
+    }
+    if (s->body) {
+      for (const auto &field : s->body->fields) {
+        WriteLine();
+        WriteLineIndent("fm." + ConvertToUpper(*field->name) +
+                        ".SetFBEOffset(fbeCurrentOffset)");
+        WriteLineIndent("if fbeFieldSize = fm." + ConvertToUpper(*field->name) +
+                        ".Verify(); fbeFieldSize == fbe.MaxInt {");
+        Indent(1);
+        WriteLineIndent("return fbe.MaxInt");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLineIndent("fbeCurrentOffset += fbeFieldSize");
+      }
+    }
+    WriteLine();
+    WriteLineIndent("return fbeCurrentOffset");
+  } else
+    WriteLineIndent("return 0");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct final model Get() methods
+  WriteLine();
+  WriteLineIndent("// Get the struct value");
+  WriteLineIndent("func (fm *" + final_model_name + ") Get() (*" + struct_name +
+                  ", int, error) {");
+  Indent(1);
+  WriteLineIndent("fbeResult := New" + struct_name + "()");
+  WriteLineIndent("fbeSize, err := fm.GetValue(fbeResult)");
+  WriteLineIndent("return fbeResult, fbeSize, err");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("// Get the struct value by the given pointer");
+  WriteLineIndent("func (fm *" + final_model_name + ") GetValue(fbeValue *" +
+                  struct_name + ") (int, error) {");
+  Indent(1);
+  WriteLineIndent("fm.buffer.Shift(fm.FBEOffset())");
+  WriteLineIndent("fbeSize, err := fm.GetFields(fbeValue)");
+  WriteLineIndent("fm.buffer.Unshift(fm.FBEOffset())");
+  WriteLineIndent("return fbeSize, err");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("// Get the struct fields values");
+  WriteLineIndent("func (fm *" + final_model_name + ") GetFields(fbeValue *" +
+                  struct_name + ") (int, error) {");
+  Indent(1);
+  if ((s->base && !s->base->empty()) || (s->body && !s->body->fields.empty())) {
+    WriteLineIndent("var err error = nil");
+    WriteLineIndent("fbeCurrentSize := 0");
+    WriteLineIndent("fbeCurrentOffset := 0");
+    WriteLineIndent("fbeFieldSize := 0");
+    if (!base_type.empty()) {
+      WriteLine();
+      WriteLineIndent("fm." + base_final_name +
+                      ".SetFBEOffset(fbeCurrentOffset)");
+      WriteLineIndent("if fbeFieldSize, err = fm." + base_final_name +
+                      ".GetFields(fbeValue." + ConvertBaseName(base_type) +
+                      "); err != nil {");
+      Indent(1);
+      WriteLineIndent("return fbeCurrentSize, err");
+      Indent(-1);
+      WriteLineIndent("}");
+      WriteLineIndent("fbeCurrentOffset += fbeFieldSize");
+      WriteLineIndent("fbeCurrentSize += fbeFieldSize");
+    }
+    if (s->body) {
+      for (const auto &field : s->body->fields) {
+        WriteLine();
+        WriteLineIndent("fm." + ConvertToUpper(*field->name) +
+                        ".SetFBEOffset(fbeCurrentOffset)");
+        if (field->array)
+          WriteLineIndent("if slice, size, err := fm." +
+                          ConvertToUpper(*field->name) +
+                          ".Get(); err != nil {");
+        else if (field->vector || field->list || field->set || field->map ||
+                 field->hash || field->optional)
+          WriteLineIndent("if fbeValue." + ConvertToUpper(*field->name) +
+                          ", fbeFieldSize, err = fm." +
+                          ConvertToUpper(*field->name) +
+                          ".Get(); err != nil {");
+        else if (!IsGoType(*field->type))
+          WriteLineIndent("if fbeFieldSize, err = fm." +
+                          ConvertToUpper(*field->name) +
+                          ".GetValue(&fbeValue." +
+                          ConvertToUpper(*field->name) + "); err != nil {");
+        else
+          WriteLineIndent("if fbeValue." + ConvertToUpper(*field->name) +
+                          ", fbeFieldSize, err = fm." +
+                          ConvertToUpper(*field->name) +
+                          ".Get(); err != nil {");
+        Indent(1);
+        WriteLineIndent("return fbeCurrentSize, err");
+        Indent(-1);
+        if (field->array) {
+          WriteLineIndent("} else {");
+          Indent(1);
+          WriteLineIndent("copy(fbeValue." + ConvertToUpper(*field->name) +
+                          "[:], slice)");
+          WriteLineIndent("fbeFieldSize = size");
+          Indent(-1);
+        }
+        WriteLineIndent("}");
+        WriteLineIndent("fbeCurrentOffset += fbeFieldSize");
+        WriteLineIndent("fbeCurrentSize += fbeFieldSize");
+      }
+    }
+    WriteLine();
+    WriteLineIndent("return fbeCurrentSize, err");
+  } else
+    WriteLineIndent("return 0, nil");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct final model Set() methods
+  WriteLine();
+  WriteLineIndent("// Set the struct value");
+  WriteLineIndent("func (fm *" + final_model_name + ") Set(fbeValue *" +
+                  struct_name + ") (int, error) {");
+  Indent(1);
+  WriteLineIndent("fm.buffer.Shift(fm.FBEOffset())");
+  WriteLineIndent("fbeResult, err := fm.SetFields(fbeValue)");
+  WriteLineIndent("fm.buffer.Unshift(fm.FBEOffset())");
+  WriteLineIndent("return fbeResult, err");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("// Set the struct fields values");
+  WriteLineIndent("func (fm *" + final_model_name + ") SetFields(fbeValue *" +
+                  struct_name + ") (int, error) {");
+  Indent(1);
+  if ((s->base && !s->base->empty()) || (s->body && !s->body->fields.empty())) {
+    WriteLineIndent("var err error = nil");
+    WriteLineIndent("fbeCurrentSize := 0");
+    WriteLineIndent("fbeCurrentOffset := 0");
+    WriteLineIndent("fbeFieldSize := 0");
+    if (!base_type.empty()) {
+      WriteLine();
+      WriteLineIndent("fm." + base_final_name +
+                      ".SetFBEOffset(fbeCurrentOffset)");
+      WriteLineIndent("if fbeFieldSize, err = fm." + base_final_name +
+                      ".SetFields(fbeValue." + ConvertBaseName(base_type) +
+                      "); err != nil {");
+      Indent(1);
+      WriteLineIndent("return fbeCurrentSize, err");
+      Indent(-1);
+      WriteLineIndent("}");
+      WriteLineIndent("fbeCurrentOffset += fbeFieldSize");
+      WriteLineIndent("fbeCurrentSize += fbeFieldSize");
+    }
+    if (s->body) {
+      for (const auto &field : s->body->fields) {
+        WriteLine();
+        WriteLineIndent("fm." + ConvertToUpper(*field->name) +
+                        ".SetFBEOffset(fbeCurrentOffset)");
+        if (field->array)
+          WriteLineIndent("if fbeFieldSize, err = fm." +
+                          ConvertToUpper(*field->name) + ".Set(fbeValue." +
+                          ConvertToUpper(*field->name) + "[:]); err != nil {");
+        else
+          WriteLineIndent(
+              "if fbeFieldSize, err = fm." + ConvertToUpper(*field->name) +
+              ".Set(" +
+              ((IsGoType(*field->type) || field->vector || field->list ||
+                field->set || field->map || field->hash || field->optional)
+                   ? ""
+                   : "&") +
+              "fbeValue." + ConvertToUpper(*field->name) + "); err != nil {");
+        Indent(1);
+        WriteLineIndent("return fbeCurrentSize, err");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLineIndent("fbeCurrentOffset += fbeFieldSize");
+        WriteLineIndent("fbeCurrentSize += fbeFieldSize");
+      }
+    }
+    WriteLine();
+    WriteLineIndent("return fbeCurrentSize, err");
+  } else
+    WriteLineIndent("return 0, nil");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate footer
+  GenerateFooter();
+
+  // Store the output file
+  WriteEnd();
+  Store(output);
+}
+
+void GeneratorGo::GenerateStructModelFinal(const std::shared_ptr<Package> &p,
+                                           const std::shared_ptr<StructType> &s,
+                                           const CppCommon::Path &path) {
+  std::string struct_name = ConvertToUpper(*s->name);
+  std::string model_name = struct_name + "FinalModel";
+  std::string final_model_name = "FinalModel" + struct_name;
+
+  // Generate the output file
+  CppCommon::Path output = path / (model_name + ".go");
+  WriteBegin();
+
+  // Generate header
+  GenerateHeader(CppCommon::Path(_input).filename().string());
+
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
+
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
+
+  // Generate struct model final type
+  WriteLine();
+  WriteLineIndent("// Fast Binary Encoding " + struct_name + " final model");
+  WriteLineIndent("type " + model_name + " struct {");
+  Indent(1);
+  WriteLineIndent("// Model buffer");
+  WriteLineIndent("buffer *fbe.Buffer");
+  WriteLine();
+  WriteLineIndent("// Final model");
+  WriteLineIndent("model *" + final_model_name);
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct model final constructor
+  WriteLine();
+  WriteLineIndent("// Create a new " + struct_name + " final model");
+  WriteLineIndent("func New" + model_name + "(buffer *fbe.Buffer) *" +
+                  model_name + " {");
+  Indent(1);
+  WriteLineIndent("return &" + model_name + "{buffer: buffer, model: New" +
+                  final_model_name + "(buffer, 8)}");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct model final Buffer() & Model() methods
+  WriteLine();
+  WriteLineIndent("// Get the final model buffer");
+  WriteLineIndent("func (m *" + model_name +
+                  ") Buffer() *fbe.Buffer { return m.buffer }");
+  WriteLineIndent("// Get the final model");
+  WriteLineIndent("func (m *" + model_name + ") Model() *" + final_model_name +
+                  " { return m.model }");
+
+  // Generate struct model final FBEType() method
+  WriteLine();
+  WriteLineIndent("// // Get the final model type");
+  WriteLineIndent("func (m *" + model_name +
+                  ") FBEType() int { return m.model.FBEType() }");
+
+  // Generate struct model final Verify() method
+  WriteLine();
+  WriteLineIndent("// Check if the struct value is valid");
+  WriteLineIndent("func (m *" + model_name + ") Verify() bool {");
+  Indent(1);
+  WriteLineIndent(
+      "if (m.buffer.Offset() + m.model.FBEOffset() - 4) > m.buffer.Size() {");
+  Indent(1);
+  WriteLineIndent("return false");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fbeStructSize := int(fbe.ReadUInt32(m.buffer.Data(), "
+                  "m.buffer.Offset() + m.model.FBEOffset() - 8))");
+  WriteLineIndent("fbeStructType := int(fbe.ReadUInt32(m.buffer.Data(), "
+                  "m.buffer.Offset() + m.model.FBEOffset() - 4))");
+  WriteLineIndent(
+      "if (fbeStructSize <= 0) || (fbeStructType != m.FBEType()) {");
+  Indent(1);
+  WriteLineIndent("return false");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("return (8 + m.model.Verify()) == fbeStructSize");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct model final CreateBegin() method
+  WriteLine();
+  WriteLineIndent("// Create a new final model (begin phase)");
+  WriteLineIndent("func (m *" + model_name + ") CreateBegin() int {");
+  Indent(1);
+  WriteLineIndent("fbeBegin := m.buffer.Allocate(4 + m.model.FBESize())");
+  WriteLineIndent("return fbeBegin");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct model final CreateEnd() method
+  WriteLine();
+  WriteLineIndent("// Create a new final model (end phase)");
+  WriteLineIndent("func (m *" + model_name + ") CreateEnd(fbeBegin int) int {");
+  Indent(1);
+  WriteLineIndent("fbeEnd := m.buffer.Size()");
+  WriteLineIndent("fbeFullSize := fbeEnd - fbeBegin");
+  WriteLineIndent("fbe.WriteUInt32(m.buffer.Data(), m.buffer.Offset() + "
+                  "m.model.FBEOffset() - 4, uint32(fbeFullSize))");
+  WriteLineIndent("return fbeFullSize");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct model final Serialize() method
+  WriteLine();
+  WriteLineIndent("// Serialize the struct value");
+  WriteLineIndent("func (m *" + model_name + ") Serialize(value *" +
+                  struct_name + ") (int, error) {");
+  Indent(1);
+  WriteLineIndent("fbeInitialSize := m.buffer.Size()");
+  WriteLine();
+  WriteLineIndent("fbeStructType := m.FBEType()");
+  WriteLineIndent("fbeStructSize := 8 + m.model.FBEAllocationSize(value)");
+  WriteLineIndent("fbeStructOffset := m.buffer.Allocate(fbeStructSize) - "
+                  "m.buffer.Offset()");
+  WriteLineIndent("if (m.buffer.Offset() + fbeStructOffset + fbeStructSize) > "
+                  "m.buffer.Size() {");
+  Indent(1);
+  WriteLineIndent("return 0, errors.New(\"model is broken\")");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fbeStructSize, err := m.model.Set(value)");
+  WriteLineIndent("fbeStructSize += 8");
+  WriteLineIndent("m.buffer.Resize(fbeInitialSize + fbeStructSize)");
+  WriteLine();
+  WriteLineIndent("fbe.WriteUInt32(m.buffer.Data(), m.buffer.Offset() + "
+                  "m.model.FBEOffset() - 8, uint32(fbeStructSize))");
+  WriteLineIndent("fbe.WriteUInt32(m.buffer.Data(), m.buffer.Offset() + "
+                  "m.model.FBEOffset() - 4, uint32(fbeStructType))");
+  WriteLine();
+  WriteLineIndent("return fbeStructSize, err");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct model final Deserialize() method
+  WriteLine();
+  WriteLineIndent("// Deserialize the struct value");
+  WriteLineIndent("func (m *" + model_name + ") Deserialize() (*" +
+                  struct_name + ", int, error) {");
+  Indent(1);
+  WriteLineIndent("value := New" + struct_name + "()");
+  WriteLineIndent("fbeFullSize, err := m.DeserializeValue(value)");
+  WriteLineIndent("return value, fbeFullSize, err");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct model final DeserializeValue() method
+  WriteLine();
+  WriteLineIndent("// Deserialize the struct value by the given pointer");
+  WriteLineIndent("func (m *" + model_name + ") DeserializeValue(value *" +
+                  struct_name + ") (int, error) {");
+  Indent(1);
+  WriteLineIndent(
+      "if (m.buffer.Offset() + m.model.FBEOffset()) > m.buffer.Size() {");
+  Indent(1);
+  WriteLineIndent("value = New" + struct_name + "()");
+  WriteLineIndent("return 0, errors.New(\"model is broken\")");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fbeStructSize := int(fbe.ReadUInt32(m.buffer.Data(), "
+                  "m.buffer.Offset() + m.model.FBEOffset() - 8))");
+  WriteLineIndent("fbeStructType := int(fbe.ReadUInt32(m.buffer.Data(), "
+                  "m.buffer.Offset() + m.model.FBEOffset() - 4))");
+  WriteLineIndent(
+      "if (fbeStructSize <= 0) || (fbeStructType != m.FBEType()) {");
+  Indent(1);
+  WriteLineIndent("value = New" + struct_name + "()");
+  WriteLineIndent("return 8, errors.New(\"model is broken\")");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("fbeStructSize, err := m.model.GetValue(value)");
+  WriteLineIndent("return 8 + fbeStructSize, err");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate struct model final Next() method
+  WriteLine();
+  WriteLineIndent("// Move to the next struct value");
+  WriteLineIndent("func (m *" + model_name + ") Next(prev int) {");
+  Indent(1);
+  WriteLineIndent("m.model.FBEShift(prev)");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate footer
+  GenerateFooter();
+
+  // Store the output file
+  WriteEnd();
+  Store(output);
+}
+
+void GeneratorGo::GenerateProtocolVersion(const std::shared_ptr<Package> &p,
+                                          const CppCommon::Path &path) {
+  // Generate the output file
+  CppCommon::Path output = path / "ProtocolVersion.go";
+  WriteBegin();
+
+  // Generate header
+  GenerateHeader(CppCommon::Path(_input).filename().string());
+
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
+
+  // Generate protocol version constants
+  WriteLine();
+  WriteLineIndent("// Protocol major version");
+  WriteLineIndent("const ProtocolVersionMajor = " +
+                  std::to_string(p->version->major));
+  WriteLineIndent("// Protocol minor version");
+  WriteLineIndent("const ProtocolVersionMinor = " +
+                  std::to_string(p->version->minor));
+
+  // Generate footer
+  GenerateFooter();
+
+  // Store the output file
+  WriteEnd();
+  Store(output);
+}
+
+void GeneratorGo::GenerateSender(const std::shared_ptr<Package> &p,
+                                 const CppCommon::Path &path, bool final) {
+  std::string sender_name = std::string(final ? "Final" : "") + "Sender";
+
+  // Generate the output file
+  CppCommon::Path output = path / (sender_name + ".go");
+  WriteBegin();
+
+  // Generate header
+  GenerateHeader(CppCommon::Path(_input).filename().string());
+
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
+
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
+
+  // Generate sender type
+  WriteLine();
+  WriteLineIndent("// Fast Binary Encoding " + *p->name +
+                  (final ? " final " : " ") + "sender");
+  WriteLineIndent("type " + sender_name + " struct {");
+  Indent(1);
+  WriteLineIndent("*fbe.Sender");
+  if (p->body) {
+    if (p->import)
+      for (const auto &import : p->import->imports)
+        WriteLineIndent(ConvertToLower(*import) + "Sender *" + *import +
+                        (final ? ".Final" : ".") + "Sender");
+    for (const auto &s : p->body->structs)
+      if (s->message)
+        WriteLineIndent(ConvertToLower(*s->name) + "Model *" +
+                        ConvertToUpper(*s->name) + (final ? "Final" : "") +
+                        "Model");
+  }
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate sender constructor
+  WriteLine();
+  WriteLineIndent("// Create a new " + *p->name + (final ? " final " : " ") +
+                  "sender with an empty buffer");
+  WriteLineIndent("func New" + sender_name + "() *" + sender_name + " {");
+  Indent(1);
+  WriteLineIndent("return New" + sender_name +
+                  "WithBuffer(fbe.NewEmptyBuffer())");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("// Create a new " + *p->name + (final ? " final " : " ") +
+                  "sender with the given buffer");
+  WriteLineIndent("func New" + sender_name +
+                  "WithBuffer(buffer *fbe.Buffer) *" + sender_name + " {");
+  Indent(1);
+  WriteLineIndent("return &" + sender_name + "{");
+  Indent(1);
+  WriteLineIndent("fbe.NewSender(buffer, " +
+                  std::string(final ? "true" : "false") + "),");
+  if (p->body) {
+    if (p->import)
+      for (const auto &import : p->import->imports)
+        WriteLineIndent(*import + ".New" + (final ? "Final" : "") +
+                        "SenderWithBuffer(buffer),");
+    for (const auto &s : p->body->structs)
+      if (s->message)
+        WriteLineIndent("New" + ConvertToUpper(*s->name) +
+                        (final ? "Final" : "") + "Model(buffer),");
+  }
+  Indent(-1);
+  WriteLineIndent("}");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate sender imported senders
+  if (p->import) {
+    WriteLine();
+    WriteLineIndent("// Imported senders");
+    WriteLine();
+    for (const auto &import : p->import->imports)
+      WriteLineIndent("func (s *" + sender_name + ") " +
+                      ConvertToUpper(*import) + "Sender" + "() *" + *import +
+                      (final ? ".Final" : ".") + "Sender" + " { return s." +
+                      ConvertToLower(*import) + "Sender" + " }");
+  }
+
+  // Generate sender models accessors
+  WriteLine();
+  WriteLineIndent("// Sender models accessors");
+  WriteLine();
+  if (p->body)
+    for (const auto &s : p->body->structs)
+      if (s->message)
+        WriteLineIndent("func (s *" + sender_name + ") " +
+                        ConvertToUpper(*s->name) + "Model" + "() *" +
+                        ConvertToUpper(*s->name) + (final ? "Final" : "") +
+                        "Model" + " { return s." + ConvertToLower(*s->name) +
+                        "Model" + " }");
+
+  // Generate sender methods
+  WriteLine();
+  WriteLineIndent("// Send methods");
+  WriteLine();
+  WriteLineIndent("func (s *" + sender_name +
+                  ") Send(value interface{}) (int, error) {");
+  Indent(1);
+  if (p->body) {
+    WriteLineIndent("switch value := value.(type) {");
+    for (const auto &s : p->body->structs) {
+      if (s->message) {
+        WriteLineIndent("case *" + ConvertToUpper(*s->name) + ":");
+        Indent(1);
+        WriteLineIndent("if value.FBEType() == s." + ConvertToLower(*s->name) +
+                        "Model.FBEType() {");
+        Indent(1);
+        WriteLineIndent("return s.Send" + ConvertToUpper(*s->name) + "(value)");
+        Indent(-1);
+        WriteLineIndent("}");
+        Indent(-1);
+      }
+    }
+    WriteLineIndent("default:");
+    Indent(1);
+    WriteLineIndent("_ = value");
+    WriteLineIndent("break");
+    Indent(-1);
+    WriteLineIndent("}");
+    if (p->import) {
+      for (const auto &import : p->import->imports) {
+        WriteLineIndent("if result, err := s." + ConvertToLower(*import) +
+                        "Sender.Send(value); (result > 0) || (err != nil) {");
+        Indent(1);
+        WriteLineIndent("return result, err");
+        Indent(-1);
+        WriteLineIndent("}");
+      }
+    }
+  }
+  WriteLineIndent("return 0, nil");
+  Indent(-1);
+  WriteLineIndent("}");
+  if (p->body) {
+    for (const auto &s : p->body->structs) {
+      if (s->message) {
+        WriteLine();
+        WriteLineIndent("func (s *" + sender_name + ") Send" +
+                        ConvertToUpper(*s->name) + "(value *" +
+                        ConvertToUpper(*s->name) + ") (int, error) {");
+        Indent(1);
+        WriteLineIndent("// Serialize the value into the FBE stream");
+        WriteLineIndent("serialized, err := s." + ConvertToLower(*s->name) +
+                        "Model.Serialize(value)");
+        WriteLineIndent("if serialized <= 0 {");
+        Indent(1);
+        WriteLineIndent("return 0, errors.New(\"" + *p->name + "." + *s->name +
+                        " serialization failed\")");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLineIndent("if err != nil {");
+        Indent(1);
+        WriteLineIndent("return 0, err");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLineIndent("if !s." + ConvertToLower(*s->name) +
+                        "Model.Verify() {");
+        Indent(1);
+        WriteLineIndent("return 0, errors.New(\"" + *p->name + "." + *s->name +
+                        " validation failed\")");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLine();
+        WriteLineIndent("// Log the value");
+        WriteLineIndent("if s.Logging() {");
+        Indent(1);
+        WriteLineIndent("message := value.String()");
+        WriteLineIndent("s.HandlerOnSendLog.OnSendLog(message)");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLine();
+        WriteLineIndent("// Send the serialized value");
+        WriteLineIndent("return s.SendSerialized(serialized)");
+        Indent(-1);
+        WriteLineIndent("}");
+      }
+    }
+  }
+
+  // Generate footer
+  GenerateFooter();
+
+  // Store the output file
+  WriteEnd();
+  Store(output);
+}
+
+void GeneratorGo::GenerateReceiver(const std::shared_ptr<Package> &p,
+                                   const CppCommon::Path &path, bool final) {
+  std::string receiver_name = std::string(final ? "Final" : "") + "Receiver";
+
+  // Generate the output file
+  CppCommon::Path output = path / (receiver_name + ".go");
+  WriteBegin();
+
+  // Generate header
+  GenerateHeader(CppCommon::Path(_input).filename().string());
+
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
+
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
+
+  // Generate receiver interfaces
+  if (!final && p->body) {
+    for (const auto &s : p->body->structs) {
+      if (s->message) {
+        std::string struct_name = ConvertToUpper(*s->name);
+        WriteLine();
+        WriteLineIndent("// Receive " + *s->name + " interface");
+        WriteLineIndent("type OnReceive" + struct_name + " interface {");
+        Indent(1);
+        WriteLineIndent("OnReceive" + struct_name + "(value *" + struct_name +
+                        ")");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLine();
+        WriteLineIndent("// Receive " + *s->name + " function");
+        WriteLineIndent("type OnReceive" + struct_name + "Func func(value *" +
+                        struct_name + ")");
+        WriteLineIndent("func (f OnReceive" + struct_name + "Func) OnReceive" +
+                        struct_name + "(value *" + struct_name + ") {");
+        Indent(1);
+        WriteLineIndent("f(value)");
+        Indent(-1);
+        WriteLineIndent("}");
+      }
+    }
+  }
+
+  // Generate receiver type
+  WriteLine();
+  WriteLineIndent("// Fast Binary Encoding " + *p->name +
+                  (final ? " final " : " ") + "receiver");
+  WriteLineIndent("type " + receiver_name + " struct {");
+  Indent(1);
+  WriteLineIndent("*fbe.Receiver");
+  if (p->import)
+    for (const auto &import : p->import->imports)
+      WriteLineIndent(ConvertToLower(*import) + "Receiver *" + *import +
+                      (final ? ".Final" : ".") + "Receiver");
+  if (p->body) {
+    for (const auto &s : p->body->structs) {
+      if (s->message) {
+        WriteLineIndent(ConvertToLower(*s->name) + "Value *" +
+                        ConvertToUpper(*s->name));
+        WriteLineIndent(ConvertToLower(*s->name) + "Model *" +
+                        ConvertToUpper(*s->name) + (final ? "Final" : "") +
+                        "Model");
+      }
+    }
+
+    WriteLine();
+    for (const auto &s : p->body->structs) {
+      if (s->message) {
+        std::string struct_name = ConvertToUpper(*s->name);
+        WriteLineIndent("// Receive " + *s->name + " handler");
+        WriteLineIndent("HandlerOnReceive" + struct_name + " OnReceive" +
+                        struct_name);
+      }
+    }
+  }
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate receiver constructor
+  WriteLine();
+  WriteLineIndent("// Create a new " + *p->name + (final ? " final " : " ") +
+                  "receiver with an empty buffer");
+  WriteLineIndent("func New" + receiver_name + "() *" + receiver_name + " {");
+  Indent(1);
+  WriteLineIndent("return New" + receiver_name +
+                  "WithBuffer(fbe.NewEmptyBuffer())");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("// Create a new " + *p->name + (final ? " final " : " ") +
+                  "receiver with the given buffer");
+  WriteLineIndent("func New" + receiver_name +
+                  "WithBuffer(buffer *fbe.Buffer) *" + receiver_name + " {");
+  Indent(1);
+  WriteLineIndent("receiver := &" + receiver_name + "{");
+  Indent(1);
+  WriteLineIndent("fbe.NewReceiver(buffer, " +
+                  std::string(final ? "true" : "false") + "),");
+  if (p->import)
+    for (const auto &import : p->import->imports)
+      WriteLineIndent(*import + ".New" + (final ? "Final" : "") +
+                      "ReceiverWithBuffer(buffer),");
+  if (p->body) {
+    for (const auto &s : p->body->structs) {
+      if (s->message) {
+        WriteLineIndent("New" + ConvertToUpper(*s->name) + "(),");
+        WriteLineIndent("New" + ConvertToUpper(*s->name) +
+                        (final ? "Final" : "") + "Model(buffer),");
+      }
+    }
+    for (size_t i = 0; i < p->body->structs.size(); ++i)
+      if (p->body->structs[i]->message)
+        WriteLineIndent("nil,");
+  }
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLineIndent("receiver.SetupHandlerOnReceive(receiver)");
+  for (const auto &s : p->body->structs)
+    if (s->message)
+      WriteLineIndent("receiver.SetupHandlerOnReceive" +
+                      ConvertToUpper(*s->name) + "Func(func(value *" +
+                      ConvertToUpper(*s->name) + ") {})");
+  WriteLineIndent("return receiver");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  if (p->import) {
+    // Generate receiver imports
+    WriteLine();
+    WriteLineIndent("// Imported receivers");
+    WriteLine();
+    for (const auto &import : p->import->imports) {
+      WriteLineIndent("// Get the " + *import + " receiver");
+      WriteLineIndent("func (r *" + receiver_name + ") " +
+                      ConvertToUpper(*import) + "Receiver() *" + *import +
+                      (final ? ".Final" : ".") + "Receiver { return r." +
+                      ConvertToLower(*import) + "Receiver }");
+      WriteLineIndent("// Set the " + *import + " receiver");
+      WriteLineIndent("func (r *" + receiver_name + ") Set" +
+                      ConvertToUpper(*import) + "Receiver(receiver *" +
+                      *import + (final ? ".Final" : ".") + "Receiver) { r." +
+                      ConvertToLower(*import) + "Receiver = receiver }");
+    }
+  }
+
+  // Generate receiver setup handlers
+  WriteLine();
+  WriteLineIndent("// Setup handlers");
+  WriteLineIndent("func (r *" + receiver_name +
+                  ") SetupHandlers(handlers interface{}) {");
+  Indent(1);
+  WriteLineIndent("r.Receiver.SetupHandlers(handlers)");
+  if (p->import)
+    for (const auto &import : p->import->imports)
+      WriteLineIndent("r." + ConvertToLower(*import) +
+                      "Receiver.SetupHandlers(handlers)");
+  if (p->body) {
+    for (const auto &s : p->body->structs) {
+      if (s->message) {
+        std::string struct_name = ConvertToUpper(*s->name);
+        WriteLineIndent("if handler, ok := handlers.(OnReceive" + struct_name +
+                        "); ok {");
+        Indent(1);
+        WriteLineIndent("r.SetupHandlerOnReceive" + struct_name + "(handler)");
+        Indent(-1);
+        WriteLineIndent("}");
+      }
+    }
+  }
+  Indent(-1);
+  WriteLineIndent("}");
+  if (p->body) {
+    WriteLine();
+    for (const auto &s : p->body->structs) {
+      if (s->message) {
+        std::string struct_name = ConvertToUpper(*s->name);
+        WriteLineIndent("// Setup receive " + *s->name + " handler");
+        WriteLineIndent(
+            "func (r *" + receiver_name + ") SetupHandlerOnReceive" +
+            struct_name + "(handler OnReceive" + struct_name +
+            ") { r.HandlerOnReceive" + struct_name + " = handler }");
+        WriteLineIndent("// Setup receive " + *s->name + " handler function");
+        WriteLineIndent("func (r *" + receiver_name +
+                        ") SetupHandlerOnReceive" + struct_name +
+                        "Func(function func(value *" + struct_name +
+                        ")) { r.HandlerOnReceive" + struct_name +
+                        " = OnReceive" + struct_name + "Func(function) }");
+      }
+    }
+  }
+
+  // Generate receiver message handler
+  WriteLine();
+  WriteLineIndent("// Receive message handler");
+  WriteLineIndent("func (r *" + receiver_name +
+                  ") OnReceive(fbeType int, buffer []byte) (bool, error) {");
+  Indent(1);
+  if (p->body) {
+    WriteLineIndent("switch fbeType {");
+    for (const auto &s : p->body->structs) {
+      if (s->message) {
+        std::string struct_name = ConvertToUpper(*s->name);
+        std::string struct_model = ConvertToLower(*s->name) + "Model";
+        std::string struct_value = ConvertToLower(*s->name) + "Value";
+        WriteLineIndent("case r." + struct_model + ".FBEType():");
+        Indent(1);
+        WriteLineIndent("// Deserialize the value from the FBE stream");
+        WriteLineIndent("r." + struct_model + ".Buffer().Attach(buffer)");
+        WriteLineIndent("if !r." + struct_model + ".Verify() {");
+        Indent(1);
+        WriteLineIndent("return false, errors.New(\"" + *p->name + "." +
+                        *s->name + " validation failed\")");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLineIndent("deserialized, err := r." + struct_model +
+                        ".DeserializeValue(r." + struct_value + ")");
+        WriteLineIndent("if deserialized <= 0 {");
+        Indent(1);
+        WriteLineIndent("return false, errors.New(\"" + *p->name + "." +
+                        *s->name + " deserialization failed\")");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLineIndent("if err != nil {");
+        Indent(1);
+        WriteLineIndent("return false, err");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLine();
+        WriteLineIndent("// Log the value");
+        WriteLineIndent("if r.Logging() {");
+        Indent(1);
+        WriteLineIndent("message := r." + struct_value + ".String()");
+        WriteLineIndent("r.HandlerOnReceiveLog.OnReceiveLog(message)");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLine();
+        WriteLineIndent("// Call receive handler with deserialized value");
+        WriteLineIndent("r.HandlerOnReceive" + struct_name + ".OnReceive" +
+                        struct_name + "(r." + struct_value + ")");
+        WriteLineIndent("return true, nil");
+        Indent(-1);
+      }
+    }
+    WriteLineIndent("default:");
+    Indent(1);
+    WriteLineIndent("_ = fbeType");
+    WriteLineIndent("break");
+    Indent(-1);
+    WriteLineIndent("}");
+  }
+  if (p->import) {
+    WriteLine();
+    for (const auto &import : p->import->imports) {
+      WriteLineIndent("if r." + ConvertToLower(*import) + "Receiver != nil {");
+      Indent(1);
+      WriteLineIndent("if ok, err := r." + ConvertToLower(*import) +
+                      "Receiver.OnReceive(fbeType, buffer); ok {");
+      Indent(1);
+      WriteLineIndent("return ok, err");
+      Indent(-1);
+      WriteLineIndent("}");
+      Indent(-1);
+      WriteLineIndent("}");
+    }
+  }
+  WriteLine();
+  WriteLineIndent("return false, nil");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate footer
+  GenerateFooter();
+
+  // Store the output file
+  WriteEnd();
+  Store(output);
+}
+
+void GeneratorGo::GenerateProxy(const std::shared_ptr<Package> &p,
+                                const CppCommon::Path &path, bool final) {
+  std::string proxy_name = std::string(final ? "Final" : "") + "Proxy";
+
+  // Generate the output file
+  CppCommon::Path output = path / (proxy_name + ".go");
+  WriteBegin();
+
+  // Generate header
+  GenerateHeader(CppCommon::Path(_input).filename().string());
+
+  // Generate package
+  WriteLine();
+  WriteLineIndent("package " + *p->name);
+
+  // Generate imports
+  WriteLine();
+  GenerateImports(p);
+
+  // Generate proxy interfaces
+  if (p->body) {
+    for (const auto &s : p->body->structs) {
+      if (s->message) {
+        std::string struct_name = ConvertToUpper(*s->name);
+        std::string struct_model =
+            ConvertToUpper(*s->name) + (final ? "Final" : "") + "Model";
+        WriteLine();
+        WriteLineIndent("// Proxy " + *s->name + " interface");
+        WriteLineIndent("type OnProxy" + std::string(final ? "Final" : "") +
+                        struct_name + " interface {");
+        Indent(1);
+        WriteLineIndent("OnProxy" + struct_name + "(model *" + struct_model +
+                        ", fbeType int, buffer []byte)");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLine();
+        WriteLineIndent("// Proxy " + *s->name + " function");
+        WriteLineIndent("type OnProxy" + std::string(final ? "Final" : "") +
+                        struct_name + "Func func(model *" + struct_model +
+                        ", fbeType int, buffer []byte)");
+        WriteLineIndent("func (f OnProxy" + std::string(final ? "Final" : "") +
+                        struct_name + "Func) OnProxy" + struct_name +
+                        "(model *" + struct_model +
+                        ", fbeType int, buffer []byte) {");
+        Indent(1);
+        WriteLineIndent("f(model, fbeType, buffer)");
+        Indent(-1);
+        WriteLineIndent("}");
+      }
+    }
+  }
+
+  // Generate proxy type
+  WriteLine();
+  WriteLineIndent("// Fast Binary Encoding " + *p->name +
+                  (final ? " final " : " ") + "proxy");
+  WriteLineIndent("type " + proxy_name + " struct {");
+  Indent(1);
+  WriteLineIndent("*fbe.Receiver");
+  if (p->import)
+    for (const auto &import : p->import->imports)
+      WriteLineIndent(ConvertToLower(*import) + "Proxy *" + *import +
+                      (final ? ".Final" : ".") + "Proxy");
+  if (p->body) {
+    for (const auto &s : p->body->structs)
+      if (s->message)
+        WriteLineIndent(ConvertToLower(*s->name) + "Model *" +
+                        ConvertToUpper(*s->name) + (final ? "Final" : "") +
+                        "Model");
+
+    WriteLine();
+    for (const auto &s : p->body->structs) {
+      if (s->message) {
+        std::string struct_name = ConvertToUpper(*s->name);
+
+        WriteLineIndent("// Proxy " + *s->name + " handler");
+        WriteLineIndent("HandlerOnProxy" + struct_name + " OnProxy" +
+                        std::string(final ? "Final" : "") + struct_name);
+      }
+    }
+  }
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate proxy constructor
+  WriteLine();
+  WriteLineIndent("// Create a new " + *p->name + (final ? " final " : " ") +
+                  "proxy with an empty buffer");
+  WriteLineIndent("func New" + proxy_name + "() *" + proxy_name + " {");
+  Indent(1);
+  WriteLineIndent("return New" + proxy_name +
+                  "WithBuffer(fbe.NewEmptyBuffer())");
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLine();
+  WriteLineIndent("// Create a new " + *p->name + (final ? " final " : " ") +
+                  "proxy with the given buffer");
+  WriteLineIndent("func New" + proxy_name + "WithBuffer(buffer *fbe.Buffer) *" +
+                  proxy_name + " {");
+  Indent(1);
+  WriteLineIndent("proxy := &" + proxy_name + "{");
+  Indent(1);
+  WriteLineIndent("fbe.NewReceiver(buffer, " +
+                  std::string(final ? "true" : "false") + "),");
+  if (p->import)
+    for (const auto &import : p->import->imports)
+      WriteLineIndent(*import + ".New" + (final ? "Final" : "") +
+                      "ProxyWithBuffer(buffer),");
+  if (p->body) {
+    for (const auto &s : p->body->structs)
+      if (s->message)
+        WriteLineIndent("New" + ConvertToUpper(*s->name) +
+                        (final ? "Final" : "") + "Model(buffer),");
+    for (size_t i = 0; i < p->body->structs.size(); ++i)
+      if (p->body->structs[i]->message)
+        WriteLineIndent("nil,");
+  }
+  Indent(-1);
+  WriteLineIndent("}");
+  WriteLineIndent("proxy.SetupHandlerOnReceive(proxy)");
+  for (const auto &s : p->body->structs) {
+    if (s->message) {
+      std::string struct_model =
+          ConvertToUpper(*s->name) + (final ? "Final" : "") + "Model";
+      WriteLineIndent("proxy.SetupHandlerOnProxy" + ConvertToUpper(*s->name) +
+                      "Func(func(model *" + struct_model +
+                      ", fbeType int, buffer []byte) {})");
+    }
+  }
+  WriteLineIndent("return proxy");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  if (p->import) {
+    // Generate proxy imports
+    WriteLine();
+    WriteLineIndent("// Imported proxy");
+    WriteLine();
+    for (const auto &import : p->import->imports) {
+      WriteLineIndent("// Get the " + *import + " proxy");
+      WriteLineIndent("func (p *" + proxy_name + ") " +
+                      ConvertToUpper(*import) + "Proxy() *" + *import +
+                      (final ? ".Final" : ".") + "Proxy { return p." +
+                      ConvertToLower(*import) + "Proxy }");
+      WriteLineIndent("// Set the " + *import + " proxy");
+      WriteLineIndent("func (p *" + proxy_name + ") Set" +
+                      ConvertToUpper(*import) + "Proxy(proxy *" + *import +
+                      (final ? ".Final" : ".") + "Proxy) { p." +
+                      ConvertToLower(*import) + "Proxy = proxy }");
+    }
+  }
+
+  // Generate proxy setup handlers
+  WriteLine();
+  WriteLineIndent("// Setup handlers");
+  WriteLineIndent("func (p *" + proxy_name +
+                  ") SetupHandlers(handlers interface{}) {");
+  Indent(1);
+  WriteLineIndent("p.Receiver.SetupHandlers(handlers)");
+  if (p->import)
+    for (const auto &import : p->import->imports)
+      WriteLineIndent("p." + ConvertToLower(*import) +
+                      "Proxy.SetupHandlers(handlers)");
+  if (p->body) {
+    for (const auto &s : p->body->structs) {
+      if (s->message) {
+        std::string struct_name = ConvertToUpper(*s->name);
+        WriteLineIndent("if handler, ok := handlers.(OnProxy" +
+                        std::string(final ? "Final" : "") + struct_name +
+                        "); ok {");
+        Indent(1);
+        WriteLineIndent("p.SetupHandlerOnProxy" + struct_name + "(handler)");
+        Indent(-1);
+        WriteLineIndent("}");
+      }
+    }
+  }
+  Indent(-1);
+  WriteLineIndent("}");
+  if (p->body) {
+    WriteLine();
+    for (const auto &s : p->body->structs) {
+      if (s->message) {
+        std::string struct_name = ConvertToUpper(*s->name);
+        std::string struct_model =
+            ConvertToUpper(*s->name) + (final ? "Final" : "") + "Model";
+        WriteLineIndent("// Setup proxy " + *s->name + " handler");
+        WriteLineIndent("func (p *" + proxy_name + ") SetupHandlerOnProxy" +
+                        struct_name + "(handler OnProxy" +
+                        std::string(final ? "Final" : "") + struct_name +
+                        ") { p.HandlerOnProxy" + struct_name + " = handler }");
+        WriteLineIndent("// Setup proxy " + *s->name + " handler function");
+        WriteLineIndent(
+            "func (p *" + proxy_name + ") SetupHandlerOnProxy" + struct_name +
+            "Func(function func(model *" + struct_model +
+            ", fbeType int, buffer []byte)) { p.HandlerOnProxy" + struct_name +
+            " = OnProxy" + std::string(final ? "Final" : "") + struct_name +
+            "Func(function) }");
+      }
+    }
+  }
+
+  // Generate proxy message handler
+  WriteLine();
+  WriteLineIndent("// Receive message handler");
+  WriteLineIndent("func (p *" + proxy_name +
+                  ") OnReceive(fbeType int, buffer []byte) (bool, error) {");
+  Indent(1);
+  if (p->body) {
+    WriteLineIndent("switch fbeType {");
+    for (const auto &s : p->body->structs) {
+      if (s->message) {
+        std::string struct_name = ConvertToUpper(*s->name);
+        std::string struct_model = ConvertToLower(*s->name) + "Model";
+        WriteLineIndent("case p." + struct_model + ".FBEType():");
+        Indent(1);
+        WriteLineIndent("// Attach the FBE stream to the proxy model");
+        WriteLineIndent("p." + struct_model + ".Buffer().Attach(buffer)");
+        WriteLineIndent("if !p." + struct_model + ".Verify() {");
+        Indent(1);
+        WriteLineIndent("return false, errors.New(\"" + *p->name + "." +
+                        *s->name + " validation failed\")");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLine();
+        WriteLineIndent("fbeBegin, err := p." + struct_model +
+                        ".model.GetBegin()");
+        WriteLineIndent("if fbeBegin == 0 {");
+        Indent(1);
+        WriteLineIndent("return false, err");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLineIndent("// Call proxy handler");
+        WriteLineIndent("p.HandlerOnProxy" + struct_name + ".OnProxy" +
+                        struct_name + "(p." + struct_model +
+                        ", fbeType, buffer)");
+        WriteLineIndent("p." + struct_model + ".model.GetEnd(fbeBegin)");
+        WriteLineIndent("return true, nil");
+        Indent(-1);
+      }
+    }
+    WriteLineIndent("default:");
+    Indent(1);
+    WriteLineIndent("_ = fbeType");
+    WriteLineIndent("break");
+    Indent(-1);
+    WriteLineIndent("}");
+  }
+  if (p->import) {
+    WriteLine();
+    for (const auto &import : p->import->imports) {
+      WriteLineIndent("if p." + ConvertToLower(*import) + "Proxy != nil {");
+      Indent(1);
+      WriteLineIndent("if ok, err := p." + ConvertToLower(*import) +
+                      "Proxy.OnReceive(fbeType, buffer); ok {");
+      Indent(1);
+      WriteLineIndent("return ok, err");
+      Indent(-1);
+      WriteLineIndent("}");
+      Indent(-1);
+      WriteLineIndent("}");
+    }
+  }
+  WriteLine();
+  WriteLineIndent("return false, nil");
+  Indent(-1);
+  WriteLineIndent("}");
+
+  // Generate footer
+  GenerateFooter();
+
+  // Store the output file
+  WriteEnd();
+  Store(output);
+}
+
+bool GeneratorGo::IsPrimitiveType(const std::string &type) {
+  return ((type == "bool") || (type == "byte") || (type == "char") ||
+          (type == "wchar") || (type == "int8") || (type == "uint8") ||
+          (type == "int16") || (type == "uint16") || (type == "int32") ||
+          (type == "uint32") || (type == "int64") || (type == "uint64") ||
+          (type == "float") || (type == "double"));
+}
+
+bool GeneratorGo::IsGoType(const std::string &type) {
+  return IsPrimitiveType(type) || (type == "bytes") || (type == "decimal") ||
+         (type == "string") || (type == "timestamp") || (type == "uuid");
+}
+
+std::string GeneratorGo::ConvertToLower(const std::string &type) {
+  std::string result = CppCommon::StringUtils::ToTrim(type);
+  result[0] = std::tolower(result[0]);
+  return result;
+}
+
+std::string GeneratorGo::ConvertToUpper(const std::string &type) {
+  std::string result = CppCommon::StringUtils::ToTrim(type);
+  result[0] = std::toupper(result[0]);
+  return result;
+}
+
+std::string GeneratorGo::ConvertEnumBase(const std::string &type) {
+  if (type == "byte")
+    return "Byte";
+  else if (type == "char")
+    return "UInt8";
+  else if (type == "wchar")
+    return "UInt32";
+  else if (type == "int8")
+    return "Int8";
+  else if (type == "uint8")
+    return "UInt8";
+  else if (type == "int16")
+    return "Int16";
+  else if (type == "uint16")
+    return "UInt16";
+  else if (type == "int32")
+    return "Int32";
+  else if (type == "uint32")
+    return "UInt32";
+  else if (type == "int64")
+    return "Int64";
+  else if (type == "uint64")
+    return "UInt64";
+
+  yyerror("Unsupported enum base type - " + type);
+  return "";
+}
+
+std::string GeneratorGo::ConvertEnumSize(const std::string &type) {
+  if (type == "byte")
+    return "1";
+  else if (type == "char")
+    return "1";
+  else if (type == "wchar")
+    return "4";
+  else if (type == "int8")
+    return "1";
+  else if (type == "uint8")
+    return "1";
+  else if (type == "int16")
+    return "2";
+  else if (type == "uint16")
+    return "2";
+  else if (type == "int32")
+    return "4";
+  else if (type == "uint32")
+    return "4";
+  else if (type == "int64")
+    return "8";
+  else if (type == "uint64")
+    return "8";
+
+  yyerror("Unsupported enum base type - " + type);
+  return "";
+}
+
+std::string GeneratorGo::ConvertEnumType(const std::string &type) {
+  if (type == "byte")
+    return "byte";
+  else if (type == "char")
+    return "uint8";
+  else if (type == "wchar")
+    return "uint32";
+  else if (type == "int8")
+    return "int8";
+  else if (type == "uint8")
+    return "uint8";
+  else if (type == "int16")
+    return "int16";
+  else if (type == "uint16")
+    return "uint16";
+  else if (type == "int32")
+    return "int32";
+  else if (type == "uint32")
+    return "uint32";
+  else if (type == "int64")
+    return "int64";
+  else if (type == "uint64")
+    return "uint64";
+
+  yyerror("Unsupported enum base type - " + type);
+  return "";
+}
+
+std::string GeneratorGo::ConvertEnumConstant(const std::string &value) {
+  std::string ns = "";
+  std::string t = "";
+  std::string v = "";
+
+  size_t pos = value.find_last_of('.');
+  if (pos != std::string::npos) {
+    t.assign(value, 0, pos);
+    v.assign(value, pos + 1, value.size() - pos);
+  }
+
+  pos = t.find_last_of('.');
+  if (pos != std::string::npos) {
+    ns.assign(t, 0, pos);
+    t.assign(t, pos + 1, t.size() - pos);
+  }
+
+  return ns + ConvertToUpper(t) + "_" + v;
+}
+
+std::string GeneratorGo::ConvertEnumConstant(const std::string &name,
+                                             const std::string &type,
+                                             const std::string &value) {
+  if (((type == "char") || (type == "wchar")) &&
+      CppCommon::StringUtils::StartsWith(value, "'"))
+    return name + "(" + value + ")";
+
+  std::string result = value;
+
+  if (type.empty()) {
+    // Fill flags values
+    std::vector<std::string> flags =
+        CppCommon::StringUtils::Split(value, '|', true);
+
+    // Generate flags combination
+    if (!flags.empty()) {
+      result = "";
+      bool first = true;
+      for (const auto &it : flags) {
+        result += (first ? "" : " | ") + name + "_" +
+                  CppCommon::StringUtils::ToTrim(it);
+        first = false;
+      }
+    }
+  }
+
+  return result;
+}
+
+std::string GeneratorGo::ConvertBaseName(const std::string &type) {
+  if (IsGoType(type))
+    return type;
+
+  std::string ns = "";
+  std::string t = type;
+
+  size_t pos = type.find_last_of('.');
+  if (pos != std::string::npos) {
+    ns.assign(type, 0, pos + 1);
+    t.assign(type, pos + 1, type.size() - pos);
+  }
+
+  return ConvertToUpper(t);
+}
+
+std::string GeneratorGo::ConvertKeyName(const std::string &type) {
+  if (IsGoType(type))
+    return type;
+
+  std::string ns = "";
+  std::string t = type;
+
+  size_t pos = type.find_last_of('.');
+  if (pos != std::string::npos) {
+    ns.assign(type, 0, pos + 1);
+    t.assign(type, pos + 1, type.size() - pos);
+  }
+
+  return ns + ConvertToUpper(t) + "Key";
+}
+
+std::string GeneratorGo::ConvertModelName(const std::string &type,
+                                          const std::string &model) {
+  std::string ns = "";
+  std::string t = type;
+
+  size_t pos = type.find_last_of('.');
+  if (pos != std::string::npos) {
+    ns.assign(type, 0, pos + 1);
+    t.assign(type, pos + 1, type.size() - pos);
+  }
+
+  return ns + model + ConvertToUpper(t);
+}
+
+std::string GeneratorGo::ConvertNewName(const std::string &type) {
+  std::string ns = "";
+  std::string t = type;
+
+  size_t pos = type.find_last_of('.');
+  if (pos != std::string::npos) {
+    ns.assign(type, 0, pos + 1);
+    t.assign(type, pos + 1, type.size() - pos);
+  }
+
+  return ns + "New" + ConvertToUpper(t);
+}
+
+std::string GeneratorGo::ConvertOptional(const std::string &type) {
+  if (type == "bool")
+    return "fbe.OptionalBool(false)";
+  else if (type == "byte")
+    return "fbe.OptionalByte(0)";
+  else if (type == "bytes")
+    return "fbe.OptionalBytes(make([]byte, 0))";
+  else if ((type == "char") || (type == "wchar"))
+    return "fbe.OptionalRune('\\000')";
+  else if (type == "int8")
+    return "fbe.OptionalInt8(0)";
+  else if (type == "uint8")
+    return "fbe.OptionalUInt8(0)";
+  else if (type == "int16")
+    return "fbe.OptionalInt16(0)";
+  else if (type == "uint16")
+    return "fbe.OptionalUInt16(0)";
+  else if (type == "int32")
+    return "fbe.OptionalInt32(0)";
+  else if (type == "uint32")
+    return "fbe.OptionalUInt32(0)";
+  else if (type == "int64")
+    return "fbe.OptionalInt64(0)";
+  else if (type == "uint64")
+    return "fbe.OptionalUInt64(0)";
+  else if (type == "float")
+    return "fbe.OptionalFloat32(0.0)";
+  else if (type == "double")
+    return "fbe.OptionalFloat64(0.0)";
+  else if (type == "decimal")
+    return "fbe.OptionalDecimal(fbe.DecimalZero())";
+  else if (type == "timestamp")
+    return "fbe.OptionalTimestamp(fbe.TimestampEpoch())";
+  else if (type == "string")
+    return "fbe.OptionalString(\"\")";
+  else if (type == "uuid")
+    return "fbe.OptionalUUID(fbe.UUIDNil())";
+
+  return ConvertNewName(type) + "()" + ".Optional()";
+}
+
+std::string GeneratorGo::ConvertOptional(const std::string &type,
+                                         const std::string &value) {
+  if (value == "null")
+    return "nil";
+
+  if (type == "bool")
+    return "fbe.OptionalBool(" + ConvertConstant(type, value, false) + ")";
+  else if (type == "byte")
+    return "fbe.OptionalByte(" + ConvertConstant(type, value, false) + ")";
+  else if (type == "bytes")
+    return "fbe.OptionalBytes(" + ConvertConstant(type, value, false) + ")";
+  else if ((type == "char") || (type == "wchar"))
+    return "fbe.OptionalRune(" + ConvertConstant(type, value, false) + ")";
+  else if (type == "int8")
+    return "fbe.OptionalInt8(" + ConvertConstant(type, value, false) + ")";
+  else if (type == "uint8")
+    return "fbe.OptionalUInt8(" + ConvertConstant(type, value, false) + ")";
+  else if (type == "int16")
+    return "fbe.OptionalInt16(" + ConvertConstant(type, value, false) + ")";
+  else if (type == "uint16")
+    return "fbe.OptionalUInt16(" + ConvertConstant(type, value, false) + ")";
+  else if (type == "int32")
+    return "fbe.OptionalInt32(" + ConvertConstant(type, value, false) + ")";
+  else if (type == "uint32")
+    return "fbe.OptionalUInt32(" + ConvertConstant(type, value, false) + ")";
+  else if (type == "int64")
+    return "fbe.OptionalInt64(" + ConvertConstant(type, value, false) + ")";
+  else if (type == "uint64")
+    return "fbe.OptionalUInt64(" + ConvertConstant(type, value, false) + ")";
+  else if (type == "float")
+    return "fbe.OptionalFloat32(" + ConvertConstant(type, value, false) + ")";
+  else if (type == "double")
+    return "fbe.OptionalFloat64(" + ConvertConstant(type, value, false) + ")";
+  else if (type == "decimal")
+    return "fbe.OptionalDecimal(" + ConvertConstant(type, value, false) + ")";
+  else if (type == "timestamp")
+    return "fbe.OptionalTimestamp(" + ConvertConstant(type, value, false) + ")";
+  else if (type == "string")
+    return "fbe.OptionalString(" + ConvertConstant(type, value, false) + ")";
+  else if (type == "uuid")
+    return "fbe.OptionalUUID(" + ConvertConstant(type, value, false) + ")";
+
+  return ConvertConstant(type, value, false) + ".Optional()";
+}
+
+std::string GeneratorGo::ConvertTypeName(const std::string &type,
+                                         bool optional) {
+  std::string opt = optional ? "*" : "";
+
+  if ((type == "bool") || (type == "byte") || (type == "int8") ||
+      (type == "uint8") || (type == "int16") || (type == "uint16") ||
+      (type == "int32") || (type == "uint32") || (type == "int64") ||
+      (type == "uint64") || (type == "string"))
+    return opt + type;
+  else if ((type == "char") || (type == "wchar"))
+    return opt + "rune";
+  else if (type == "bytes")
+    return opt + "[]byte";
+  else if (type == "float")
+    return opt + "float32";
+  else if (type == "double")
+    return opt + "float64";
+  else if (type == "decimal")
+    return opt + "fbe.Decimal";
+  else if (type == "timestamp")
+    return opt + "fbe.Timestamp";
+  else if (type == "uuid")
+    return opt + "fbe.UUID";
+
+  std::string ns = "";
+  std::string t = type;
+
+  size_t pos = type.find_last_of('.');
+  if (pos != std::string::npos) {
+    ns.assign(type, 0, pos + 1);
+    t.assign(type, pos + 1, type.size() - pos);
+  }
+
+  return opt + ns + ConvertToUpper(t);
+}
+
+std::string GeneratorGo::ConvertTypeName(const StructField &field) {
+  if (field.array)
+    return "[" + std::to_string(field.N) + "]" +
+           ConvertTypeName(*field.type, field.optional);
+  else if ((field.vector) || (field.list))
+    return "[]" + ConvertTypeName(*field.type, field.optional);
+  else if (field.set)
+    return "set" + ConvertToUpper(*field.name);
+  else if ((field.set) || (field.map) || (field.hash)) {
+    if (IsGoType(*field.key))
+      return "map[" + ConvertKeyName(*field.key) + "]" +
+             ConvertTypeName(*field.type, field.optional);
+    else
+      return "map[" + ConvertKeyName(*field.key) + "]struct{Key " +
+             ConvertTypeName(*field.key, false) + "; Value " +
+             ConvertTypeName(*field.type, field.optional) + "}";
+  }
+
+  return ConvertTypeName(*field.type, field.optional);
+}
+
+std::string GeneratorGo::ConvertTypeFieldName(const std::string &type) {
+  if (type == "bool")
+    return "Bool";
+  else if (type == "byte")
+    return "Byte";
+  else if (type == "bytes")
+    return "Bytes";
+  else if (type == "char")
+    return "Char";
+  else if (type == "wchar")
+    return "WChar";
+  else if (type == "int8")
+    return "Int8";
+  else if (type == "uint8")
+    return "UInt8";
+  else if (type == "int16")
+    return "Int16";
+  else if (type == "uint16")
+    return "UInt16";
+  else if (type == "int32")
+    return "Int32";
+  else if (type == "uint32")
+    return "UInt32";
+  else if (type == "int64")
+    return "Int64";
+  else if (type == "uint64")
+    return "UInt64";
+  else if (type == "float")
+    return "Float";
+  else if (type == "double")
+    return "Double";
+  else if (type == "decimal")
+    return "Decimal";
+  else if (type == "timestamp")
+    return "Timestamp";
+  else if (type == "string")
+    return "String";
+  else if (type == "uuid")
+    return "UUID";
+
+  std::string ns = "";
+  std::string t = type;
+
+  size_t pos = type.find_last_of('.');
+  if (pos != std::string::npos) {
+    ns.assign(type, 0, pos + 1);
+    t.assign(type, pos + 1, type.size() - pos);
+  }
+
+  CppCommon::StringUtils::ReplaceAll(ns, ".", "");
+  return ns + ConvertToUpper(t);
+}
+
+std::string GeneratorGo::ConvertTypeFieldType(const std::string &type,
+                                              bool optional) {
+  if (IsGoType(type))
+    return ConvertTypeName(type, optional);
+
+  std::string ns = "";
+  std::string opt = optional ? "*" : "";
+  std::string t = type;
+
+  size_t pos = type.find_last_of('.');
+  if (pos != std::string::npos) {
+    ns.assign(type, 0, pos + 1);
+    t.assign(type, pos + 1, type.size() - pos);
+  }
+
+  return ns + opt + ConvertToUpper(t);
+}
+
+std::string GeneratorGo::ConvertTypeFieldDeclaration(const std::string &type,
+                                                     bool optional,
+                                                     bool final) {
+  std::string modelType = final ? "Final" : "Field";
+
+  if (IsGoType(type) && !optional)
+    return "fbe." + modelType + "Model" + ConvertTypeFieldName(type);
+
+  std::string ns = "";
+  std::string opt = optional ? "Optional" : "";
+  std::string t = type;
+
+  size_t pos = type.find_last_of('.');
+  if (pos != std::string::npos) {
+    ns.assign(type, 0, pos + 1);
+    t.assign(type, pos + 1, type.size() - pos);
+  }
+
+  return ns + modelType + "Model" + opt + ConvertTypeFieldName(t);
+}
+
+std::string GeneratorGo::ConvertTypeFieldDeclaration(const StructField &field,
+                                                     bool final) {
+  std::string modelType = final ? "Final" : "Field";
+
+  if (field.array)
+    return modelType + "ModelArray" +
+           std::string(field.optional ? "Optional" : "") +
+           ConvertTypeFieldName(*field.type);
+  else if (field.vector || field.list)
+    return modelType + "ModelVector" +
+           std::string(field.optional ? "Optional" : "") +
+           ConvertTypeFieldName(*field.type);
+  else if (field.set)
+    return modelType + "ModelSet" +
+           std::string(field.optional ? "Optional" : "") +
+           ConvertTypeFieldName(*field.type);
+  else if (field.map || field.hash)
+    return modelType + "ModelMap" + ConvertTypeFieldName(*field.key) +
+           std::string(field.optional ? "Optional" : "") +
+           ConvertTypeFieldName(*field.type);
+  else if (field.optional)
+    return modelType + "ModelOptional" + ConvertTypeFieldName(*field.type);
+
+  return ConvertTypeFieldDeclaration(*field.type, field.optional, final);
+}
+
+std::string GeneratorGo::ConvertTypeFieldInitialization(
+    const std::string &type, bool optional, const std::string &offset,
+    bool final) {
+  std::string modelType = final ? "Final" : "Field";
+
+  if (IsGoType(type))
+    return "fbe.New" + modelType + "Model" + ConvertTypeFieldName(type) +
+           "(buffer, " + offset + ")";
+
+  std::string ns = "";
+  std::string t = type;
+
+  size_t pos = type.find_last_of('.');
+  if (pos != std::string::npos) {
+    ns.assign(type, 0, pos + 1);
+    t.assign(type, pos + 1, type.size() - pos);
+  }
+
+  return ns + "New" + modelType + "Model" + ConvertTypeFieldName(t) +
+         "(buffer, " + offset + ")";
+}
+
+std::string GeneratorGo::ConvertTypeFieldInitialization(
+    const StructField &field, const std::string &offset, bool final) {
+  std::string modelType = final ? "Final" : "Field";
+
+  if (field.array)
+    return "New" + modelType + "ModelArray" +
+           std::string(field.optional ? "Optional" : "") +
+           ConvertTypeFieldName(*field.type) + "(buffer, " + offset + ", " +
+           std::to_string(field.N) + ")";
+  else if (field.vector || field.list)
+    return "New" + modelType + "ModelVector" +
+           std::string(field.optional ? "Optional" : "") +
+           ConvertTypeFieldName(*field.type) + "(buffer, " + offset + ")";
+  else if (field.set)
+    return "New" + modelType + "ModelSet" +
+           std::string(field.optional ? "Optional" : "") +
+           ConvertTypeFieldName(*field.type) + "(buffer, " + offset + ")";
+  else if (field.map || field.hash)
+    return "New" + modelType + "ModelMap" + ConvertTypeFieldName(*field.key) +
+           std::string(field.optional ? "Optional" : "") +
+           ConvertTypeFieldName(*field.type) + "(buffer, " + offset + ")";
+  else if (field.optional)
+    return "New" + modelType + "ModelOptional" +
+           ConvertTypeFieldName(*field.type) + "(buffer, " + offset + ")";
+
+  return ConvertTypeFieldInitialization(*field.type, field.optional, offset,
+                                        final);
+}
+
+std::string GeneratorGo::ConvertConstant(const std::string &type,
+                                         const std::string &value,
+                                         bool optional) {
+  if (optional)
+    return ConvertOptional(type, value);
+
+  if (value == "true")
+    return "true";
+  else if (value == "false")
+    return "false";
+  else if (value == "null")
+    return "nil";
+  else if (value == "min") {
+    if ((type == "byte") || (type == "uint8") || (type == "uint16") ||
+        (type == "uint32") || (type == "uint64"))
+      return "0";
+    else if (type == "int8")
+      return "-128";
+    else if (type == "int16")
+      return "-32768";
+    else if (type == "int32")
+      return "-2147483648";
+    else if (type == "int64")
+      return "-9223372036854775808";
+
+    yyerror("Unsupported type " + type + " for 'min' constant");
+    return "";
+  } else if (value == "max") {
+    if (type == "byte")
+      return "255";
+    else if (type == "int8")
+      return "127";
+    else if (type == "uint8")
+      return "255";
+    else if (type == "int16")
+      return "32767";
+    else if (type == "uint16")
+      return "65535";
+    else if (type == "int32")
+      return "2147483647";
+    else if (type == "uint32")
+      return "4294967295";
+    else if (type == "int64")
+      return "9223372036854775807";
+    else if (type == "uint64")
+      return "18446744073709551615";
+
+    yyerror("Unsupported type " + type + " for 'max' constant");
+    return "";
+  } else if (value == "epoch")
+    return "fbe.TimestampEpoch()";
+  else if (value == "utc")
+    return "fbe.TimestampUTC()";
+  else if (value == "uuid0")
+    return "fbe.UUIDNil()";
+  else if (value == "uuid1")
+    return "fbe.UUIDSequential()";
+  else if (value == "uuid4")
+    return "fbe.UUIDRandom()";
+
+  if ((type == "bool") || (type == "byte") || (type == "int8") ||
+      (type == "uint8") || (type == "int16") || (type == "uint16") ||
+      (type == "int32") || (type == "uint32") || (type == "int64") ||
+      (type == "uint64"))
+    return type + "(" + value + ")";
+  else if (((type == "char") || (type == "wchar")) &&
+           !CppCommon::StringUtils::StartsWith(value, "'"))
+    return "rune(" + value + ")";
+  else if (type == "float")
+    return "float32(" + value + ")";
+  else if (type == "double")
+    return "float64(" + value + ")";
+  else if (type == "decimal")
+    return "fbe.DecimalFromString(\"" + value + "\")";
+  else if (type == "uuid")
+    return "fbe.UUIDFromString(" + value + ")";
+
+  std::string result = value;
+
+  if (!IsGoType(type)) {
+    // Fill flags values
+    std::vector<std::string> flags =
+        CppCommon::StringUtils::Split(value, '|', true);
+
+    // Generate flags combination
+    if (flags.size() > 1) {
+      result = "";
+      bool first = true;
+      for (const auto &it : flags) {
+        result += (first ? "" : " | ") +
+                  ConvertEnumConstant(CppCommon::StringUtils::ToTrim(it));
+        first = false;
+      }
+    }
+    // Generate single flag
+    else if (flags.size() > 0)
+      result =
+          ConvertEnumConstant(CppCommon::StringUtils::ToTrim(flags.front()));
+  }
+
+  return result;
+}
+
+std::string GeneratorGo::ConvertDefault(const std::string &type,
+                                        bool optional) {
+  if (optional)
+    return "nil";
+
+  if (type == "bool")
+    return "false";
+  else if (type == "byte")
+    return "0";
+  else if (type == "bytes")
+    return "make([]byte, 0)";
+  else if ((type == "char") || (type == "wchar"))
+    return "'\\000'";
+  else if ((type == "int8") || (type == "uint8") || (type == "int16") ||
+           (type == "uint16") || (type == "int32") || (type == "uint32") ||
+           (type == "int64") || (type == "uint64"))
+    return "0";
+  else if ((type == "float") || (type == "double"))
+    return "0.0";
+  else if (type == "decimal")
+    return "fbe.DecimalZero()";
+  else if (type == "timestamp")
+    return "fbe.TimestampEpoch()";
+  else if (type == "string")
+    return "\"\"";
+  else if (type == "uuid")
+    return "fbe.UUIDNil()";
+
+  return "*" + ConvertNewName(type) + "()";
+}
+
+std::string GeneratorGo::ConvertDefault(const StructField &field) {
+  if (field.value)
+    return ConvertConstant(*field.type, *field.value, field.optional);
+
+  if (field.array)
+    return ConvertTypeName(field) + "{}";
+  else if (field.vector || field.list)
+    return "make(" + ConvertTypeName(field) + ", 0)";
+  else if (field.set)
+    return "make(set" + ConvertToUpper(*field.name) + ")";
+  else if (field.map || field.hash)
+    return "make(" + ConvertTypeName(field) + ")";
+
+  return ConvertDefault(*field.type, field.optional);
+}
+
+void GeneratorGo::WriteOutputStreamType(const std::string &type,
+                                        const std::string &name,
+                                        bool optional) {
+  if (type == "bool")
+    Write("sb.WriteString(strconv.FormatBool(" +
+          std::string(optional ? "*" : "") + name + "))");
+  else if (type == "byte")
+    Write("sb.WriteString(strconv.FormatUint(uint64(" +
+          std::string(optional ? "*" : "") + name + "), 10))");
+  else if ((type == "int8") || (type == "int16") || (type == "int32") ||
+           (type == "int64"))
+    Write("sb.WriteString(strconv.FormatInt(int64(" +
+          std::string(optional ? "*" : "") + name + "), 10))");
+  else if ((type == "uint8") || (type == "uint16") || (type == "uint32") ||
+           (type == "uint64"))
+    Write("sb.WriteString(strconv.FormatUint(uint64(" +
+          std::string(optional ? "*" : "") + name + "), 10))");
+  else if ((type == "char") || (type == "wchar"))
+    Write("sb.WriteString(\"'\" + string(" + std::string(optional ? "*" : "") +
+          name + ") + \"'\")");
+  else if (type == "float")
+    Write("sb.WriteString(strconv.FormatFloat(float64(" +
+          std::string(optional ? "*" : "") + name + "), 'g', -1, 32))");
+  else if (type == "double")
+    Write("sb.WriteString(strconv.FormatFloat(float64(" +
+          std::string(optional ? "*" : "") + name + "), 'g', -1, 64))");
+  else if (type == "bytes")
+    Write("sb.WriteString(\"bytes[\" + strconv.FormatInt(int64(len(" +
+          std::string(optional ? "*" : "") + name + ")), 10) + \"]\")");
+  else if (type == "string")
+    Write("sb.WriteString(\"\\\"\" + " + std::string(optional ? "*" : "") +
+          name + " + \"\\\"\")");
+  else if (type == "decimal")
+    Write("sb.WriteString(" + std::string(optional ? "(*" : "") + name +
+          std::string(optional ? ")" : "") + ".String())");
+  else if (type == "timestamp")
+    Write("sb.WriteString(strconv.FormatInt(" +
+          std::string(optional ? "(*" : "") + name +
+          std::string(optional ? ")" : "") + +".UnixNano(), 10))");
+  else if (type == "uuid")
+    Write("sb.WriteString(\"\\\"\" + " + std::string(optional ? "(*" : "") +
+          name + std::string(optional ? ")" : "") + ".String() + \"\\\"\")");
+  else
+    Write("sb.WriteString(" + name + ".String())");
+}
+
+void GeneratorGo::WriteOutputStreamValue(const std::string &type,
+                                         const std::string &name, bool optional,
+                                         bool separate) {
+  if (optional || (type == "bytes")) {
+    WriteLineIndent("if " + name + " != nil { ");
+    Indent(1);
+    if (separate)
+      WriteLineIndent(
+          "if first { sb.WriteString(\"\") } else { sb.WriteString(\",\") }");
+    WriteIndent();
+    WriteOutputStreamType(type, name, optional);
+    WriteLine();
+    Indent(-1);
+    WriteLineIndent("} else {");
+    Indent(1);
+    if (separate)
+      WriteLineIndent(
+          "if first { sb.WriteString(\"\") } else { sb.WriteString(\",\") }");
+    WriteLineIndent("sb.WriteString(\"null\")");
+    Indent(-1);
+    WriteLineIndent("}");
+  } else {
+    if (separate)
+      WriteLineIndent(
+          "if first { sb.WriteString(\"\") } else { sb.WriteString(\",\") }");
+    WriteIndent();
+    WriteOutputStreamType(type, name, optional);
+    WriteLine();
+  }
 }
 
 } // namespace FBE
