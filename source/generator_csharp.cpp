@@ -3613,7 +3613,7 @@ void GeneratorCSharp::GenerateFBEReceiver() {
 
         // Receive message handler
         internal abstract bool OnReceive(long type, byte[] buffer, long offset, long size);
-        public void OnReceiveLog(string message) {}
+        public virtual void OnReceiveLog(string message) {}
     }
 )CODE";
 
@@ -3945,7 +3945,7 @@ void GeneratorCSharp::GenerateFBEClient() {
 
         // Receive message handler
         internal abstract bool OnReceive(long type, byte[] buffer, long offset, long size);
-        public long OnSend(byte[] buffer, long offset, long size) { return size; }
+        public virtual long OnSend(byte[] buffer, long offset, long size) { return size; }
         public void OnSendLog(string message) {}
         public void OnReceiveLog(string message) {}
     }
@@ -7165,8 +7165,15 @@ void GeneratorCSharp::GenerateReceiver(const std::shared_ptr<Package> &p,
         Indent(-1);
         WriteLineIndent("}");
         WriteLine();
-        WriteLineIndent("// Call receive handler with deserialized value");
+
+        WriteLineIndent("// Add call to execution queue");
+        WriteLineIndent("NetworkClient.EnqueueExecution(() =>");
+        WriteLineIndent("{");
+        Indent(1);
         WriteLineIndent("listener.OnReceive(" + *s->name + "Value);");
+        Indent(-1);
+        WriteLineIndent("});");
+
         WriteLineIndent("return true;");
         Indent(-1);
         WriteLineIndent("}");
@@ -7748,7 +7755,7 @@ void GeneratorCSharp::GenerateClient(const std::shared_ptr<Package> &p,
   WriteLine();
   WriteLineIndent(
       "public long Send(object obj) { return SendListener(this, obj); }");
-  WriteLineIndent("public long SendListener(" + listener +
+  WriteLineIndent("public long SendListener(" + sender_listener +
                   " listener, object obj)");
   WriteLineIndent("{");
   Indent(1);
@@ -7793,8 +7800,8 @@ void GeneratorCSharp::GenerateClient(const std::shared_ptr<Package> &p,
         std::string struct_name = ConvertTypeName(*p->name, *s->name, false);
         WriteLineIndent("public long Send(" + struct_name +
                         " value) { return SendListener(this, value); }");
-        WriteLineIndent("public long SendListener(" + listener + " listener, " +
-                        struct_name + " value)");
+        WriteLineIndent("public long SendListener(" + sender_listener +
+                        " listener, " + struct_name + " value)");
         WriteLineIndent("{");
         Indent(1);
         WriteLineIndent("// Serialize the value into the FBE stream");
@@ -8166,7 +8173,7 @@ void GeneratorCSharp::GenerateClient(const std::shared_ptr<Package> &p,
                   "long offset, long size) { return OnReceiveListener(this, "
                   "type, buffer, offset, size); }");
   WriteLineIndent(
-      "internal bool OnReceiveListener(" + listener +
+      "internal bool OnReceiveListener(" + receiver_listener +
       " listener, long type, byte[] buffer, long offset, long size)");
   WriteLineIndent("{");
   Indent(1);
