@@ -3291,9 +3291,9 @@ void GeneratorCSharp::GenerateFBESender() {
     public interface ISenderListener
     {
         // Send message handler
-        long OnSend(byte[] buffer, long offset, long size) { return size; }
+        long OnSend(byte[] buffer, long offset, long size);
         // Send log message handler
-        void OnSendLog(string message) {}
+        void OnSendLog(string message);
     }
 
     // Fast Binary Encoding base sender
@@ -3329,6 +3329,9 @@ void GeneratorCSharp::GenerateFBESender() {
             Buffer.Remove(0, sent);
             return sent;
         }
+
+        public long OnSend(byte[] buffer, long offset, long size) { return size; }
+        public void OnSendLog(string message) {}
     }
 )CODE";
 
@@ -3344,7 +3347,7 @@ void GeneratorCSharp::GenerateFBEReceiver() {
     public interface IReceiverListener
     {
         // Receive log message handler
-        void OnReceiveLog(string message) {}
+        void OnReceiveLog(string message);
     }
 
     // Fast Binary Encoding base receiver
@@ -3610,6 +3613,7 @@ void GeneratorCSharp::GenerateFBEReceiver() {
 
         // Receive message handler
         internal abstract bool OnReceive(long type, byte[] buffer, long offset, long size);
+        public void OnReceiveLog(string message) {}
     }
 )CODE";
 
@@ -3941,6 +3945,9 @@ void GeneratorCSharp::GenerateFBEClient() {
 
         // Receive message handler
         internal abstract bool OnReceive(long type, byte[] buffer, long offset, long size);
+        public long OnSend(byte[] buffer, long offset, long size) { return size; }
+        public void OnSendLog(string message) {}
+        public void OnReceiveLog(string message) {}
     }
 )CODE";
 
@@ -4540,7 +4547,7 @@ void GeneratorCSharp::GeneratePackage(const std::shared_ptr<Package> &p) {
     // Generate sender & receiver
     GenerateSender(p, false);
     GenerateReceiver(p, false);
-    GenerateProxy(p, false);
+    // GenerateProxy(p, false);
     GenerateClient(p, false);
     if (Final()) {
       GenerateSender(p, true);
@@ -7033,7 +7040,7 @@ void GeneratorCSharp::GenerateReceiver(const std::shared_ptr<Package> &p,
     for (const auto &s : p->body->structs) {
       if (s->message) {
         std::string struct_name = ConvertTypeName(*p->name, *s->name, false);
-        WriteLineIndent("void OnReceive(" + struct_name + " value) {}");
+        WriteLineIndent("void OnReceive(" + struct_name + " value);");
       }
     }
   }
@@ -7185,6 +7192,38 @@ void GeneratorCSharp::GenerateReceiver(const std::shared_ptr<Package> &p,
   Indent(-1);
   WriteLineIndent("}");
 
+  // Generate empty listeners
+  if (p->body) {
+    WriteLineIndent("// Emppty receive handlers");
+    for (const auto &s : p->body->structs) {
+      if (s->message) {
+        std::string struct_name = ConvertTypeName(*p->name, *s->name, false);
+        WriteLineIndent("public void OnReceive(" + struct_name + " value) {}");
+      }
+    }
+  }
+  WriteLine();
+
+  // Listeners of imported
+  if (p->import) {
+    for (const auto &import : p->import->imports) {
+      WriteLineIndent("// Listeners of " + *import);
+
+      // WriteLineIndent(
+      //     "if (" + *import +
+      //     "Receiver.OnReceiveListener(listener, type, buffer, offset,
+      //     size))");
+      // Indent(1);
+      // WriteLineIndent("return true;");
+      // Indent(-1);
+    }
+    WriteLine();
+  }
+
+  // Empty impleemntation of
+  // WriteLine();
+  // WriteLineIndent("// abs");
+
   // Generate receiver end
   Indent(-1);
   WriteLineIndent("}");
@@ -7238,7 +7277,7 @@ void GeneratorCSharp::GenerateProxy(const std::shared_ptr<Package> &p,
         std::string struct_model = *s->name + model;
         WriteLineIndent(
             "void OnProxy(" + struct_model +
-            " model, long type, byte[] buffer, long offset, long size) {}");
+            " model, long type, byte[] buffer, long offset, long size);");
       }
     }
   }
