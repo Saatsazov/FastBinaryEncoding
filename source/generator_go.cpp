@@ -6986,7 +6986,6 @@ void GeneratorGo::GenerateStructModel(const std::shared_ptr<Package> &p,
   WriteLineIndent(
       "if (m.buffer.Offset() + m.model.FBEOffset() - 4) > m.buffer.Size() {");
   Indent(1);
-  WriteLineIndent("value = New" + struct_name + "()");
   WriteLineIndent("return 0, nil");
   Indent(-1);
   WriteLineIndent("}");
@@ -7557,7 +7556,6 @@ void GeneratorGo::GenerateStructModelFinal(const std::shared_ptr<Package> &p,
   WriteLineIndent(
       "if (m.buffer.Offset() + m.model.FBEOffset()) > m.buffer.Size() {");
   Indent(1);
-  WriteLineIndent("value = New" + struct_name + "()");
   WriteLineIndent("return 0, errors.New(\"model is broken\")");
   Indent(-1);
   WriteLineIndent("}");
@@ -7734,7 +7732,9 @@ void GeneratorGo::GenerateSender(const std::shared_ptr<Package> &p,
                   ") Send(value interface{}) (int, error) {");
   Indent(1);
   if (p->body) {
-    WriteLineIndent("switch value := value.(type) {");
+    if (p->body->structs.size() != 0) {
+      WriteLineIndent("switch value := value.(type) {");
+    }
     for (const auto &s : p->body->structs) {
       if (s->message) {
         WriteLineIndent("case *" + ConvertToUpper(*s->name) + ":");
@@ -7748,12 +7748,9 @@ void GeneratorGo::GenerateSender(const std::shared_ptr<Package> &p,
         Indent(-1);
       }
     }
-    WriteLineIndent("default:");
-    Indent(1);
-    WriteLineIndent("_ = value");
-    WriteLineIndent("break");
-    Indent(-1);
-    WriteLineIndent("}");
+    if (p->body->structs.size() != 0) {
+      WriteLineIndent("}");
+    }
     if (p->import) {
       for (const auto &import : p->import->imports) {
         WriteLineIndent("if result, err := s." + ConvertToLower(*import) +
@@ -7977,6 +7974,7 @@ void GeneratorGo::GenerateReceiver(const std::shared_ptr<Package> &p,
                   ") SetupHandlers(handlers interface{}) {");
   Indent(1);
   WriteLineIndent("r.Receiver.SetupHandlers(handlers)");
+  // todo: check for setLog for imported class
   if (p->import)
     for (const auto &import : p->import->imports)
       WriteLineIndent("r." + ConvertToLower(*import) +
@@ -8068,11 +8066,6 @@ void GeneratorGo::GenerateReceiver(const std::shared_ptr<Package> &p,
         Indent(-1);
       }
     }
-    WriteLineIndent("default:");
-    Indent(1);
-    WriteLineIndent("_ = fbeType");
-    WriteLineIndent("break");
-    Indent(-1);
     WriteLineIndent("}");
   }
   if (p->import) {
@@ -8344,11 +8337,6 @@ void GeneratorGo::GenerateProxy(const std::shared_ptr<Package> &p,
         Indent(-1);
       }
     }
-    WriteLineIndent("default:");
-    Indent(1);
-    WriteLineIndent("_ = fbeType");
-    WriteLineIndent("break");
-    Indent(-1);
     WriteLineIndent("}");
   }
   if (p->import) {
