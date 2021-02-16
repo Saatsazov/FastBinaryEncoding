@@ -3330,8 +3330,8 @@ void GeneratorCSharp::GenerateFBESender() {
             return sent;
         }
 
-        public long OnSend(byte[] buffer, long offset, long size) { return size; }
-        public void OnSendLog(string message) {}
+        public virtual long OnSend(byte[] buffer, long offset, long size) { return size; }
+        public virtual void OnSendLog(string message) {}
     }
 )CODE";
 
