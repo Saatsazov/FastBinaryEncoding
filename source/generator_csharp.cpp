@@ -3946,7 +3946,7 @@ void GeneratorCSharp::GenerateFBEClient() {
         // Receive message handler
         internal abstract bool OnReceive(long type, byte[] buffer, long offset, long size);
         public virtual long OnSend(byte[] buffer, long offset, long size) { return size; }
-        public void OnSendLog(string message) {}
+        public virtual void OnSendLog(string message) {}
         public void OnReceiveLog(string message) {}
     }
 )CODE";
