@@ -4897,6 +4897,7 @@ func min(a, b int) int {
 void GeneratorGo::GenerateImports(const std::shared_ptr<Package> &p) {
   // Generate fbe import
   WriteLineIndent("import \"errors\"");
+  WriteLineIndent("import \"sync\"");
   WriteLineIndent("import \"saatsazov.com/fbe-virus/fbe\"");
 
   // Generate packages import
@@ -4909,6 +4910,8 @@ void GeneratorGo::GenerateImports(const std::shared_ptr<Package> &p) {
   WriteLineIndent("// Workaround for Go unused imports issue");
   WriteLineIndent("var _ = errors.New");
   WriteLineIndent("var _ = fbe.Version");
+  WriteLineIndent("var _ sync.Cond");
+
   if (p->import)
     for (const auto &import : p->import->imports)
       WriteLineIndent("var _ = " + *import + ".Version");
@@ -7897,6 +7900,10 @@ void GeneratorGo::GenerateReceiver(const std::shared_ptr<Package> &p,
       }
     }
   }
+
+  WriteLine();
+  WriteLineIndent("Mutex *sync.Mutex");
+
   Indent(-1);
   WriteLineIndent("}");
 
@@ -7935,6 +7942,9 @@ void GeneratorGo::GenerateReceiver(const std::shared_ptr<Package> &p,
     for (size_t i = 0; i < p->body->structs.size(); ++i)
       if (p->body->structs[i]->message)
         WriteLineIndent("nil,");
+
+    // Mutex
+    WriteLineIndent("nil,");
   }
   Indent(-1);
   WriteLineIndent("}");
@@ -8059,6 +8069,15 @@ void GeneratorGo::GenerateReceiver(const std::shared_ptr<Package> &p,
         Indent(-1);
         WriteLineIndent("}");
         WriteLine();
+
+        WriteLineIndent("if (r.Mutex != nil) {");
+        Indent(1);
+        WriteLineIndent("r.Mutex.Lock()");
+        WriteLineIndent("defer r.Mutex.Unlock()");
+        Indent(-1);
+        WriteLineIndent("}");
+        WriteLine();
+
         WriteLineIndent("// Call receive handler with deserialized value");
         WriteLineIndent("r.HandlerOnReceive" + struct_name + ".OnReceive" +
                         struct_name + "(r." + struct_value + ")");
