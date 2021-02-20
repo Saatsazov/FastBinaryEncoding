@@ -7851,17 +7851,18 @@ void GeneratorGo::GenerateReceiver(const std::shared_ptr<Package> &p,
         WriteLineIndent("type OnReceive" + struct_name + " interface {");
         Indent(1);
         WriteLineIndent("OnReceive" + struct_name + "(value *" + struct_name +
-                        ")");
+                        ", clientID uint)");
         Indent(-1);
         WriteLineIndent("}");
         WriteLine();
         WriteLineIndent("// Receive " + *s->name + " function");
         WriteLineIndent("type OnReceive" + struct_name + "Func func(value *" +
-                        struct_name + ")");
+                        struct_name + ", clientID uint)");
         WriteLineIndent("func (f OnReceive" + struct_name + "Func) OnReceive" +
-                        struct_name + "(value *" + struct_name + ") {");
+                        struct_name + "(value *" + struct_name +
+                        ", clientID uint) {");
         Indent(1);
-        WriteLineIndent("f(value)");
+        WriteLineIndent("f(value, clientID)");
         Indent(-1);
         WriteLineIndent("}");
       }
@@ -7903,6 +7904,7 @@ void GeneratorGo::GenerateReceiver(const std::shared_ptr<Package> &p,
 
   WriteLine();
   WriteLineIndent("Mutex *sync.Mutex");
+  WriteLineIndent("ClientID uint");
 
   Indent(-1);
   WriteLineIndent("}");
@@ -7945,6 +7947,8 @@ void GeneratorGo::GenerateReceiver(const std::shared_ptr<Package> &p,
 
     // Mutex
     WriteLineIndent("nil,");
+    // client
+    WriteLineIndent("0,");
   }
   Indent(-1);
   WriteLineIndent("}");
@@ -7953,7 +7957,7 @@ void GeneratorGo::GenerateReceiver(const std::shared_ptr<Package> &p,
     if (s->message)
       WriteLineIndent("receiver.SetupHandlerOnReceive" +
                       ConvertToUpper(*s->name) + "Func(func(value *" +
-                      ConvertToUpper(*s->name) + ") {})");
+                      ConvertToUpper(*s->name) + ", clientID uint) {})");
   WriteLineIndent("return receiver");
   Indent(-1);
   WriteLineIndent("}");
@@ -8018,7 +8022,7 @@ void GeneratorGo::GenerateReceiver(const std::shared_ptr<Package> &p,
         WriteLineIndent("func (r *" + receiver_name +
                         ") SetupHandlerOnReceive" + struct_name +
                         "Func(function func(value *" + struct_name +
-                        ")) { r.HandlerOnReceive" + struct_name +
+                        ", clientID uint)) { r.HandlerOnReceive" + struct_name +
                         " = OnReceive" + struct_name + "Func(function) }");
       }
     }
@@ -8080,7 +8084,7 @@ void GeneratorGo::GenerateReceiver(const std::shared_ptr<Package> &p,
 
         WriteLineIndent("// Call receive handler with deserialized value");
         WriteLineIndent("r.HandlerOnReceive" + struct_name + ".OnReceive" +
-                        struct_name + "(r." + struct_value + ")");
+                        struct_name + "(r." + struct_value + ", r.ClientID)");
         WriteLineIndent("return true, nil");
         Indent(-1);
       }
