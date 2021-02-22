@@ -8207,8 +8207,14 @@ void GeneratorCSharp::GenerateClient(const std::shared_ptr<Package> &p,
         Indent(-1);
         WriteLineIndent("}");
         WriteLine();
-        WriteLineIndent("// Call receive handler with deserialized value");
+        WriteLineIndent("// Add call to execution queue");
+        WriteLineIndent("NetworkClient.EnqueueExecution(() =>");
+        WriteLineIndent("{");
+        Indent(1);
         WriteLineIndent("listener.OnReceive(" + *s->name + "ReceiverValue);");
+        Indent(-1);
+        WriteLineIndent("});");
+
         WriteLineIndent("return true;");
         Indent(-1);
         WriteLineIndent("}");
